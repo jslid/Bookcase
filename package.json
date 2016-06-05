@@ -4,7 +4,7 @@
   "description": "Responsive CSS Grid Framework",
   "main": "index.js",
   "author": "Jonathan Scott Lutz",
-  "license": "MIT",
+  "license": "GNU GPL",
   "dependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-coffee": "~1.0.0",
