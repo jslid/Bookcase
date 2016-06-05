@@ -1,0 +1,22 @@
+{
+  "name": "bookcase",
+  "version": "1.0.0",
+  "homepage": "https://github.com/jslid/Bookcase",
+  "authors": [
+    "Jonathan Scott Lutz <lutzjs@jslid.com>"
+  ],
+  "description": "Simple Responsive CSS Framework",
+  "keywords": [
+    "css",
+    "less",
+    "scss",
+    "sass",
+    "styl",
+    "stylus",
+    "framework",
+    "simple",
+    "lightweight",
+    "responsive"
+  ],
+  "license": "GNU GPL"
+}
