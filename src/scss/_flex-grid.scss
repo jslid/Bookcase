@@ -1,0 +1,367 @@
+/* Bookcase - Flex Grid */
+
+	// - Flexbox Common
+	// - Flex Directions
+	// - Flex Columns and Positioning
+
+
+// Inspiration from the following flexbox grids: 
+		
+		// - https://github.com/ptb/flexgrid
+		// - https://github.com/alexander-ruehle/bobscss
+		// - https://github.com/kristoferjoseph/flexboxgrid
+		// - https://github.com/zemirco/flexbox-grid
+		//- https://github.com/philipwalton/solved-by-flexbox
+
+
+// FLEXBOX COMMON
+
+	.flexbox-common {
+		@include box-sizing(border-box);
+		@include flexbox-container;
+		@include flex(0, 1, auto);
+		@include flex-wrap(wrap);
+		@include margin-left(-$gutter);
+		@include margin-right(-$gutter);
+	}
+
+// FLEX ROWS & COLUMNS
+
+	.flex-row {
+		@extend .flexbox-common;
+		@include flex-direction(row);
+	}
+
+	.flex-row-reverse {
+		@extend .flexbox-common;
+		@include flex-direction(row-reverse);
+	}
+
+	.flex-column {
+		@extend .flexbox-common;
+		@include flex-direction(column);
+	}
+
+	.flex-column-reverse {
+		@extend .flexbox-common;
+		@include flex-direction(column-reverse);
+	}
+
+
+// FLEX COLUMNS & POSITIONING
+
+	// Mobile/Small (sm) Flex Grid - Columns and Offsets
+
+		// Build Columns
+
+		.flex-mobile, .flex-sm {
+			@include box-sizing(border-box);
+			@include flex(0, 0, auto);
+			@include padding-left($gutter);
+			@include padding-right($gutter);
+		}
+
+		@for $i from 1 through $flex-columns - 1 {
+			.flex-#{$i}-mobile, .flex-#{$i}-sm {
+				@extend .flex-mobile;
+			}
+		}
+
+		@for $i from 1 through $flex-columns {
+			.flex-#{$i}-mobile, .flex-#{$i}-sm {
+				width: ($i / $flex-columns) * 100%;
+			}
+		}
+
+
+		// Flex Positioning
+
+		.flex-start-mobile, .flex-start-sm {
+			@include flex-justify(flex-start);
+		}
+
+		.flex-center-mobile, .flex-center-sm {
+			@include flex-justify(center);
+		}
+
+		.flex-end-mobile, .flex-end-sm {
+			@include flex-justify(flex-end);
+		}
+
+		.flex-around-mobile, .flex-around-sm {
+			@include flex-justify(space-around);
+		}
+
+		.flex-between-mobile, .flex-between-sm {
+			@include flex-justify(space-between);
+		}
+
+		.flex-top-mobile, .flex-top-sm {
+			@include flex-align-items(flex-start);
+		}
+
+		.flex-middle-mobile, .flex-middle-sm {
+			@include flex-align-items(center);
+		}
+
+		.flex-bottom-mobile, .flex-bottom-sm {
+			@include flex-align-items(flex-end);
+		}
+
+		.flex-stretch-mobile, .flex-stretch-sm {
+			@include flex-align-items(stretch);
+		}
+
+		.flex-baseline-mobile, .flex-baseline-sm {
+			@include flex-align-items(baseline);
+		}
+
+		// Flex Order
+
+		.flex-order-start-mobile, .flex-order-start-sm {
+			@include flex-order(-1);
+		}
+
+		.flex-order-end-mobile, .flex-order-end-sm {
+			@include flex-order(1);
+		}
+
+
+	// Tablet/Medium (md) Flex Grid - Columns and Offsets
+
+	@media only screen and (min-width: $breakpoint-tablet) {
+
+		// Build Columns
+
+		.flex-tablet, .flex-md {
+			@include box-sizing(border-box);
+			@include flex(0, 0, auto);
+			@include padding-left($gutter-tablet);
+			@include padding-right($gutter-tablet);
+		}
+
+		@for $i from 1 through $flex-columns - 1 {
+			.flex-#{$i}-tablet, .flex-#{$i}-md {
+				@extend .flex-tablet;
+			}
+		}
+
+		@for $i from 1 through $flex-columns {
+			.flex-#{$i}-tablet, .flex-#{$i}-md {
+				width: ($i / $flex-columns) * 100%;
+			}
+		}
+
+
+		// Flex Positioning
+
+		.flex-start-tablet, .flex-start-md {
+			@include flex-justify(flex-start);
+		}
+
+		.flex-center-tablet, .flex-center-md {
+			@include flex-justify(center);
+		}
+
+		.flex-end-tablet, .flex-end-md {
+			@include flex-justify(flex-end);
+		}
+
+		.flex-around-tablet, .flex-around-md {
+			@include flex-justify(space-around);
+		}
+
+		.flex-between-tablet, .flex-between-md {
+			@include flex-justify(space-between);
+		}
+
+		.flex-top-tablet, .flex-top-md {
+			@include flex-align-items(flex-start);
+		}
+
+		.flex-middle-tablet, .flex-middle-md {
+			@include flex-align-items(center);
+		}
+
+		.flex-bottom-tablet, .flex-bottom-md {
+			@include flex-align-items(flex-end);
+		}
+
+		.flex-stretch-tablet, .flex-stretch-md {
+			@include flex-align-items(stretch);
+		}
+
+		.flex-baseline-tablet, .flex-baseline-md {
+			@include flex-align-items(baseline);
+		}
+
+		// Flex Order
+
+		.flex-order-start-tablet, .flex-order-start-md {
+			@include flex-order(-1);
+		}
+
+		.flex-order-end-tablet, .flex-order-end-md {
+			@include flex-order(1);
+		}
+	}
+
+
+	// Desktop/Large (ld) Flex Grid - Columns and Offsets
+
+	@media only screen and (min-width: $breakpoint-desktop) {
+
+		// Build Columns
+
+		.flex-desktop, .flex-lg {
+			@include box-sizing(border-box);
+			@include flex(0, 0, auto);
+			@include padding-left($gutter-desktop);
+			@include padding-right($gutter-desktop);
+		}
+
+		@for $i from 1 through $flex-columns - 1 {
+			.flex-#{$i}-desktop, .flex-#{$i}-lg {
+				@extend .flex-desktop;
+			}
+		}
+
+		@for $i from 1 through $flex-columns {
+			.flex-#{$i}-desktop, .flex-#{$i}-lg {
+				width: ($i / $flex-columns) * 100%;
+			}
+		}
+
+
+		// Flex Positioning
+
+		.flex-start-desktop, .flex-start-lg {
+			@include flex-justify(flex-start);
+		}
+
+		.flex-center-desktop, .flex-center-lg {
+			@include flex-justify(center);
+		}
+
+		.flex-end-desktop, .flex-center-lg {
+			@include flex-justify(flex-end);
+		}
+
+		.flex-around-desktop, .flex-around-lg {
+			@include flex-justify(space-around);
+		}
+
+		.flex-between-desktop, .flex-between-lg {
+			@include flex-justify(space-between);
+		}
+
+		.flex-top-desktop, .flex-top-lg {
+			@include flex-align-items(flex-start);
+		}
+
+		.flex-middle-desktop, .flex-middle-lg {
+			@include flex-align-items(center);
+		}
+
+		.flex-bottom-desktop, .flex-bottom-lg {
+			@include flex-align-items(flex-end);
+		}
+
+		.flex-stretch-desktop, .flex-stretch-lg {
+			@include flex-align-items(stretch);
+		}
+
+		.flex-baseline-desktop, .flex-baseline-lg {
+			@include flex-align-items(baseline);
+		}
+
+		// Flex Order
+
+		.flex-order-start-desktop, .flex-order-start-lg {
+			@include flex-order(-1);
+		}
+
+		.flex-order-end-desktop, .flex-order-end-lg {
+			@include flex-order(1);
+		}
+	}
+
+
+	// HD/XL (xl) Flex Grid - Columns and Offsets
+
+	@media only screen and (min-width: $breakpoint-hd) {
+
+		// Build Columns
+
+		.flex-hd, .flex-xl {
+			@include box-sizing(border-box);
+			@include flex(0, 0, auto);
+			@include padding-left($gutter-hd);
+			@include padding-right($gutter-hd);
+		}
+
+		@for $i from 1 through $flex-columns - 1 {
+			.flex-#{$i}-hd, .flex-#{$i}-xl {
+				@extend .flex-hd;
+			}
+		}
+
+		@for $i from 1 through $flex-columns {
+			.flex-#{$i}-hd, .flex-#{$i}-xl {
+				width: ($i / $flex-columns) * 100%;
+			}
+		}
+
+
+		// Flex Positioning
+
+		.flex-start-hd, .flex-start-xl {
+			@include flex-justify(flex-start);
+		}
+
+		.flex-center-hd, .flex-center-xl {
+			@include flex-justify(center);
+		}
+
+		.flex-end-hd, .flex-end-xl {
+			@include flex-justify(flex-end);
+		}
+
+		.flex-around-hd, .flex-around-xl {
+			@include flex-justify(space-around);
+		}
+
+		.flex-between-hd, .flex-between-xl {
+			@include flex-justify(space-between);
+		}
+
+		.flex-top-hd, .flex-top-xl {
+			@include flex-align-items(flex-start);
+		}
+
+		.flex-middle-hd, .flex-middle-xl {
+			@include flex-align-items(center);
+		}
+
+		.flex-bottom-hd, .flex-bottom-xl {
+			@include flex-align-items(flex-end);
+		}
+
+		.flex-stretch-hd, .flex-stretch-xl {
+			@include flex-align-items(stretch);
+		}
+
+		.flex-baseline-hd, .flex-baseline-xl {
+			@include flex-align-items(baseline);
+		}
+
+		// Flex Order
+
+		.flex-order-start-hd, .flex-order-start-xl {
+			@include flex-order(-1);
+		}
+
+		.flex-order-end-hd, .flex-order-end-xl {
+			@include flex-order(1);
+		}
+	}

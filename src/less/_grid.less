@@ -1,0 +1,318 @@
+
+/* Bookcase - Grid */
+
+	// - Clear Fix
+	// - Rows and Containers
+	// - Columns and Offsets
+
+
+
+// CLEAR FIX
+
+	.row:before, 
+	.row:after,
+	.shelf:before,
+	.shelf:after { 
+		display: table; 
+		line-height: 0; 
+		content: ""; 
+	}
+
+	.row:after,
+	.shelf:after { 
+		clear: both; 
+	}
+
+	.container:before,
+	.container:after,
+	.bookcase:before, 
+	.bookcase:after { 
+		display: table; 
+		line-height: 0; 
+		content: ""; 
+	}
+
+	.container:after,
+	.bookcase:after { 
+		clear: both; 
+	}
+
+	.container-wide:before,
+	.container-wide:after,
+	.bookcase-wide:before, 
+	.bookcase-wide:after { 
+		display: table; 
+		line-height: 0; 
+		content: ""; 
+	}
+
+	.container-wide:after
+	.bookcase-wide:after { 
+		clear: both; 
+	}
+
+
+
+// ROW & CONTAINERS
+
+	// Rows
+
+	.row,
+	.shelf {
+		position: relative;
+		.margin-left(-@gutter);
+		.margin-right(-@gutter);
+	}
+
+	// Mobile/Small (sm) Container
+
+	.container,
+	.bookcase {
+		.padding-left(@gutter);
+		.padding-right(@gutter);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.container-wide,
+	.bookcase-wide {
+		width: @container-wide;
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+	// Tablet/Medium (md) Container
+
+	@media only screen and (min-width: @breakpoint-tablet) {
+
+		.container,
+		.bookcase { 
+			.width(@container-tablet); 
+		}
+	}
+
+	// Desktop/Large (lg) Container
+
+	@media only screen and (min-width: @breakpoint-desktop) {
+
+		.container,
+		.bookcase { 
+			.width(@container-desktop); 
+		}
+	}
+
+	// HD/XL (xl) Container
+
+	@media only screen and (min-width: @breakpoint-hd) {
+
+		.container,
+		.bookcase { 
+			.width(@container-hd); 
+		}
+	}
+
+
+
+// COLUMNS & OFFSETS
+
+	// Mobile/Small (sm) Grid - Columns and Offsets
+
+		// Build Columns
+
+		.build-columns(@name; @grid-columns; @index: 1) when (@index =< @grid-columns) {
+		  .build-columns(@name; @grid-columns; (@index + 1));
+		   
+		  .@{name}-@{index}, .@{name}-@{index}-sm {
+		    width: ( percentage(@index / @grid-columns) );
+		    & when ( @index < @grid-columns ) {
+		      &:extend(.col);
+		    }
+		  } 
+		}
+
+		.col, .col-sm {
+			float: left;
+			position: relative;
+			.padding-left(@gutter);
+			.padding-right(@gutter);
+		}
+
+		.build-columns(col; @grid-columns);
+
+		// Build Push Offsets
+		
+		.build-push-offsets(@offset-columns);
+
+		.build-push-offsets(@offset-columns) when (@offset-columns > 0) {
+			.build-push-offsets (@offset-columns - 1);
+			.push-@{offset-columns}, .push-@{offset-columns}-sm {
+				left: @offset-columns / @grid-columns * 100%;
+			}
+		}
+
+		// Build Pull Offsets
+
+		.build-pull-offsets(@offset-columns);
+
+		.build-pull-offsets(@offset-columns) when (@offset-columns > 0) {
+			.build-pull-offsets (@offset-columns - 1);
+			.pull-@{offset-columns}, .pull-@{offset-columns}-sm {
+				left: -@offset-columns / @grid-columns * 100%;
+			}
+		}
+
+
+	// Tablet/Medium (md) Grid - Columns and Offsets
+
+	@media only screen and (min-width: @breakpoint-tablet) {
+
+		// Build Columns
+
+		.build-columns-tablet(@name; @grid-columns; @index: 1) when (@index =< @grid-columns) {
+		  .build-columns-tablet(@name; @grid-columns; (@index + 1));
+		   
+		  .@{name}-@{index}-tablet, .@{name}-@{index}-md {
+		    width: ( percentage(@index / @grid-columns) );
+		    & when ( @index < @grid-columns ) {
+		      &:extend(.col-tablet);
+		    }
+		  } 
+		}
+
+		.col-tablet, .col-md {
+			float: left;
+			position: relative;
+			.padding-left(@gutter-tablet);
+			.padding-right(@gutter-tablet);
+		}
+
+		.build-columns-tablet(col; @grid-columns);
+
+		// Build Push Offsets
+		
+		.build-push-offsets-tablet(@offset-columns);
+
+		.build-push-offsets-tablet(@offset-columns) when (@offset-columns > 0) {
+			.build-push-offsets-tablet (@offset-columns - 1);
+			.push-@{offset-columns}-tablet, .push-@{offset-columns}-md {
+				left: @offset-columns / @grid-columns * 100%;
+			}
+		}
+
+		// Build Pull Offsets
+
+		.build-pull-offsets-tablet(@offset-columns);
+
+		.build-pull-offsets-tablet(@offset-columns) when (@offset-columns > 0) {
+			.build-pull-offsets-tablet (@offset-columns - 1);
+			.pull-@{offset-columns}-tablet, .pull-@{offset-columns}-md {
+				left: -@offset-columns / @grid-columns * 100%;
+			}
+		}
+	}
+
+
+	// Desktop/Large (lg) Grid - Columns and Offsets
+
+	@media only screen and (min-width: @breakpoint-desktop) {
+
+		// Build Columns
+
+		.build-columns-desktop(@name; @grid-columns; @index: 1) when (@index =< @grid-columns) {
+		  .build-columns-desktop(@name; @grid-columns; (@index + 1));
+		   
+		  .@{name}-@{index}-desktop, .@{name}-@{index}-lg {
+		    width: ( percentage(@index / @grid-columns) );
+		    & when ( @index < @grid-columns ) {
+		      &:extend(.col-desktop);
+		    }
+		  } 
+		}
+
+		.col-desktop, .col-lg {
+			float: left;
+			position: relative;
+			.padding-left(@gutter-desktop);
+			.padding-right(@gutter-desktop);
+		}
+
+		.build-columns-desktop(col; @grid-columns);
+
+
+		// Build Push Offsets
+
+		.build-push-offsets-desktop(@offset-columns);
+
+		.build-push-offsets-desktop(@offset-columns) when (@offset-columns > 0) {
+			.build-push-offsets-desktop (@offset-columns - 1);
+			.push-@{offset-columns}-desktop, .push-@{offset-columns}-lg {
+				left: @offset-columns / @grid-columns * 100%;
+			}
+		}
+
+
+		// Build Pull Offsets
+
+		.build-pull-offsets-desktop(@offset-columns);
+
+		.build-pull-offsets-desktop(@offset-columns) when (@offset-columns > 0) {
+			.build-pull-offsets-desktop (@offset-columns - 1);
+			.pull-@{offset-columns}-desktop, .pull-@{offset-columns}-lg {
+				left: -@offset-columns / @grid-columns * 100%;
+			}
+		}
+	}
+
+
+	// HD/XL (xl) Grid - Columns and Offsets
+
+	@media only screen and (min-width: @breakpoint-hd) {
+
+		// Build Columns
+
+		.build-columns-hd(@name; @grid-columns; @index: 1) when (@index =< @grid-columns) {
+		  .build-columns-hd(@name; @grid-columns; (@index + 1));
+		   
+		  .@{name}-@{index}-hd, .@{name}-@{index}-xl {
+		    width: ( percentage(@index / @grid-columns) );
+		    & when ( @index < @grid-columns ) {
+		      &:extend(.col-hd);
+		    }
+		  } 
+		}
+
+		.col-hd, .col-xl {
+			float: left;
+			position: relative;
+			.padding-left(@gutter-hd);
+			.padding-right(@gutter-hd);
+		}
+
+		.build-columns-hd(col; @grid-columns);
+
+		// Build Push Offsets
+
+		.build-push-offsets-hd(@offset-columns);
+
+		.build-push-offsets-hd(@offset-columns) when (@offset-columns > 0) {
+			.build-push-offsets-hd (@offset-columns - 1);
+			.push-@{offset-columns}-hd, .push-@{offset-columns}-xl {
+				left: @offset-columns / @grid-columns * 100%;
+			}
+		}
+
+
+		// Build Pull Offsets
+
+		.build-pull-offsets-hd(@offset-columns);
+
+		.build-pull-offsets-hd(@offset-columns) when (@offset-columns > 0) {
+			.build-pull-offsets-hd (@offset-columns - 1);
+			.pull-@{offset-columns}-hd, .pull-@{offset-columns}-xl {
+				left: -@offset-columns / @grid-columns * 100%;
+			}
+		}
+	}

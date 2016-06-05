@@ -1,0 +1,181 @@
+
+/* Bookcase - Buttons */
+	
+	// - Button Common
+	// - Button Styling
+	// - Rounded Buttons
+	// - Button Sizes
+
+
+// BUTTON COMMON
+
+	.button-common {
+		display: inline-block;
+		.font-size(@btn-font-size);
+		.line-height(@btn-line-height);
+		font-family: @btn-font-family;
+		font-weight: @btn-font-weight;
+		.padding-two(@btn-vertical-padding, @btn-horizontal-padding);
+		text-align: center;
+		&:hover, &:active { text-decoration: none; }
+	}
+
+
+// BUTTON STYLING
+
+	// Normal Button
+
+	.button,
+	.btn,
+	{
+		.button-common;
+		text-decoration: none;
+		color: @btn-color;
+		background: @btn-bg-color;
+		border: none;
+
+		&:hover { 
+			background: @btn-bg-hover-color;
+			color: @btn-hover-color; 
+		}
+	}
+
+	// Outlined Buttons
+
+	.button-outline,
+	.btn-outline {
+
+		.button-common;
+		text-decoration: none;
+		.border(@btn-outline-size, @btn-outline-style, @btn-outline-color);
+		color: @btn-outline-font-color;
+
+		&:hover, &:active {
+			.border(@btn-outline-size, @btn-outline-style, @btn-outline-hover-color);
+			color: @btn-outline-hover-color;
+		}
+	}
+
+	// Link Button
+
+	.button-link,
+	.btn-link {
+
+		.button-common;
+		color: @btn-link-color;
+		text-decoration: underline;
+		border: none;
+		background: transparent;
+		padding: 0;
+
+		&:hover, &:active {
+			color: @btn-link-hover-color;
+			font-weight: bold;
+		}
+	}
+
+
+// ROUNDED BUTTONS
+
+	// Rounded Button
+
+	.button-rounded,
+	.btn-rounded {
+
+		.button-common;
+		text-decoration: none;
+		color: @btn-color;
+		background: @btn-bg-color;
+		border: none;
+		.border-radius(@btn-rounded-radius);
+
+		&:hover { 
+			color: @btn-hover-color;
+			background: @btn-bg-hover-color; 
+		}
+	}
+
+	// Rounded Outline Button
+
+	.button-rounded-outline,
+	.btn-rounded-outline {
+
+		.button-common;
+		text-decoration: none;
+		background: transparent;
+		.border(@btn-outline-size, @btn-outline-style, @btn-outline-color);
+		color: @btn-outline-font-color;
+		.border-radius(@btn-rounded-radius);
+
+		&:hover, &:active {
+			.border(@btn-outline-size, @btn-outline-style, @btn-outline-hover-color);
+			color: @btn-outline-hover-color;
+		}
+	}
+
+	// Pill Button
+
+	.button-pill,
+	.btn-pill {
+
+		.button-common;
+		text-decoration: none;
+		color: @btn-color;
+		background: @btn-bg-color;
+		border: none;
+		.border-radius(@btn-pill-radius);
+
+		&:hover { 
+			color: @btn-hover-color;
+			background: @btn-outline-hover-color; 
+		}
+	}
+
+	// Pill Outline Button
+
+	.button-pill-outline,
+	.btn-pill-outline {
+
+		.button-common;
+		text-decoration: none;
+		background: transparent;
+		.border(@btn-outline-size, @btn-outline-style, @btn-outline-color);
+		color: @btn-outline-font-color;
+		.border-radius(@btn-pill-radius);
+
+		&:hover, &:active {
+			.border(@btn-outline-size, @btn-outline-style, @btn-outline-hover-color);
+			color: @btn-outline-hover-color;
+		}
+	}
+
+
+// BUTTON SIZES
+
+	.button-small,
+	.btn-small {
+		.font-size(@btn-small-font-size);
+		.line-height(@btn-small-line-height);
+		.padding-two(@btn-small-vertical-padding, @btn-small-horizontal-padding);
+	}
+
+	.button-medium,
+	.btn-medium {
+		.font-size(@btn-medium-font-size);
+		.line-height(@btn-medium-line-height);
+		.padding-two(@btn-medium-vertical-padding, @btn-medium-horizontal-padding);
+	}
+
+	.button-large,
+	.btn-large {
+		.font-size(@btn-large-font-size);
+		.line-height(@btn-large-line-height);
+		.padding-two(@btn-large-vertical-padding, @btn-large-horizontal-padding);
+	}
+
+	.button-mega,
+	.btn-mega {
+		.font-size(@btn-mega-font-size);
+		.line-height(@btn-mega-line-height);
+		.padding-two(@btn-mega-vertical-padding, @btn-mega-horizontal-padding);
+	}

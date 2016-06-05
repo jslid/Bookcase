@@ -1,0 +1,339 @@
+
+/*! Bookcase - Flex Grid */
+
+	// - Flexbox Common
+	// - Flex Directions
+	// - Flex Columns and Positioning
+
+
+	// Inspiration from the following flexbox grids: 
+		
+		// - https://github.com/ptb/flexgrid
+		// - https://github.com/alexander-ruehle/bobscss
+		// - https://github.com/kristoferjoseph/flexboxgrid
+		// - https://github.com/zemirco/flexbox-grid
+		// - https://github.com/philipwalton/solved-by-flexbox
+
+
+// FLEXBOX COMMON
+
+	.flexbox-common
+		box-sizing-mixin(border-box)
+		flexbox-mixin()
+		flex-mixin(0, 1, auto)
+		flex-wrap-mixin(wrap)
+		margin-left-mixin(- $gutter)
+		margin-right-mixin(- $gutter)
+
+
+// FLEX ROWS
+
+	.flex-row 
+		@extend .flexbox-common
+		flex-direction-mixin(row)
+	
+	.flex-row-reverse
+		@extend .flexbox-common
+		flex-direction-mixin(row-reverse)
+	
+	.flex-column
+		@extend .flexbox-common
+		flex-direction-mixin(column)
+	
+	.flex-column-reverse
+		@extend .flexbox-common
+		flex-direction-mixin(column-reverse)
+
+
+// FLEX COLUMNS & POSITIONING
+
+	// Mobile/Small (sm) Flex Grid - Columns and Offsets
+
+		// Build Columns
+
+		.flex-mobile, .flex-sm
+			box-sizing-mixin(border-box)
+			flex-mixin(0, 0, auto)
+			padding-left-mixin($gutter)
+			padding-right-mixin($gutter)
+
+		for $i in (1..$flex-columns - 1)
+			.flex-{$i}-mobile, .flex-{$i}-sm
+				@extend .flex-mobile
+
+		for $i in (1..$flex-columns)
+			.flex-{$i}-mobile, .flex-{$i}-sm
+				width: ($i / $flex-columns) * 100%
+
+		
+
+		// Flex Positioning
+
+		.flex-start-mobile, .flex-start-sm 
+			flex-justify-mixin(flex-start)
+
+		
+		.flex-center-mobile, .flex-center-sm 
+			flex-justify-mixin(center)
+
+		
+		.flex-end-mobile, .flex-end-sm
+			flex-justify-mixin(flex-end)
+
+		.flex-around-mobile, .flex-around-sm 
+			flex-justify-mixin(space-around)
+		
+
+		.flex-between-mobile, .flex-between-sm
+			flex-justify-mixin(space-between)
+		
+
+		.flex-top-mobile, .flex-top-sm 
+			flex-align-items-mixin(flex-start)
+		
+
+		.flex-middle-mobile, .flex-middle-sm 
+			flex-align-items-mixin(center)
+		
+
+		.flex-bottom-mobile, .flex-bottom-sm
+			flex-align-items-mixin(flex-end)
+		
+
+		.flex-stretch-mobile, .flex-stretch-sm 
+			flex-align-items-mixin(stretch)
+		
+
+		.flex-baseline-mobile, .flex-baseline-sm
+			flex-align-items-mixin(baseline)
+		
+
+		// Flex Order
+
+		.flex-order-start-mobile, .flex-order-start-sm 
+			flex-order-mixin(-1)
+		
+
+		.flex-order-end-mobile, .flex-order-end-sm 
+			flex-order-mixin(1)
+	
+
+	// Tablet/Medium (md) Flex Grid - Columns and Offsets
+
+	@media only screen and (min-width: $breakpoint-tablet)
+
+		// Build Columns
+
+		.flex-tablet, .flex-md
+			box-sizing-mixin(border-box)
+			flex-mixin(0, 0, auto)
+			padding-left-mixin($gutter-tablet)
+			padding-right-mixin($gutter-tablet)
+
+		for $i in (1..$flex-columns - 1)
+			.flex-{$i}-tablet, .flex-{$i}-md
+				@extend .flex-tablet
+
+		for $i in (1..$flex-columns)
+			.flex-{$i}-tablet, .flex-{$i}-md 
+				width: ($i / $flex-columns) * 100%
+
+		
+
+		// Flex Positioning
+
+		.flex-start-tablet, .flex-start-md 
+			flex-justify-mixin(flex-start)
+
+		
+		.flex-center-tablet, .flex-center-md  
+			flex-justify-mixin(center)
+
+		
+		.flex-end-tablet, .flex-end-md  
+			flex-justify-mixin(flex-end)
+
+		.flex-around-tablet, .flex-around-md  
+			flex-justify-mixin(space-around)
+		
+
+		.flex-between-tablet, .flex-between-md 
+			flex-justify-mixin(space-between)
+		
+
+		.flex-top-tablet, .flex-top-md  
+			flex-align-items-mixin(flex-start)
+		
+
+		.flex-middle-tablet, .flex-middle-md  
+			flex-align-items-mixin(center)
+		
+
+		.flex-bottom-tablet, .flex-bottom-md  
+			flex-align-items-mixin(flex-end)
+		
+
+		.flex-stretch-tablet, .flex-stretch-md 
+			flex-align-items-mixin(stretch)
+		
+
+		.flex-baseline-tablet, .flex-baseline-md  
+			flex-align-items-mixin(baseline)
+		
+
+		// Flex Order
+
+		.flex-order-start-tablet, .flex-order-start-md  
+			flex-order-mixin(-1)
+		
+
+		.flex-order-end-tablet, .flex-order-end-md  
+			flex-order-mixin(1)
+
+
+	// Desktop/Large (lg) Flex Grid - Columns and Offsets
+
+	@media only screen and (min-width: $breakpoint-desktop) 
+
+		// Build Columns
+
+		.flex-desktop, .flex-lg
+			box-sizing-mixin(border-box)
+			flex-mixin(0, 0, auto)
+			padding-left-mixin($gutter-desktop)
+			padding-right-mixin($gutter-desktop)
+
+		for $i in (1..$flex-columns - 1)
+			.flex-{$i}-desktop, .flex-{$i}-lg
+				@extend .flex-desktop
+
+		for $i in (1..$flex-columns) 
+			.flex-{$i}-desktop, .flex-{$i}-lg 
+				width: ($i / $flex-columns) * 100%
+
+	
+
+		// Flex Positioning
+
+		.flex-start-desktop, .flex-start-lg
+			flex-justify-mixin(flex-start)
+
+		
+		.flex-center-desktop, .flex-center-lg 
+			flex-justify-mixin(center)
+
+		
+		.flex-end-desktop, .flex-end-lg  
+			flex-justify-mixin(flex-end)
+
+		.flex-around-desktop, .flex-around-lg  
+			flex-justify-mixin(space-around)
+		
+
+		.flex-between-desktop, .flex-between-lg  
+			flex-justify-mixin(space-between)
+		
+
+		.flex-top-desktop, .flex-top-lg  
+			flex-align-items-mixin(flex-start)
+		
+
+		.flex-middle-desktop, .flex-middle-lg  
+			flex-align-items-mixin(center)
+		
+
+		.flex-bottom-desktop, .flex-bottom-lg  
+			flex-align-items-mixin(flex-end)
+		
+
+		.flex-stretch-desktop, .flex-stretch-lg 
+			flex-align-items-mixin(stretch)
+		
+
+		.flex-baseline-desktop, .flex-baseline-lg  
+			flex-align-items-mixin(baseline)
+		
+
+		// Flex Order
+
+		.flex-order-start-desktop, .flex-order-start-lg  
+			flex-order-mixin(-1)
+		
+
+		.flex-order-end-desktop, .flex-order-end-lg  
+			flex-order-mixin(1)
+
+
+	// HD/XL (xl) Grid - Columns and Offsets
+
+	@media only screen and (min-width: $breakpoint-hd)
+		// Build Columns
+
+		.flex-hd, .flex-xl 
+			box-sizing-mixin(border-box)
+			flex-mixin(0, 0, auto)
+			padding-left-mixin($gutter-hd)
+			padding-right-mixin($gutter-hd)
+
+		for $i in (1..$flex-columns - 1)
+			.flex-{$i}-hd, .flex-{$i}-xl 
+				@extend .flex-hd
+
+		for $i in (1..$flex-columns)
+			.flex-{$i}-hd, .flex-{$i}-xl
+				width: ($i / $flex-columns) * 100%;
+
+		
+
+		// Flex Positioning
+
+		.flex-start-hd, .flex-start-xl
+			flex-justify-mixin(flex-start)
+
+		
+		.flex-center-hd, .flex-center-xl  
+			flex-justify-mixin(center)
+
+		
+		.flex-end-hd, .flex-end-xl
+			flex-justify-mixin(flex-end)
+
+		.flex-around-hd, .flex-around-xl
+			flex-justify-mixin(space-around)
+		
+
+		.flex-between-hd, .flex-between-xl  
+			flex-justify-mixin(space-between)
+		
+
+		.flex-top-hd, .flex-top-xl 
+			flex-align-items-mixin(flex-start)
+		
+
+		.flex-middle-hd, .flex-middle-xl  
+			flex-align-items-mixin(center)
+		
+
+		.flex-bottom-hd, .flex-bottom-xl 
+			flex-align-items-mixin(flex-end)
+		
+
+		.flex-stretch-hd, .flex-stretch-xl
+			flex-align-items-mixin(stretch)
+		
+
+		.flex-baseline-hd, .flex-baseline-xl  
+			flex-align-items-mixin(baseline)
+		
+
+		// Flex Order
+
+		.flex-order-start-hd, .flex-order-start-xl 
+			flex-order-mixin(-1)
+		
+
+		.flex-order-end-hd, .flex-order-end-xl  
+			flex-order-mixin(1)
+
+	
+		

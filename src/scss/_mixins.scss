@@ -1,0 +1,1007 @@
+	
+// Bookcase - Mixins
+
+	
+	// - REM to PX 
+	// - Fonts
+	// - Padding
+	// - Margins
+	// - Borders
+	// - Border Radius
+	// - Positions
+	// - Gradients
+	// - Opacity
+	// - Backgrounds
+	// - Drop Shadows
+	// - Animations and Transitions
+	// - Transforms
+	//- Flexbox
+
+
+// REM to PX 
+
+	// REM - @include rem(margin-top, 12);
+
+	@mixin rem($property, $value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		#{$property}: $valuePx + px;
+		#{$property}: $valueRem + rem;
+	}
+
+	// REM Top/Bottom and Right/Left - @include rem-two(border, 20, 15);
+
+	@mixin rem-two($property, $topbottom, $rightleft) {
+		$tpbtmPx: $topbottom;
+		$tpbtmRem: ($topbottom / $baseFontSize);
+		$rightleftPx: $rightleft;
+		$rightleftRem: ($rightleft / $baseFontSize);
+		#{$property}: $tpbtmPx + px $rightleftPx + px;
+		#{$property}: $tpbtmRem + rem $rightleftRem + rem;
+	}
+
+
+	// REM Top, Right/Left, Bottom - @include rem-three(padding, 10, 15, 20);
+
+	@mixin rem-three($property, $top, $rightleft, $bottom) {
+		$topPx: $top;
+		$topRem: ($top / $baseFontSize);
+		$rightleftPx: $rightleft;
+		$rightleftRem: ($rightleft / $baseFontSize);
+		$bottomPx: $bottom;
+		$bottomRem: ($bottom / $baseFontSize);
+		#{$property}: $topPx + px $rightleftPx + px $bottomPx + px;
+		#{$property}: $topRem + rem $rightleftRem + rem $bottomRem + rem;
+	}
+
+
+	// REM Top, Right, Bottom, Left - @include rem-four(margin, 20, 12, 5, 10);
+
+	@mixin rem-four($property, $top, $right, $bottom, $left) {
+		$topPx: $top;
+		$topRem: ($top / $baseFontSize);
+		$rightPx: $right;
+		$rightRem: ($right / $baseFontSize);
+		$bottomPx: $bottom;
+		$bottomRem: ($bottom / $baseFontSize);
+		$leftPx: $left;
+		$leftRem: ($left / $baseFontSize);
+		#{$property}: $topPx + px $rightPx + px $bottomPx + px $leftPx + px;
+		#{$property}: $topRem + rem $rightRem + rem $bottomRem + rem $leftRem + rem;
+	}
+
+
+// FONT MIXINS 
+
+	// Font Size - @include font-size(24);
+
+	@mixin font-size($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		font-size: $valuePx + px;
+		font-size: $valueRem + rem;
+	}
+
+
+	// Line Height - @include line-height(18);
+
+	@mixin line-height($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		line-height: $valuePx + px;
+		line-height: $valueRem + rem;
+	}
+
+	// Text Indent - @include text-indent(12);
+
+	@mixin text-indent($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		text-indent: $valuePx + px;
+		text-indent: $valueRem + rem;
+	}
+
+
+// PADDING MIXINS 
+
+	// Padding - @include padding(10);
+
+	@mixin padding($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		padding: $valuePx + px;
+		padding: $valueRem + rem;
+	}
+
+	// Padding Top - @include padding-top(15);
+
+	@mixin padding-top($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		padding-top: $valuePx + px;
+		padding-top: $valueRem + rem;
+	}
+
+	// Padding Bottom - @include padding-bottom(10);
+
+	@mixin padding-bottom($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		padding-bottom: $valuePx + px;
+		padding-bottom: $valueRem + rem;
+	}
+
+	// Padding Right - @include padding-right(20);
+
+	@mixin padding-right($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		padding-right: $valuePx + px;
+		padding-right: $valueRem + rem;
+	}
+
+	// Padding Left - @include padding-left(10);
+
+	@mixin padding-left($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		padding-left: $valuePx + px;
+		padding-left: $valueRem + rem;
+	}
+
+	// Padding Top/Bottom and Right/Left - @include padding-two(20, 10);
+
+	@mixin padding-two($topbottom, $rightleft) {
+		$tpbtmPx: $topbottom;
+		$tpbtmRem: ($topbottom / $baseFontSize);
+		$rightleftPx: $rightleft;
+		$rightleftRem: ($rightleft / $baseFontSize);
+		padding: $tpbtmPx + px $rightleftPx + px;
+		padding: $tpbtmRem + rem $rightleftRem + rem;
+	}
+
+	// Padding Top, Right/Left, Bottom - @include padding-three(10, 12, 5);
+
+	@mixin padding-three($top, $rightleft, $bottom) {
+		$topPx: $top;
+		$topRem: ($top / $baseFontSize);
+		$rightleftPx: $rightleft;
+		$rightleftRem: ($rightleft / $baseFontSize);
+		$bottomPx: $bottom;
+		$bottomRem: ($bottom / $baseFontSize);
+		padding: $topPx + px $rightleftPx + px $bottomPx + px;
+		padding: $topRem + rem $rightleftRem + rem $bottomRem + rem;
+	}
+
+	// Padding Top, Right, Bottom, Left - @include padding-four(12, 10, 5, 8);
+
+	@mixin padding-four($top, $right, $bottom, $left) {
+		$topPx: $top;
+		$topRem: ($top / $baseFontSize);
+		$rightPx: $right;
+		$rightRem: ($right / $baseFontSize);
+		$bottomPx: $bottom;
+		$bottomRem: ($bottom / $baseFontSize);
+		$leftPx: $left;
+		$leftRem: ($left / $baseFontSize);
+		padding: $topPx + px $rightPx + px $bottomPx + px $leftPx + px;
+		padding: $topRem + rem $rightRem + rem $bottomRem + rem $leftRem + rem;
+	}
+
+
+// MARGIN MIXINS
+
+	// Margin - @include margin(10);
+
+	@mixin margin($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		margin: $valuePx + px;
+		margin: $valueRem + rem;
+	}
+
+	// Margin Top - @include margin-top(15);
+
+	@mixin margin-top($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		margin-top: $valuePx + px;
+		margin-top: $valueRem + rem;
+	}
+
+	// Margin Bottom - @include margin-bottom(10);
+
+	@mixin margin-bottom($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		margin-bottom: $valuePx + px;
+		margin-bottom: $valueRem + rem;
+	}
+
+	// Margin Right - @include margin-right(20);
+
+	@mixin margin-right($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		margin-right: $valuePx + px;
+		margin-right: $valueRem + rem;
+	}
+
+	// Margin Left - @include margin-left(10);
+
+	@mixin margin-left($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		margin-left: $valuePx + px;
+		margin-left: $valueRem + rem;
+	}
+
+	// Margin Top/Bottom and Right/Left - @include margin-two(20, 10);
+
+	@mixin margin-two($topbottom, $rightleft) {
+		$tpbtmPx: $topbottom;
+		$tpbtmRem: ($topbottom / $baseFontSize);
+		$rightleftPx: $rightleft;
+		$rightleftRem: ($rightleft / $baseFontSize);
+		margin: $tpbtmPx + px $rightleftPx + px;
+		margin: $tpbtmRem + rem $rightleftRem + rem;
+	}
+
+	// Margin Top, Right/Left, Bottom - @include margin-three(10, 12, 5);
+
+	@mixin margin-three($top, $rightleft, $bottom) {
+		$topPx: $top;
+		$topRem: ($top / $baseFontSize);
+		$rightleftPx: $rightleft;
+		$rightleftRem: ($rightleft / $baseFontSize);
+		$bottomPx: $bottom;
+		$bottomRem: ($bottom / $baseFontSize);
+		margin: $topPx + px $rightleftPx + px $bottomPx + px;
+		margin: $topRem + rem $rightleftRem + rem $bottomRem + rem;
+	}
+
+	// Margin Top, Right, Bottom, Left - @include margin-four(12, 10, 5, 8);
+
+	@mixin margin-four($top, $right, $bottom, $left) {
+		$topPx: $top;
+		$topRem: ($top / $baseFontSize);
+		$rightPx: $right;
+		$rightRem: ($right / $baseFontSize);
+		$bottomPx: $bottom;
+		$bottomRem: ($bottom / $baseFontSize);
+		$leftPx: $left;
+		$leftRem: ($left / $baseFontSize);
+		margin: $topPx + px $rightPx + px $bottomPx + px $leftPx + px;
+		margin: $topRem + rem $rightRem + rem $bottomRem + rem $leftRem + rem;
+	}
+
+
+// BORDER MIXINS
+
+	// Border - @include border(10, solid, #000000);
+
+	@mixin border($value, $style, $color) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		border: $valuePx + px $style $color;
+		border: $valueRem + rem $style $color;
+	}
+
+	// Border Top - @include border-top(15, dotted, #5c5c5c);
+
+	@mixin border-top($value, $style, $color) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		border-top: $valuePx + px $style $color;
+		border-top: $valueRem + rem $style $color;
+	}
+
+	// Border Bottom - @include border-bottom(10, solid, #f3f3f3);
+
+	@mixin border-bottom($value, $style, $color) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		border-bottom: $valuePx + px $style $color;
+		border-bottom: $valueRem + rem $style $color;
+	}
+
+	// Border Right - @include border-right(20, dotted, #000000);
+
+	@mixin border-right($value, $style, $color) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		border-right: $valuePx + px $style $color;
+		border-right: $valueRem + rem $style $color;
+	}
+
+	// Border Left - @include border-left(10, solid, #6c6c6c);
+
+	@mixin border-left($value, $style, $color) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		border-left: $valuePx + px $style $color;
+		border-left: $valueRem + rem $style $color;
+	}
+
+	// Border Top/Bottom and Right/Left - @include border-two(20, 10);
+
+	@mixin border-two($topbottom, $rightleft) {
+		$tpbtmPx: $topbottom;
+		$tpbtmRem: ($topbottom / $baseFontSize);
+		$rightleftPx: $rightleft;
+		$rightleftRem: ($rightleft / $baseFontSize);
+		border-width: $tpbtmPx + px $rightleftPx + px;
+		border-width: $tpbtmRem + rem $rightleftRem + rem;
+	}
+
+	// Border Top, Right/Left, Bottom - @include border-three(10, 12, 5);
+
+	@mixin border-three($top, $rightleft, $bottom) {
+		$topPx: $top;
+		$topRem: ($top / $baseFontSize);
+		$rightleftPx: $rightleft;
+		$rightleftRem: ($rightleft / $baseFontSize);
+		$bottomPx: $bottom;
+		$bottomRem: ($bottom / $baseFontSize);
+		border-width: $topPx + px $rightleftPx + px $bottomPx + px;
+		border-width: $topRem + rem $rightleftRem + rem $bottomRem + rem;
+	}
+
+	// Border Top, Right, Bottom, Left - @include border-four(12, 10, 5, 8);
+
+	@mixin border-four($top, $right, $bottom, $left) {
+		$topPx: $top;
+		$topRem: ($top / $baseFontSize);
+		$rightPx: $right;
+		$rightRem: ($right / $baseFontSize);
+		$bottomPx: $bottom;
+		$bottomRem: ($bottom / $baseFontSize);
+		$leftPx: $left;
+		$leftRem: ($left / $baseFontSize);
+		border-width: $topPx + px $rightPx + px $bottomPx + px $leftPx + px;
+		border-width: $topRem + rem $rightRem + rem $bottomRem + rem $leftRem + rem;
+	}
+
+
+// BORDER RADIUS MIXINS
+
+	// Border Radius - @include border-radius(5);
+
+	@mixin border-radius($radius: 5) {
+		$border-radius-mixin: $radius + px;
+		-webkit-border-radius: $border-radius-mixin;
+		-moz-border-radius: $border-radius-mixin;
+		border-radius: $border-radius-mixin;
+	}
+
+
+	// Border Radius Corners - @include border-radius-corners(20, 10, 20, 0);
+
+	@mixin border-radius-corners($topLeft: 5, $topRight: 5, $bottomLeft: 5, $bottomRight: 5) {
+		$border-corners-mixin: $topLeft + px $topRight + px $bottomLeft + px $bottomRight + px;
+		-webkit-border-radius: $border-corners-mixin;
+		-moz-border-radius: $border-corners-mixin;
+		border-radius: $border-corners-mixin;
+	}
+
+
+// POSITION MIXINS
+
+	// Height - @include height(40);
+
+	@mixin height($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		height: $valuePx + px;
+		height: $valueRem + rem;
+	}
+
+	// Max Height - @include max-height(30);
+
+	@mixin max-height($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		max-height: $valuePx + px;
+		max-height: $valueRem + rem;
+	}
+
+	// Min Height - @include min-height(15);
+
+	@mixin min-height($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		min-height: $valuePx + px;
+		min-height: $valueRem + rem;
+	}
+
+	// Width - @include width(14);
+
+	@mixin width($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		width: $valuePx + px;
+		width: $valueRem + rem;
+	}
+
+	// Max Width - @include max-width(20);
+
+	@mixin max-width($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		max-width: $valuePx + px;
+		max-width: $valueRem + rem;
+	}
+
+	// Min Width - @include min-width(500);
+
+	@mixin min-width($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		min-width: $valuePx + px;
+		min-width: $valueRem + rem;
+	}
+
+	// Top - @include top(200);
+
+	@mixin top($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		top: $valuePx + px;
+		top: $valueRem + rem;
+	}
+
+	// Bottom - @include bottom(30);
+
+	@mixin bottom($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		bottom: $valuePx + px;
+		bottom: $valueRem + rem;
+	}
+
+	// Right - @include right(150);
+
+	@mixin right($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		right: $valuePx + px;
+		right: $valueRem + rem;
+	}
+
+	// Left - @include left(200);
+
+	@mixin left($value) {
+		$valuePx: $value;
+		$valueRem: ($value / $baseFontSize);
+		left: $valuePx + px;
+		left: $valueRem + rem;
+	}
+
+
+
+// GRADIENT MIXINS
+
+	// Can use - left, right, top, bottom, left bottom, left top, right bottom, right top for @origion
+
+	// Gradient - @include gradient(right, #d5d5d5, #c6c67c);
+	
+	@mixin gradient($origin: left, $start: #ffffff, $end: #000000) {
+		$gradient-mixin: $origin, $start, $end;
+		background: $start;
+		background: -webkit-linear-gradient($gradient-mixin);
+		background: -mox-linear-gradient($gradient-mixin);
+		background: -o-linear-gradient($gradient-mixin);
+		background: -ms-linear-gradient($gradient-mixin);
+		background: linear-gradient($gradient-mixin);
+	}
+
+	// Gradient with a Degree - @include gradient-degree(30, #d5d5d5, #c6c67c);
+	
+	@mixin gradient-degree($degree: 45, $start: #ffffff, $end: #000000) {
+		$degree-convert: $degree + deg;
+		$gradient-degree-mixin: $degree-convert, $start, $end;
+		background: $start;
+		background: -webkit-linear-gradient($gradient-degree-mixin);
+		background: -mox-linear-gradient($gradient-degree-mixin);
+		background: -o-linear-gradient($gradient-degree-mixin);
+		background: -ms-linear-gradient($gradient-degree-mixin);
+		background: linear-gradient($gradient-degree-mixin);
+	}
+
+	// Gradient Transparent - @include gradient-transparent(right, #d14836);
+	
+	@mixin gradient-transparent($origin: left, $color: #ffffff) {
+		$rgba-start: rgba($color, 0.0);
+		$rgba-end: rgba($color, 1.0);
+		$gradient-transparent-mixin: $origin, $rgba-start, $rgba-end;
+		background: -webkit-linear-gradient($gradient-transparent-mixin);
+		background: -moz-linear-gradient($gradient-transparent-mixin);
+		background: -o-linear-gradient($gradient-transparent-mixin);
+		background: -ms-linear-gradient($gradient-transparent-mixin);
+		background: linear-gradient($gradient-transparent-mixin);
+	}
+
+	// Gradient Transparent with a Degree - @include gradient-transparent-degree(35, #d14836);
+	
+	@mixin gradient-transparent-degree($degree: 45, $color: #ffffff) {
+		$degree-convert: $degree + deg;
+		$rgba-start: rgba($color, 0.0);
+		$rgba-end: rgba($color, 1.0);
+		$gradient-trans-degree-mixin: $degree-convert, $rgba-start, $rgba-end;
+		background: $color;
+		background: -webkit-linear-gradient($gradient-trans-degree-mixin);
+		background: -moz-linear-gradient($gradient-trans-degree-mixin);
+		background: -o-linear-gradient($gradient-trans-degree-mixin);
+		background: -ms-linear-gradient($gradient-trans-degree-mixin);
+		background: linear-gradient($gradient-trans-degree-mixin);
+	}
+
+
+
+// OPACITY MIXINS 
+
+	// Opacity - @include opacity(25);
+
+	@mixin opacity($percentage: 50) {
+		$opacity: $percentage / 100;
+		-webkit-opacity: $opacity;
+		-moz-opacity: $opacity;
+		opacity: $opacity;
+	}
+
+
+// BACKGROUND MIXINS
+
+	// Background Opacity - @include background-opacity(#d5d5d5, 25);
+
+	@mixin background-opacity($color, $percentage) {
+		$percent: $percentage / 100;
+		$rgba: rgba($color, $percent);
+		$argb: ie-hex-str($rgba);
+		background-color: $color;
+		background-color: $rgba;
+	}
+
+
+	// Background Position - @include background-position(20, 30);
+
+	@mixin background-position($xValue, $yValue) {
+		$xValuePx: $xValue;
+		$xValueRem: ($xValue / $baseFontSize);
+		$yValuePx: $yValue;
+		$yValueRem: ($yValue / $baseFontSize);
+		background-position: $xValuePx + px $yValuePx + px;
+		background-position: $xValueRem + rem $yValueRem + rem;
+	}
+
+	// Background Size - @include background-size(20px, 30px) or @include background-size(20%, 30%);
+
+	@mixin background-size($width: auto, $height: auto) {
+		-webkit-background-size: $width $height;
+		-moz-background-size: $width $height;
+		-o-background-size: $width $height;
+		background-size: $width $height;
+	}
+
+
+	// Background Cover - @include background-cover();
+
+	@mixin background-cover($cover: cover) {
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
+	// Background Contain - @include background-contain();
+
+	@mixin background-contain($contain: contain) {
+		-webkit-background-size: contain;
+		-moz-background-size: contain;
+		-o-background-size: contain;
+		background-size: contain;
+	}
+
+
+// DROP SHADOW MIXINS
+
+	// Box Shadow - @include box-shadow(5px, 5px, 10px, 50);
+
+	@mixin box-shadow($x: 0, $y: 5, $blur: 5, $percentage: 50) {
+		$alpha: $percentage / 100;
+		$box-shadow-mixin: $x + px $y + px $blur + px rgba(0, 0, 0, $alpha);
+		-webkit-box-shadow: $box-shadow-mixin;
+		-moz-box-shadow: $box-shadow-mixin;
+		box-shadow: $box-shadow-mixin;
+	}
+
+
+// BOX SIZING MIXINS
+
+	// Box Sizing - @include box-sizing(border-box); - can use: border-box, content-box, padding-box, inherit, initial
+
+	@mixin box-sizing($type) {
+		-webkit-box-sizing: $type;
+		-moz-box-sizing: $type;
+		box-sizing: $type;
+	}
+
+
+// USER SELECT MIXINS
+
+	// User Select - @include user-select(text); - can use: none, text, all, element
+
+	@mixin user-select($selection) {
+		-webkit-user-select: $selection;
+		-moz-user-select: $selection;
+		-ms-user-select: $selection;
+		user-select: $selection;
+	}
+
+
+// ANIMATION & TRANSITION MIXINS
+
+		// Animation Duration - @include animate(3);
+
+		@mixin animate($duration) {
+		  $animate-mixin: $duration + s;
+		  -webkit-animation-duration: $animate-mixin;
+		  animation-duration: $animate-mixin;
+		  -webkit-animation-fill-mode: both;
+		  animation-fill-mode: both;
+		}
+
+		// Animation Delay - @include animate-delay(2);
+
+		@mixin animate-delay($delay) {
+		  $animate-delay-mixin: $delay + s;
+		  -webkit-animation-delay: $animate-delay-mixin;
+		  animation-delay: $animate-delay-mixin;
+		}
+
+
+		// Transition  - @include transition(all, 0.8, ease-in);
+			// Available Properties - border, color, font-size, etc. 
+			// Available effects - ease, ease-in, ease-out, ease-in-out, linear, step-start, step-end
+
+		@mixin transition($property: all, $duration: 1, $effect: linear) {
+			$transition-mixin: $property $duration + s $effect;
+			-webkit-transition: $transition-mixin;
+			-moz-transition: $transition-mixin;
+			-o-transition: $transition-mixin;
+			-ms-transition: $transition-mixin;
+			transition: $transition-mixin;
+		}
+
+
+// TRANSFORM MIXINS
+
+	// Transform - @include transform-all(3, 0.6, 2, 0);
+
+	@mixin transform-all($rotate: 90, $scale: 1, $skew: 1, $translate: 10) {
+		$transform-mixin: rotate($rotate + deg) scale($scale) skew($skew + deg) translate($translate + px);
+		-webkit-transform: $transform-mixin;
+		-moz-transform: $transform-mixin;
+		-o-transform: $transform-mixin;
+		-ms-transform: $transform-mixin;
+		transform: $transform-mixin;
+	}
+
+	
+	// Rotate - @include rotate(180) or @include rotate(-45);
+
+	@mixin rotate($rotate) {
+	  $rotate-mixin: rotate($rotate + deg);
+	  -webkit-transform: $rotate-mixin;
+	  -moz-transform: $rotate-mixin;
+	  -ms-transform: $rotate-mixin;
+	  -o-transform: $rotate-mixin;
+	  transform: $rotate-mixin;
+	}
+
+
+	// Scale - @include scale(45, 20);
+
+	@mixin scale($xScale, $yScale) {
+		$scale-mixin: scale($xScale, $yScale);
+		-webkit-transform: $scale-mixin;
+		-moz-transform: $scale-mixin;
+		-ms-transform: $scale-mixin;
+		-o-transform: $scale-mixin;
+		transform: $scale-mixin;
+	}
+	
+
+	// Skew - @include skew(20, 45);
+
+	@mixin skew($xSkew, $ySkew) {
+		$skew-mixin: skew($xSkew + deg, $ySkew + deg);
+		-webkit-transform: $skew-mixin;
+		-moz-transform: $skew-mixin;
+		-ms-transform: $skew-mixin;
+		-o-transform: $skew-mixin;
+		transform: $skew-mixin;
+	}
+
+
+	// Translate - @include translate-xy(15, 30);
+
+	@mixin translate-xy($x, $y) {
+		$translate-mixin: translate($x + px, $y + px);
+		-webkit-transform: $translate-mixin;
+		-moz-transform: $translate-mixin;
+		-ms-transform: $translate-mixin;
+		-o-transform: $translate-mixin;
+		transform: $translate-mixin;
+	}
+
+
+	// Translate X - @include translateX(10);
+
+	@mixin translate-x($x) {
+		$translateX-mixin: translateX($x + px);
+		-webkit-transform: $translateX-mixin;
+		-moz-transform: $translateX-mixin;
+		-ms-transform: $translateX-mixin;
+		-o-transform: $translateX-mixin;
+		transform: $translateX-mixin;
+	}
+
+
+	// Translate Y - @include translate-y(14px);
+
+	@mixin translate-y($y) {
+		$translateY-mixin: translateY($y + px);
+		-webkit-transform: $translateY-mixin;
+		-moz-transform: $translateY-mixin;
+		-ms-transform: $translateY-mixin;
+		-o-transform: $translateY-mixin;
+		transform: $translateY-mixin;
+	}
+
+
+	// Translate Z - @include translate-z(20);
+
+	@mixin translate-z($z) {
+		$translateZ-mixin: translateZ($z + px);
+		-webkit-transform: $translateZ-mixin;
+		-moz-transform: $translateZ-mixin;
+		-ms-transform: $translateZ-mixin;
+		-o-transform: $translateZ-mixin;
+		transform: $translateZ-mixin;
+	}
+
+
+	// Translate 3D - @include translate-3d(45px, 10px, 5px);
+
+	@mixin translate-3d($x, $y, $z) {
+		$translate3d-mixin: translate3d($x + px, $y + px, $z + px);
+		-webkit-transform: $translate3d-mixin;
+		-moz-transform: $translate3d-mixin;
+		-ms-transform: $translate3d-mixin;
+		-o-transform: $translate3d-mixin;
+		transform: $translate3d-mixin;
+	}
+
+
+	// Perspective - @include perspective(20);
+
+	@mixin perspective($value) {
+		$perspective-mixin: $value + px;
+		-webkit-perspective: $perspective-mixin;
+		-moz-perspective: $perspective-mixin;
+		-ms-perspective: $perspective-mixin;
+		perspective: $perspective-mixin;
+	}
+
+
+// FLEXBOX MIXINS
+
+	// Inspiration from the following flexbox mixins: 
+		
+		// - https://github.com/annebosman/FlexboxLess
+		// - https://github.com/mastastealth/sass-flex-mixin
+		// - http://philipwalton.github.io/solved-by-flexbox/
+		// - https://github.com/codio/Flex.less
+		// - https://github.com/kenstone/FlexBoxLessMixins
+
+	// Flexbox - @include flexbox-container;
+
+	@mixin flexbox-container {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+	}
+
+	// Inline Flexbox - @include inline-flexbox;
+
+	@mixin inline-flexbox {
+		display: -webkit-inline-box;
+		display: -moz-inline-box;
+		display: -webkit-inline-flex;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+	}
+
+	// Flexbox Direction - @include flex-direction(row); - row | row-reverse | column | column-reverse
+
+	@mixin flex-direction($value: row) {
+		@if $value == row-reverse {
+			-webkit-box-direction: reverse;
+			-moz-box-direction: reverse;
+			-webkit-box-orient: horizontal;
+			-moz-box-orient: horizontal;
+		} @else if $value == column {
+			-webkit-box-direction: normal;
+			-moz-box-direction: normal;
+			-webkit-box-orient: vertical;
+			-moz-box-orient: vertical;
+		} @else if $value == column-reverse {
+			-webkit-box-direction: reverse;
+			-moz-box-direction: reverse;
+			-webkit-box-orient: vertical;
+			-moz-box-orient: vertical;
+		} @else {
+			-webkit-box-direction: normal;
+			-moz-box-direction: normal;
+			-webkit-box-orient: horizontal;
+			-moz-box-orient: horizontal;
+		}
+		-webkit-flex-direction: $value;
+		-moz-flex-direction: $value;
+		-ms-flex-direction: $value;
+		flex-direction: $value;
+	}
+
+	// Flexbox Wrap - @include flex-wrap(wrap); - nowrap | wrap | wrap-reverse
+
+	@mixin flex-wrap($value: nowrap) {
+		@if $value == wrap {
+			-webkit-box-lines: multiple;
+			-moz-box-lines: multiple;
+		} @else {
+			-webkit-box-lines: single;
+			-moz-box-lines: single;
+		}
+		-webkit-flex-wrap: $value;
+		-moz-flex-wrap: $value;
+		-ms-flex-wrap: $value;
+		flex-wrap: $value;
+	}
+
+	// Flexbox Justify Content - @include flex-justify(flex-start); - flex-start | flex-end | center | space-between | space-around
+
+	@mixin flex-justify($value: flex-start) {
+		@if $value == flex-end {
+			-webkit-box-pack: end;
+			-moz-box-pack: end;
+			-ms-flex-pack: end;
+		} @else if $value == center {
+			-webkit-box-pack: center;
+			-moz-box-pack: center;
+			-ms-flex-pack: center;
+		} @else if $value == space-between {
+			-webkit-box-pack: justify;
+			-moz-box-pack: justify;
+			-ms-flex-pack: justify;
+		} @else if $value == space-around {
+			-ms-flex-pack: distribute;
+		} @else {
+			-webkit-box-pack: start;
+			-moz-box-pack: start;
+			-ms-flex-pack: start;
+		}
+		-webkit-justify-content: $value;
+		-moz-justify-content: $value;
+		-ms-justify-content: $value;
+		justify-content: $value;
+	}
+
+	// Flexbox Align Items - @include flex-align-items(stretch); - flex-start | flex-end | center | stretch | baseline
+
+	@mixin flex-align-items($value: stretch) {
+		@if $value == flex-start {
+			-webkit-box-align: start;
+			-moz-box-align: start;
+			-ms-flex-align: start;
+		} @else if $value == flex-end {
+			-webkit-box-align: end;
+			-moz-box-align: end;
+			-ms-flex-align: end;
+		} @else {
+			-webkit-box-align: $value;
+			-moz-box-align: $value;
+			-ms-flex-align: $value;
+		}
+		-webkit-align-items: $value;
+		-moz-align-items: $value;
+		-ms-align-items: $value;
+		align-items: $value;
+	}
+
+	// Flexbox Align Self - @include flex-align-self(stretch); - auto | flex-start | flex-end | center | stretch | baseline
+
+	@mixin flex-align-self($value: auto) {
+		@if $value == flex-start {
+			-ms-flex-item-align: start;
+		} @else if $value == flex-end {
+			-ms-flex-item-align: end;
+		} @else {
+			-ms-flex-item-align: $value;
+		}
+		-webkit-align-self: $value;
+		-moz-align-self: $value;
+		-ms-align-self: $value;
+		align-self: $value; 
+	}
+
+	// Flexbox Align Content - @include flex-align-content(center); - auto | flex-start | flex-end | center | stretch | space-between | space-around
+
+	@mixin flex-align-content($value: auto) {
+		@if $value == flex-start {
+			-ms-flex-line-pack: start;
+		} @else if $value == flex-end {
+			-ms-flex-line-pack: end;
+		} @else if $value == space-between {
+			-ms-flex-line-pack: justify;
+		} @else if $value == space-around {
+			-ms-flex-line-pack: distribute;
+		} @else {
+			-ms-flex-line-pack: $value;
+		}
+		-webkit-align-content: $value;
+		-moz-align-cotent: $value;
+		-ms-align-content: $value;
+		align-content: $value;
+	}
+
+	// Flexbox Order - @include flex-order(1);
+
+	@mixin flex-order($value: 0) {
+		-webkit-box-ordinal-group: $value + 1;
+		-moz-box-ordinal-group: $value + 1;
+		-ms-flex-order: $value;
+		-webkit-order: $value;
+		-moz-order: $value;
+		-ms-order: $value;
+		order: $value;
+	}
+
+	// Flexbox Grow - @include flex-grow(3);
+
+	@mixin flex-grow($grow: 0) {
+		-webkit-box-flex: $grow;
+		-webkit-flex-grow: $grow;
+		-moz-flex-grow: $grow;
+		-ms-flex-positive: $grow;
+		flex-grow: $grow;
+	}
+
+	// Flexbox Shrink - @include flex-shrink(1);
+
+	@mixin flex-shrink($shrink: 1) {
+		-webkit-flex-shrink: $shrink;
+		-moz-flex-shrink: $shrink;
+		-ms-flex-negative: $shrink;
+		flex-shrink: $shrink;
+	}
+
+	// Flexbox Basis - @include flex-basis(3);
+
+	@mixin flex-basis($basis: auto) {
+		-webkit-flex-basis: $basis;
+		-moz-flex-basis: $basis;
+		-mx-flex-preferred-size: $basis;
+		flex-basis: $basis;
+	}
+
+	// Flexbox Shorthand - @include flex(0, 1, auto);
+
+	@mixin flex($grow: 0, $shrink: 1, $basis: auto) {
+		-webkit-flex: $grow $shrink $basis;
+		-ms-flex: $grow $shrink $basis;
+		-webkit-box-flex: $grow;
+		flex: $grow $shrink $basis;
+	}

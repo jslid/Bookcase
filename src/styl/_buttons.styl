@@ -1,0 +1,160 @@
+
+/*! Bookcase - Buttons */
+	
+	// - Button Common
+	// - Button Styling
+	// - Rounded Buttons
+	// - Button Sizes
+
+
+// BUTTON COMMON
+
+	.button-common 
+		display: inline-block
+		font-size-mixin($btn-font-size)
+		line-height-mixin($btn-line-height)
+		font-family: $btn-font-family
+		font-weight: $btn-font-weight
+		padding-two-mixin($btn-vertical-padding, $btn-horizontal-padding)
+		text-align: center
+		&:hover, &:active { text-decoration: none }
+	
+
+// BUTTON STYLING
+
+	// Normal Button
+
+	.button,
+	.btn
+		@extend .button-common
+		text-decoration: none
+		color: $btn-color
+		background: $btn-bg-color
+		border: 0
+		&:hover 
+			color: $btn-hover-color
+			background: $btn-bg-hover-color
+	
+
+	// Outlined Buttons
+
+	.button-outline,
+	.btn-outline 
+		@extend .button-common
+		text-decoration: none
+		background: transparent
+		border-mixin($btn-outline-size, $btn-outline-style, $btn-outline-color)
+		color: $btn-outline-font-color
+		&:hover, &:active 
+			border-mixin($btn-outline-size, $btn-outline-style, $btn-outline-color-hover)
+			color: $btn-outline-hover-color
+			
+
+	// Link Button
+
+	.button-link,
+	.btn-link 
+		@extend .button-common
+		color: $btn-link-color
+		text-decoration: underline
+		border: 0
+		background: transparent
+		padding: 0
+		&:hover, &:active 
+			color: $btn-link-hover-color
+			font-weight: bold
+		
+	
+
+// ROUNDED BUTTONS
+
+	// Rounded Button
+
+	.button-rounded,
+	.btn-rounded 
+		@extend .button-common
+		text-decoration: none
+		color: $btn-color
+		background: $btn-bg-color
+		border: 0
+		border-radius-mixin($btn-rounded-radius)
+		&:hover  
+			color: $btn-hover-color
+			background: $btn-bg-hover-color 
+	
+
+	// Rounded Outline Button
+
+	.button-rounded-outline,
+	.btn-rounded-outline 
+		@extend .button-common
+		text-decoration: none
+		background: transparent
+		border-mixin($btn-outline-size, $btn-outline-style, $btn-outline-color)
+		color: $btn-outline-font-color
+		border-radius-mixin($btn-rounded-radius)
+		&:hover, &:active 
+			border-mixin($btn-outline-size, $btn-outline-style, $btn-outline-color-hover)
+			color: $btn-outline-hover-color
+			
+
+	// Pill Button
+
+	.button-pill,
+	.btn-pill 
+		@extend .button-common
+		text-decoration: none
+		color: $btn-color
+		background: $btn-bg-color
+		border: 0
+		border-radius-mixin($btn-pill-radius)
+		&:hover 
+			color: $btn-hover-color
+			background: $btn-bg-hover-color
+	
+
+	// Pill Button Outline
+
+	.button-pill-outline,
+	.btn-pill-outline 
+		@extend .button-common
+		text-decoration: none
+		background: transparent
+		border-mixin($btn-outline-size, $btn-outline-style, $btn-outline-color)
+		color: $btn-outline-font-color
+		border-radius-mixin($btn-pill-radius)
+		&:hover, &:active 
+			border-mixin($btn-outline-size, $btn-outline-style, $btn-outline-color-hover)
+			color: $btn-outline-hover-color
+		
+	
+
+// BUTTON SIZES
+
+	.button-small,
+	.btn-small 
+		font-size-mixin($btn-small-font-size)
+		line-height-mixin($btn-small-line-height)
+		padding-two-mixin($btn-small-vertical-padding, $btn-small-horizontal-padding)
+
+
+	.button-medium,
+	.btn-medium 
+		font-size-mixin($btn-medium-font-size)
+		line-height-mixin($btn-medium-line-height)
+		padding-two-mixin($btn-medium-vertical-padding, $btn-medium-horizontal-padding)
+	
+
+	.button-large,
+	.btn-large 
+		font-size-mixin($btn-large-font-size)
+		line-height-mixin($btn-large-line-height)
+		padding-two-mixin($btn-large-vertical-padding, $btn-large-horizontal-padding)
+	
+
+	.button-mega,
+	.btn-mega 
+		font-size-mixin($btn-mega-font-size)
+		line-height-mixin($btn-mega-line-height)
+		padding-two-mixin($btn-mega-vertical-padding, $btn-mega-horizontal-padding)
+	

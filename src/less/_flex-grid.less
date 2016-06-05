@@ -1,0 +1,385 @@
+/* Bookcase - Flex Grid */
+
+	// - Flexbox Common
+	// - Flex Directions
+	// - Flex Columns and Positioning
+
+
+// Inspiration from the following flexbox grids: 
+		
+		// - https://github.com/ptb/flexgrid
+		// - https://github.com/alexander-ruehle/bobscss
+		// - https://github.com/kristoferjoseph/flexboxgrid
+		// - https://github.com/zemirco/flexbox-grid
+		// - https://github.com/philipwalton/solved-by-flexbox
+
+
+// FLEXBOX COMMON
+
+	.flexbox-common {
+		.box-sizing(border-box);
+		.flexbox-container;
+		.flex(0, 1, auto);
+		.flex-wrap(wrap);
+		.margin-left(-@gutter);
+		.margin-right(-@gutter);
+	}
+
+
+// FLEXBOX ROWS & COLUMNS
+
+	.flex-row {
+		.flexbox-common;
+		.flex-direction(row);
+	}
+
+	.flex-row-reverse {
+		.flexbox-common;
+		.flex-direction(row-reverse);
+	}
+
+	.flex-column {
+		.flexbox-common;
+		.flex-direction(column);
+	}
+
+	.flex-column-reverse {
+		.flexbox-common;
+		.flex-direction(column-reverse);
+	}
+
+
+// FLEX COLUMNS & POSITIONING
+
+	// Mobile/Small (sm) Grid - Columns and Offsets
+
+		// Build Flex Columns
+
+		.build-flex-columns(@name; @flex-columns; @index: 1) when (@index =< @flex-columns) {
+		  .build-flex-columns(@name; @flex-columns; (@index + 1));
+		   
+		  .@{name}-@{index}-mobile, .@{name}-@{index}-sm {
+		    -ms-flex-preferred-size: ( percentage(@index / @flex-columns) );
+		    -webkit-flex-basis: ( percentage(@index / @flex-columns) );
+		    -flex-basis: ( percentage(@index / @flex-columns) );
+		    max-width: ( percentage(@index / @flex-columns) );
+		    & when ( @index < @flex-columns ) {
+		      &:extend(.flex-mobile);
+		    }
+		  } 
+		}
+
+		.flex-mobile, .flex-sm {
+			.box-sizing(border-box);
+			.flex(0, 0, auto);
+			.padding-left(@gutter);
+			.padding-right(@gutter);
+		}
+
+		.build-flex-columns(flex; @flex-columns);
+
+
+		// Flex Positioning
+
+		.flex-start-mobile, .flex-start-sm {
+			.flex-justify(flex-start);
+		}
+
+		.flex-center-mobile, .flex-center-sm {
+			.flex-justify(center);
+		}
+
+		.flex-end-mobile, .flex-end-sm {
+			.flex-justify(flex-end);
+		}
+
+		.flex-around-mobile, .flex-around-sm {
+			.flex-justify(space-around);
+		}
+
+		.flex-between-mobile, .flex-between-sm {
+			.flex-justify(space-between);
+		}
+
+		.flex-top-mobile, .flex-top-sm {
+			.flex-align-items(flex-start);
+		}
+
+		.flex-middle-mobile, .flex-middle-sm {
+			.flex-align-items(center);
+		}
+
+		.flex-bottom-mobile, .flex-bottom-sm {
+			.flex-align-items(flex-end);
+		}
+
+		.flex-stretch-mobile, .flex-stretch-sm {
+			.flex-align-items(stretch);
+		}
+
+		.flex-baseline-mobile, .flex-baseline-sm {
+			.flex-align-items(baseline);
+		}
+
+		// Flex Order
+
+		.flex-order-start-mobile, .flex-order-start-sm {
+			.flex-order(-1);
+		}
+
+		.flex-order-end-mobile, .flex-order-end-sm {
+			.flex-order(1);
+		}
+
+
+	// Tablet/Medium (md) Flex Grid - Columns and Offsets
+
+	@media only screen and (min-width: @breakpoint-tablet) {
+
+		// Build Columns
+
+		.flex-columns-tablet(@name; @flex-columns; @index: 1) when (@index =< @flex-columns) {
+		  .flex-columns-tablet(@name; @flex-columns; (@index + 1));
+		   
+		  .@{name}-@{index}-tablet, .@{name}-@{index}-md {
+		    -ms-flex-preferred-size: ( percentage(@index / @flex-columns) );
+		    -webkit-flex-basis: ( percentage(@index / @flex-columns) );
+		    -flex-basis: ( percentage(@index / @flex-columns) );
+		    max-width: ( percentage(@index / @flex-columns) );
+		    & when ( @index < @grid-columns ) {
+		      &:extend(.flex-tablet);
+		    }
+		  } 
+		}
+
+		.flex-tablet, .flex-md {
+			.box-sizing(border-box);
+			.flex(0, 0, auto);
+			.padding-left(@gutter-tablet);
+			.padding-right(@gutter-tablet);
+		}
+
+		.flex-columns-tablet(flex; @flex-columns);
+
+
+		// Flex Positioning
+
+		.flex-start-tablet, .flex-start-md {
+			.flex-justify(flex-start);
+		}
+
+		.flex-center-tablet, .flex-center-md {
+			.flex-justify(center);
+		}
+
+		.flex-end-tablet, .flex-end-md {
+			.flex-justify(flex-end);
+		}
+
+		.flex-around-tablet, .flex-around-md {
+			.flex-justify(space-around);
+		}
+
+		.flex-between-tablet, .flex-between-md {
+			.flex-justify(space-between);
+		}
+
+		.flex-top-tablet, .flex-top-md {
+			.flex-align-items(flex-start);
+		}
+
+		.flex-middle-tablet, .flex-middle-md {
+			.flex-align-items(center);
+		}
+
+		.flex-bottom-tablet, .flex-bottom-md {
+			.flex-align-items(flex-end);
+		}
+
+		.flex-stretch-tablet, .flex-stretch-md {
+			.flex-align-items(stretch);
+		}
+
+		.flex-baseline-tablet, .flex-baseline-md {
+			.flex-align-items(baseline);
+		}
+
+		// Flex Order
+
+		.flex-order-start-tablet, .flex-order-start-md {
+			.flex-order(-1);
+		}
+
+		.flex-order-end-tablet, .flex-order-end-md {
+			.flex-order(1);
+		}
+
+	}
+
+
+	// Desktop/Large (lg) Flex Grid - Columns and Offsets
+
+	@media only screen and (min-width: @breakpoint-desktop) {
+
+		// Build Columns
+
+		.flex-columns-desktop(@name; @flex-columns; @index: 1) when (@index =< @flex-columns) {
+		  .flex-columns-desktop(@name; @flex-columns; (@index + 1));
+		   
+		  .@{name}-@{index}-desktop, .@{name}-@{index}-lg {
+		    -ms-flex-preferred-size: ( percentage(@index / @flex-columns) );
+		    -webkit-flex-basis: ( percentage(@index / @flex-columns) );
+		    -flex-basis: ( percentage(@index / @flex-columns) );
+		    max-width: ( percentage(@index / @flex-columns) );
+		    & when ( @index < @grid-columns ) {
+		      &:extend(.flex-desktop);
+		    }
+		  } 
+		}
+
+		.flex-desktop, .flex-lg {
+			.box-sizing(border-box);
+			.flex(0, 0, auto);
+			.padding-left(@gutter-desktop);
+			.padding-right(@gutter-desktop);
+		}
+
+		.flex-columns-desktop(flex; @flex-columns);
+
+
+		// Flex Positioning
+
+		.flex-start-desktop, .flex-start-lg {
+			.flex-justify(flex-start);
+		}
+
+		.flex-center-desktop, .flex-center-lg {
+			.flex-justify(center);
+		}
+
+		.flex-end-desktop, .flex-end-lg {
+			.flex-justify(flex-end);
+		}
+
+		.flex-around-desktop, .flex-around-lg {
+			.flex-justify(space-around);
+		}
+
+		.flex-between-desktop, .flex-between-lg {
+			.flex-justify(space-between);
+		}
+
+		.flex-top-desktop, .flex-top-lg {
+			.flex-align-items(flex-start);
+		}
+
+		.flex-middle-desktop, .flex-middle-lg {
+			.flex-align-items(center);
+		}
+
+		.flex-bottom-desktop, .flex-bottom-lg {
+			.flex-align-items(flex-end);
+		}
+
+		.flex-stretch-desktop, .flex-stretch-lg {
+			.flex-align-items(stretch);
+		}
+
+		.flex-baseline-desktop, .flex-baseline-lg {
+			.flex-align-items(baseline);
+		}
+
+		// Flex Order
+
+		.flex-order-start-desktop, .flex-order-start-lg {
+			.flex-order(-1);
+		}
+
+		.flex-order-end-desktop, .flex-order-end-lg {
+			.flex-order(1);
+		}
+	}
+
+
+	// HD/XL (xl) Flex Grid - Columns and Offsets
+
+	@media only screen and (min-width: @breakpoint-hd) {
+
+		// Build Columns
+
+		.flex-columns-hd(@name; @flex-columns; @index: 1) when (@index =< @flex-columns) {
+		  .flex-columns-hd(@name; @flex-columns; (@index + 1));
+		   
+		  .@{name}-@{index}-hd, .@{name}-@{index}-xl {
+		    -ms-flex-preferred-size: ( percentage(@index / @flex-columns) );
+		    -webkit-flex-basis: ( percentage(@index / @flex-columns) );
+		    -flex-basis: ( percentage(@index / @flex-columns) );
+		    max-width: ( percentage(@index / @flex-columns) );
+		    & when ( @index < @grid-columns ) {
+		      &:extend(.flex-hd);
+		    }
+		  } 
+		}
+
+		.flex-hd, .flex-xl {
+			.box-sizing(border-box);
+			.flex(0, 0, auto);
+			.padding-left(@gutter-hd);
+			.padding-right(@gutter-hd);
+		}
+
+		.flex-columns-hd(flex; @flex-columns);
+
+
+		// Flex Positioning
+
+		.flex-start-hd, .flex-start-xl {
+			.flex-justify(flex-start);
+		}
+
+		.flex-center-hd, .flex-center-xl {
+			.flex-justify(center);
+		}
+
+		.flex-end-hd, .flex-end-xl {
+			.flex-justify(flex-end);
+		}
+
+		.flex-around-hd, .flex-around-xl {
+			.flex-justify(space-around);
+		}
+
+		.flex-between-hd, .flex-between-xl {
+			.flex-justify(space-between);
+		}
+
+		.flex-top-hd, .flex-top-xl {
+			.flex-align-items(flex-start);
+		}
+
+		.flex-middle-hd, .flex-middle-xl {
+			.flex-align-items(center);
+		}
+
+		.flex-bottom-hd, .flex-bottom-xl {
+			.flex-align-items(flex-end);
+		}
+
+		.flex-stretch-hd, .flex-stretch-xl {
+			.flex-align-items(stretch);
+		}
+
+		.flex-baseline-hd, .flex-baseline-xl {
+			.flex-align-items(baseline);
+		}
+
+		// Flex Order
+
+		.flex-order-start-hd, .flex-order-start-xl {
+			.flex-order(-1);
+		}
+
+		.flex-order-end-hd, .flex-order-end-xl {
+			.flex-order(1);
+		}
+	}

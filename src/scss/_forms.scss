@@ -1,0 +1,233 @@
+
+/* Bookcase - Forms */
+	
+	// - Inline Form
+	// - Rounded Inputs
+	// - Grouped Inputs
+	// - Stacked Form
+	// - Aligned Form
+	// - Inline Form Help
+	// - Form Messages
+	// - Label and Input Widths
+
+
+// INLINE FORM
+
+	.form-stocked, .form-stacked {
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		input[type="url"],
+		input[type="date"],
+		input[type="month"],
+		input[type="time"],
+		input[type="datetime"],
+		input[type="datetime-local"],
+		input[type="week"],
+		input[type="number"],
+		input[type="search"],
+		input[type="tel"],
+		input[type="color"],
+		select,
+		textarea {
+			@include padding-two(5, 10);
+			@include margin-bottom(20);
+			display: inline-block;
+			@include border(1, solid, $form-border-color);
+			@include font-size(14);
+			@include transition(all, 0.3, ease-in);
+			@include box-sizing(border-box);
+			-webkit-font-smoothing: antialiased;
+
+			&:focus {
+				outline: 0;
+				outline: thin dotted \9; /* IE6-9 */
+				border-color: $form-border-color-focus;
+			}
+
+			&[disabled] {
+				cursor: not-allowed; 
+				background-color: $form-disabled-bg;
+				color: $form-disabled-color;
+			}
+		}
+
+		input[type="file"]:focus,
+		input[type="radio"]:focus,
+		input[type="checkbox"]:focus {
+			outline: thin dotted $checkbox-outline-color;
+			outline: 1px auto $form-border-color;
+
+			&:invalid:focus {
+				outline-color: $form-invalid-border-color-focus;
+			}
+		}
+
+		.checkbox,
+		.radio {
+			@include margin-two(10, 0);
+			display: block;
+		}
+
+		input[readonly],
+		select[readonly],
+		textarea[readonly] {
+			background: $form-bg-color;
+			color: $form-input-color;
+			border-color: $form-border-color;
+
+			&:focus {
+				background: $form-bg-color;
+				color: $form-input-color;
+				border-color: $form-border-color;
+			}
+		}
+
+		input:focus:invalid,
+		textarea:focus:invalid,
+		select:focus:invalid {
+			color: $form-invalid-color;
+			@include border(1, solid, $form-invalid-border-color);
+
+			&:focus {
+				border-color: $form-invalid-border-color-focus;
+			}
+		}
+
+		select {
+			@include border(1, solid, $form-border-color);
+
+			&[multiple] {
+				height: auto;
+			}
+		}
+
+		label {
+			display: inline;
+			@include margin-three(5, 0, 2);
+			@include font-size(14);
+		}
+
+		fieldset {
+			margin: 0;
+			@include padding-three(5, 0, 5);
+			border: 0;
+		}
+
+		legend {
+			display: block;
+			width: 100%;
+			@include padding-bottom(5);
+			@include padding-top(20);
+			@include margin-bottom(20);
+			@include font-size(16);
+			font-weight: 500;
+			color: $form-legend-color;
+			@include border-bottom(1, solid, $form-legend-border-color);
+			clear: both;
+		}
+
+
+		// Rounded Inputs
+		
+		input.input-rounded, 
+		.input-rounded {
+			@include border-radius(4);
+			@include padding-two(5, 10);
+		}
+
+
+		// Grouped Inputs
+
+		.input-grouped {
+			
+			fieldset {
+				@include margin-bottom(10);
+			}
+			
+			input {
+				display: block;
+				@include padding(10);
+				margin: 0;
+				@include border-radius(0);
+				position: relative;
+				@include top(-1);
+
+				&:focus {
+					z-index: 2;
+				}
+
+				&:first-child {
+					@include top(1);
+					@include border-radius-corners(4, 4, 0, 0);
+				}
+
+				&:last-child {
+					@include top(-2);
+					@include border-radius-corners(0, 0, 4, 4);
+				}
+			}
+
+			button {
+				@include margin-two(5, 0);
+			}
+		}
+	}
+
+
+// STACKED FORM
+
+	.form-stacked {
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		input[type="url"],
+		input[type="date"],
+		input[type="month"],
+		input[type="time"],
+		input[type="datetime"],
+		input[type="datetime-local"],
+		input[type="week"],
+		input[type="number"],
+		input[type="search"],
+		input[type="tel"],
+		input[type="color"],
+		select,
+		label,
+		textarea {
+		    display: block;
+		    float: none;
+		}
+	}
+
+
+// ALIGNED FORM
+
+	.form-aligned {
+		input,
+		textarea,
+		select,
+		label {
+			text-align: right;
+		}
+	}
+
+
+// FORM HELP
+
+	.form, .form-message-inline {
+		display: inline-block;
+		@include padding-left(5);
+		color: $form-input-color;
+		vertical-align: middle;
+		@include font-size(14);
+	}
+
+
+// FORM MESSAGES
+
+	.form-message {
+		display: block;
+		color: $form-input-color;
+		@include font-size(12);
+	}

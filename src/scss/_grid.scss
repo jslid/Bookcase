@@ -1,0 +1,290 @@
+
+/* Bookcase - Grid */
+
+	// - Clear Fix
+	// - Rows and Containers
+	// - Columns and Offsets
+
+
+// CLEAR FIX
+
+	.row:before, 
+	.row:after,
+	.shelf:before,
+	.shelf:after { 
+		display: table; 
+		line-height: 0; 
+		content: ""; 
+	}
+
+	.row:after,
+	.shelf:after { 
+		clear: both; 
+	}
+
+	.container:before,
+	.container:after,
+	.bookcase:before, 
+	.bookcase:after { 
+		display: table; 
+		line-height: 0; 
+		content: ""; 
+	}
+
+	.container:after,
+	.bookcase:after { 
+		clear: both; 
+	}
+
+	.container-wide:before,
+	.container-wide:after,
+	.bookcase-wide:before, 
+	.bookcase-wide:after { 
+		display: table; 
+		line-height: 0; 
+		content: ""; 
+	}
+
+	.container-wide:after,
+	.bookcase-wide:after { 
+		clear: both; 
+	}
+
+
+
+// ROWS & CONTAINERS
+
+	// Rows
+
+	.row,
+	.shelf {
+		position: relative;
+		@include margin-left(-$gutter);
+		@include margin-right(-$gutter);
+	}
+
+	// Mobile/Small (sm) Container
+
+	.container,
+	.bookcase {
+		@include padding-left($gutter);
+		@include padding-right($gutter);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.container-wide,
+	.bookcase-wide {
+		width: $container-wide;
+		@include padding-left(0);
+		@include padding-right(0);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+	// Tablet/Medium (md) Container
+
+	@media only screen and (min-width: $breakpoint-tablet) {
+
+		.container,
+		.bookcase { 
+			@include width($container-tablet); 
+		}
+	}
+
+	// Desktop/Large (lg) Container
+
+	@media only screen and (min-width: $breakpoint-desktop) {
+
+		.container,
+		.bookcase { 
+			@include width($container-desktop); 
+		}
+	}
+
+	// HD/XL (xl) Container
+
+	@media only screen and (min-width: $breakpoint-hd) {
+
+		.container,
+		.bookcase { 
+			@include width($container-hd); 
+		}
+	}
+
+
+
+// COLUMNS & OFFSETS
+
+	// Mobile/Small (sm) Grid - Columns and Offsets
+
+		// Build Columns
+
+		.col, .col-sm {
+			float: left;
+			position: relative;
+			@include padding-left($gutter);
+			@include padding-right($gutter);
+		}
+
+		@for $i from 1 through $grid-columns - 1 {
+			.col-#{$i}, .col-#{$i}-sm {
+				@extend .col;
+			}
+		}
+
+		@for $i from 1 through $grid-columns {
+			.col-#{$i}, .col-#{$i}-sm {
+				width: ($i / $grid-columns) * 100%;
+			}
+		}
+
+
+		// Build Push Offsets
+		
+		@for $i from 1 through $offset-columns {
+			.push-#{$i}, .push-#{$i}-sm {
+				left: ($i / $grid-columns) * 100%;
+			}
+		}
+
+		// Build Pull Offsets
+
+		@for $i from 1 through $offset-columns {
+			.pull-#{$i}, .pull-#{$i}-sm {
+				left: -($i / $grid-columns) * 100%;
+			}
+		}
+
+
+	// Tablet/Medium (md) Grid - Columns and Offsets
+
+	@media only screen and (min-width: $breakpoint-tablet) {
+
+		// Build Columns
+
+		.col-tablet, .col-md {
+			float: left;
+			position: relative;
+			@include padding-left($gutter-tablet);
+			@include padding-right($gutter-tablet);
+		}
+
+		@for $i from 1 through $grid-columns - 1 {
+			.col-#{$i}-tablet, .col-#{$i}-md {
+				@extend .col-tablet;
+			}
+		}
+
+		@for $i from 1 through $grid-columns {
+			.col-#{$i}-tablet, .col-#{$i}-md {
+				width: ($i / $grid-columns) * 100%;
+			}
+		}
+
+		
+		// Build Push Offsets
+		
+		@for $i from 1 through $offset-columns {
+			.push-#{$i}-tablet, .push-#{$i}-md {
+				left: ($i / $grid-columns) * 100%;
+			}
+		}
+
+		// Build Pull Offsets
+
+		@for $i from 1 through $offset-columns {
+			.pull-#{$i}-tablet, .pull-#{$i}-md {
+				left: -($i / $grid-columns) * 100%;
+			}
+		}
+	}
+
+
+	// Desktop/Large (lg) Grid - Columns and Offsets
+
+	@media only screen and (min-width: $breakpoint-desktop) {
+
+		// Build Columns
+
+		.col-desktop, .col-lg {
+			float: left;
+			position: relative;
+			@include padding-left($gutter-desktop);
+			@include padding-right($gutter-desktop);
+		}
+
+		@for $i from 1 through $grid-columns - 1 {
+			.col-#{$i}-desktop, .col-#{$i}-lg {
+				@extend .col-desktop;
+			}
+		}
+
+		@for $i from 1 through $grid-columns {
+			.col-#{$i}-desktop, .col-#{$i}-lg {
+				width: ($i / $grid-columns) * 100%;
+			}
+		}
+
+
+		// Build Push Offsets
+		
+		@for $i from 1 through $offset-columns {
+			.push-#{$i}-desktop, .push-#{$i}-lg {
+				left: ($i / $grid-columns) * 100%;
+			}
+		}
+
+		// Build Pull Offsets
+
+		@for $i from 1 through $offset-columns {
+			.pull-#{$i}-desktop, .pull-#{$i}-lg {
+				left: -($i / $grid-columns) * 100%;
+			}
+		}
+	}
+
+
+	// HD/XL (xl) Grid - Columns and Offsets
+
+	@media only screen and (min-width: $breakpoint-hd) {
+
+		// Build Columns
+
+		.col-hd, .col-xl {
+			float: left;
+			position: relative;
+			@include padding-left($gutter-hd);
+			@include padding-right($gutter-hd);
+		}
+
+		@for $i from 1 through $grid-columns - 1 {
+			.col-#{$i}-hd, .col-#{$i}-xl {
+				@extend .col-hd;
+			}
+		}
+
+		@for $i from 1 through $grid-columns {
+			.col-#{$i}-hd, .col-#{$i}-xl {
+				width: ($i / $grid-columns) * 100%;
+			}
+		}
+
+
+		// Build Push Offsets
+		
+		@for $i from 1 through $offset-columns {
+			.push-#{$i}-hd, .push-#{$i}-xl {
+				left: ($i / $grid-columns) * 100%;
+			}
+		}
+
+		// Build Pull Offsets
+
+		@for $i from 1 through $offset-columns {
+			.pull-#{$i}-hd, .pull-#{$i}-xl {
+				left: -($i / $grid-columns) * 100%;
+			}
+		}
+	}

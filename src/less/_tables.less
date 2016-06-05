@@ -1,0 +1,115 @@
+
+/* Bookcase - Tables */
+	
+	// - Table Default
+	// - Table Border
+	// - Table Striped
+	// - Table Overflow Container
+
+
+// TABLE DEFAULT
+
+	.table {
+		width: 100%;
+		max-width: 100%;
+		empty-cells: show;
+
+		caption {
+			font-weight: @font-700;
+			.padding-bottom(10);
+		}
+
+		th,
+		tfoot td {
+			font-weight: @font-700;
+			text-align: left;
+			color: @table-foot-color;
+		}
+
+		thead th,
+		tfoot td {
+			background-color: @table-foot-bg-color;
+		}
+
+		th,
+		td {
+			.padding(5);
+			vertical-align: top;
+			overflow: visible;
+		}
+
+	}
+
+
+// TABLE BORDER
+
+	// Entire Table Border	
+
+	.table-border {
+		.border(@table-border-width, @table-border-style, @table-border-color);
+	}
+
+	// Table Cells Border
+
+	.table-border-cells th,
+	.table-border-cells td {
+		.border-top(@table-border-width, @table-border-style, @table-border-color);
+		.border-left(@table-border-width, @table-border-style, @table-border-color);
+	}
+
+	// Table Rows Border
+
+	.table-border-rows th,
+	.table-border-rows td {
+		.border-top(@table-border-width, @table-border-style, @table-border-color);
+	}
+
+	// Remove Border to Avoid Double Border
+
+	.table-border.table-border-cells thead:first-child tr:first-child th,
+	.table-border.table-border-cells thead:first-child tr:first-child td,
+	.table-border.table-border-rows thead:first-child tr:first-child th,
+	.table-border.table-border-rows thead:first-child tr:first-child td {
+  		border-top: 0;
+	}
+
+	.table-border-cells tr th:first-child,
+	.table-border-cells tr td:first-child {
+		border-left: 0;
+	}
+
+	.table-border-cells tr:first-child th,
+	.table-border-cells thead:first-child tr:first-child td {
+		border-top: 0;
+	}
+
+	// Add Border to Last Row 
+
+	.table-border-rows tr:last-child td {
+		.border-bottom(@table-border-width, @table-border-style, @table-border-color);
+	}
+
+
+// TABLE STRIPED
+
+	
+	.table-striped {
+		tr {
+			&:nth-child(odd) td {
+				background-color: @table-striped-background;
+			}
+		}
+	}
+
+
+// TABLE OVERFLOW CONTAINER
+
+	
+	.table-overflow-container {
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.table-overflow-container > :last-child {
+		margin-bottom: 0;
+	}

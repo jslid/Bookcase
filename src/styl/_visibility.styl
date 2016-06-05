@@ -1,0 +1,44 @@
+
+/*! Bookcase - Visibility Helpers */
+
+// HIDE & SHOW
+
+	// Mobile/Small (sm) 
+
+	.hide-mobile, .hide-sm 
+		display: none
+	
+	.show-mobile, .show-sm 
+		display: block
+
+
+	// Tablet/Medium (md) 
+	
+	@media only screen and (min-width: $breakpoint-tablet) 
+		
+		.hide-tablet, .hide-md 
+			display: none
+		
+		.show-tablet, .show-md 
+			display: block
+
+
+	// Desktop/Large (lg) 
+	
+	@media only screen and (min-width: $breakpoint-desktop)
+		
+		.hide-desktop, .hide-lg
+			display: none
+		.show-desktop, .show-lg 
+			display: block
+
+	
+	// HD/XL (xl) 
+	
+	@media only screen and (min-width: $breakpoint-hd)
+		
+		.hide-hd, .hide-xl
+			display: none
+		
+		.show-hd, .show-xl 
+			display: block

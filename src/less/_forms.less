@@ -1,0 +1,233 @@
+
+/* Bookcase - Forms */
+	
+	// - Inline Form
+	// - Rounded Inputs
+	// - Grouped Inputs
+	// - Stacked Form
+	// - Aligned Form
+	// - Inline Form Help
+	// - Form Messages
+	// - Label and Input Widths
+
+
+// INLINE FORM
+
+	.form-stocked, .form-stacked {
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		input[type="url"],
+		input[type="date"],
+		input[type="month"],
+		input[type="time"],
+		input[type="datetime"],
+		input[type="datetime-local"],
+		input[type="week"],
+		input[type="number"],
+		input[type="search"],
+		input[type="tel"],
+		input[type="color"],
+		select,
+		textarea {
+			.padding-two(5, 10);
+			.margin-bottom(20);
+			display: inline-block;
+			border: thin solid @form-border-color;
+			.font-size(14);
+			.transition(all, 0.3, ease-in);
+			.box-sizing(border-box);
+			-webkit-font-smoothing: antialiased;
+
+			&:focus {
+				outline: 0;
+				outline: thin dotted \9; /* IE6-9 */
+				border-color: @form-border-color-focus;
+			}
+
+			&[disabled] {
+				cursor: not-allowed; 
+				background-color: @form-disabled-bg;
+				color: @form-disabled-color;
+			}
+		}
+
+		input[type="file"]:focus,
+		input[type="radio"]:focus,
+		input[type="checkbox"]:focus {
+			outline: thin dotted @checkbox-outline-color;
+			outline: 1px auto @form-border-color-focus;
+
+			&:invalid:focus {
+				outline-color: @form-invalid-border-color-focus;
+			}
+		}
+
+		.checkbox,
+		.radio {
+			.margin-two(10, 0);
+			display: block;
+		}
+
+		input[readonly],
+		select[readonly],
+		textarea[readonly] {
+			background: @form-bg-color;
+			color: @form-input-color;
+			border-color: @form-border-color;
+
+			&:focus {
+				background: @form-bg-color;
+				color: @form-input-color;
+				border-color: @form-border-color;
+			}
+		}
+
+		input:focus:invalid,
+		textarea:focus:invalid,
+		select:focus:invalid {
+			color: @form-invalid-color;
+			border: thin solid @form-invalid-border-color;
+
+			&:focus {
+				border-color: @form-invalid-border-color-focus;
+			}
+		}
+
+		select {
+			border: thin solid @form-border-color;
+
+			&[multiple] {
+				height: auto;
+			}
+		}
+
+		label {
+			display: inline;
+			.margin-three(5, 0, 2);
+			.font-size(14);
+		}
+
+		fieldset {
+			margin: 0;
+			.padding-three(5, 0, 5);
+			border: 0;
+		}
+
+		legend {
+			display: block;
+			width: 100%;
+			.padding-bottom(5);
+			.padding-top(20);
+			.margin-bottom(20);
+			.font-size(16);
+			font-weight: 500;
+			color: @form-legend-color;
+			.border-bottom(1, solid, @form-legend-border-color);
+			clear: both;
+		}
+
+		// Rounded Inputs
+
+		input.input-rounded, 
+		.input-rounded {
+			.border-radius(4);
+			.padding-two(5, 10);
+		}
+
+
+		// Grouped Inputs
+
+		.input-grouped {
+			
+			fieldset {
+				.margin-bottom(10);
+			}
+			
+			input {
+				display: block;
+				.padding(10);
+				margin: 0;
+				.border-radius(0);
+				position: relative;
+				.top(-1);
+
+				&:focus {
+					z-index: 2;
+				}
+
+				&:first-child {
+					.top(1);
+					.border-radius-corners(4, 4, 0, 0);
+				}
+
+				&:last-child {
+					.top(-2);
+					.border-radius-corners(0, 0, 4, 4);
+				}
+			}
+
+			button {
+				.margin-two(5, 0);
+			}
+		}
+	}
+
+
+// STACKED FORM
+
+	.form-stacked {
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		input[type="url"],
+		input[type="date"],
+		input[type="month"],
+		input[type="time"],
+		input[type="datetime"],
+		input[type="datetime-local"],
+		input[type="week"],
+		input[type="number"],
+		input[type="search"],
+		input[type="tel"],
+		input[type="color"],
+		select,
+		label,
+		textarea {
+		    display: block;
+		    float: none;
+		}
+	}
+
+
+// ALIGNED FORM
+
+	.form-aligned {
+		input,
+		textarea,
+		select,
+		label {
+			text-align: right;
+		}
+	}
+
+
+// FORM HELP
+
+	.form, .form-message-inline {
+		display: inline-block;
+		.padding-left(5);
+		color: @form-input-color;
+		vertical-align: middle;
+		.font-size(14);
+	}
+
+
+// FORM MESSAGES
+
+	.form-message {
+		display: block;
+		color: @form-input-color;
+		.font-size(12);
+	}
+

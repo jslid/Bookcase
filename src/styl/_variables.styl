@@ -1,0 +1,335 @@
+
+// Bookcase - Variables
+
+	// - Base
+	// - Grid
+	// - Padding
+	// - Margins
+	// - Colors
+	// - Typography
+	// - Buttons
+	// - Tables
+	// - Z-index
+
+
+// BASE
+
+	$baseFontSize = 	16
+	$baseLineHeight = 	22
+
+
+// GRID
+
+	// Columns
+
+	$grid-columns =				12
+	$offset-columns = 			$grid-columns - 1
+
+	$flex-columns = 			12
+	$flex-offset-columns = 		$flex-columns - 1
+
+
+	// Containers
+
+	$container-mobile =		100%	// Container Small (sm)
+	$container-tablet =		720		// Container Medium (md)
+	$container-desktop =	960		// Container Large (lg)
+	$container-hd =			1120	// Container XL (xl)
+
+	$container-wide = 		100%  	// Container wide is used for full length rows
+
+
+	// Breakpoints
+
+	$breakpoint-mobile = 	480px	// Breakpoint Small (sm)
+	$breakpoint-tablet = 	768px	// Breakpoint Medium (md)
+	$breakpoint-desktop = 	1024px	// Breakpoint Large (lg)
+	$breakpoint-hd = 		1280px	// Breakpoint XL (xl)
+
+
+	// Gutters
+
+	$gutter = 				10 		// Gutter Small (sm) 	
+	$gutter-tablet = 		10 		// Gutter Medium (md)
+	$gutter-desktop = 		10 		// Gutter Large (lg)
+	$gutter-hd = 			10 		// Gutter XL (xl)
+
+	$flex-gutter = 			10 		// Flex Gutter Small (sm)
+	$flex-gutter-tablet = 	10 		// Flex Gutter Medium (md)
+	$flex-gutter-desktop = 	10 		// Flex Gutter Large (lg)
+	$flex-gutter-hd = 		10 		// Flex Gutter XL (xl)
+
+
+// PADDING
+
+	$padding-small = 	10
+	$padding-medium = 	20
+	$padding-large = 	30
+	$padding-xl = 		40
+	$padding-xxl = 		50
+
+
+// MARGIN
+
+	$margin-small = 	10
+	$margin-medium = 	20
+	$margin-large = 	30
+	$margin-xl = 		40
+	$margin-xxl = 		50
+
+
+
+// COLORS
+
+	// White and Black
+
+	$white = #FFFFFF
+	$black = #000000
+
+	// Grayscale
+
+	$gray-lightest = 	lighten(black, 95%)
+	$gray-lighter = 	lighten(black, 80%)
+	$gray-light = 		lighten(black, 65%)
+	$gray = 			lighten(black, 50%)
+	$gray-dark = 		lighten(black, 35%)
+	$gray-darker = 		lighten(black, 20%)
+	$gray-darkest = 	lighten(black, 5%)
+
+	// Colorscheme
+
+	// Enter you color scheme variables below 
+
+	$text-color =					$gray-darker
+	$link-color = 					$gray
+	$link-hover-color =				$gray-darker
+	$bg-color =						$white
+
+
+	// Forms
+
+	$form-input-color =				$gray
+	$form-border-color = 			$gray
+	$form-border-color-dark = 		$gray-darker
+	$form-border-color-focus = 		$gray-dark
+	$form-shadow-color = 			$gray-darker
+	$form-bg-color = 				$white
+
+	// File, Radio, Checkbox
+	$checkbox-outline-color = 		$gray
+
+	// Legend
+	$form-legend-color = 			$gray
+	$form-legend-border-color = 	$gray
+
+	// Disabled
+	$form-disabled-bg = 			$gray-lighter
+	$form-disabled-color = 			$gray-dark
+
+	// Invalid
+	$form-invalid-color = 				$gray-lighter
+	$form-invalid-border-color = 		$gray-dark
+	$form-invalid-border-color-focus = 	$gray-darker
+
+	// Help
+	$form-help-color = 		$gray
+
+
+// TYPOGRAPHY
+
+	// Font Pairings
+
+	// Sans-Serif Font
+	$raleway = 'Raleway', Arial ,Helvetica Neue ,Helvetica, Tahoma, Verdana, Segoe, sans-serif
+
+	// Serif Font
+	$buenard = 'Buenard', Georgia, Times, Times New Roman, serif
+
+	// Monospace Font
+	$courier-new = Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace
+
+
+	// Font Families
+
+	 	// If you choose to use two Sans-serif fonts, or two Serif fonts for your web project, just uncomment the "alt"
+		// variables of the corresponding font familes below.
+
+	$font-sans-serif = 	$raleway
+	// $font-sans-serif-alt =
+	$font-serif =		$buenard
+	// $font-serif-alt =
+	$font-monospace =	$courier-new
+
+
+	// Font Weights
+
+	$font-100 = 		100
+	$font-200 = 		200
+	$font-300 = 		300
+	$font-400 = 		400
+	$font-500 = 		500
+	$font-600 = 		600
+	$font-700 = 		700
+	$font-800 = 		800
+	$font-900 = 		900
+
+
+	// Headings, Paragraphs, Lists, and Blockquotes
+
+	$heading-font-family = 		$font-sans-serif
+
+	$h1-size = 					80
+	$h1-line-height = 			84
+	$h1-weight = 				500
+	$h1-color = 				$gray-darker
+
+	$h2-size = 					60
+	$h2-line-height = 			64
+	$h2-weight = 				500
+	$h2-color = 				$gray-darker
+
+	$h3-size = 					40
+	$h3-line-height = 			44
+	$h3-weight =				500
+	$h3-color = 				$gray-darker
+
+	$h4-size = 					30
+	$h4-line-height = 			34
+	$h4-weight = 				500
+	$h4-color = 				$gray-darker
+
+	$h5-size = 					24
+	$h5-line-height = 			28
+	$h5-weight = 				500
+	$h5-color = 				$gray-darker
+
+	$h6-size = 					18
+	$h6-line-height = 			24
+	$h6-weight = 				500
+	$h6-color = 				$gray-darker
+
+	$p-size = 					18
+	$p-line-height = 			24
+	$p-weight = 				300
+	$p-color = 					$gray-darker
+	$p-font-family = 			$font-serif
+
+	$li-size = 					18
+	$li-line-height = 			20
+	$li-weight = 				300
+	$li-color = 				$gray-darker
+	$li-font-family = 			$font-serif
+
+	$code-size = 				16
+	$code-line-height = 		18
+	$code-weight = 				400
+	$code-border-color =		$gray
+	$code-bg-color =			$gray-lighter
+	$code-color = 				$gray-darker
+	$code-font-family = 		$font-monospace
+
+	$blockquote-size = 			18
+	$blockquote-line-height = 	24
+	$blockquote-weight = 		400
+	$blockquote-color =  		$gray-darker
+	$blockquote-font-family = 	$font-serif
+
+
+	// Mega Headings
+
+	$heading-large = 	40
+	$heading-jumbo = 	50
+	$heading-mega = 	60
+
+
+// BUTTONS
+
+	$btn-bg-color =					$gray
+	$btn-bg-hover-color =			$gray-darker
+	$btn-link-color =				$gray 
+	$btn-link-hover-color =			$gray-darker
+	$btn-color =					$white
+	$btn-hover-color =				$white
+	$btn-font-family =				$font-sans-serif
+	$btn-font-weight =				700
+
+	$btn-outline-size =				3
+	$btn-outline-style =			solid
+	$btn-outline-color =			$gray
+	$btn-outline-hover-color =		$gray-darker
+	$btn-outline-font-color =		$gray
+
+	$btn-rounded-radius =			5
+	$btn-pill-radius =				30
+
+	$btn-font-size =				14
+	$btn-line-height =				16
+	$btn-vertical-padding =			10
+	$btn-horizontal-padding =		20
+
+	$btn-small-font-size =				12
+	$btn-small-line-height =			14
+	$btn-small-vertical-padding =		10
+	$btn-small-horizontal-padding =		20
+
+	$btn-medium-font-size =				16
+	$btn-medium-line-height =			18
+	$btn-medium-vertical-padding =		15
+	$btn-medium-horizontal-padding =	25
+
+	$btn-large-font-size =				18
+	$btn-large-line-height =			20
+	$btn-large-vertical-padding =		20
+	$btn-large-horizontal-padding =		30
+
+	$btn-mega-font-size =				24
+	$btn-mega-line-height =				26
+	$btn-mega-vertical-padding =		20
+	$btn-mega-horizontal-padding =		30
+
+
+// TABLES
+
+	$table-margin-top =					10
+	$table-margin-bottom =				10
+
+	$table-border-color =				$gray
+	$table-border-style =				solid
+	$table-border-width =				2
+
+	$table-cell-padding =				5
+	$table-cell-font-size =				12
+	$table-cell-font-weight =			400
+	$table-cell-color =					$gray-dark
+
+	$table-caption-color =				$gray-darker
+	$table-caption-font-size =			14
+	$table-caption-font-weight =		700
+	$table-caption-padding-bottom =		10
+	
+	$table-foot-color =					$gray-darker
+	$table-foot-bg-color =				$gray-lighter
+
+	$table-striped-background =			$gray-lighter
+
+	$table-mini-padding-vertical =		5
+	$table-mini-horizontal-vertical =	5
+
+	$table-hover-background =			$gray
+
+	$table-active-background =		$table-hover-background
+
+
+// Z-INDEX
+
+	$zindex-1000 = 	1000
+	$zindex-1100 = 	1100
+	$zindex-1200 = 	1200
+	$zindex-1300 = 	1300
+	$zindex-1400 = 	1400
+	$zindex-1500 = 	1500
+	$zindex-1600 = 	1600
+	$zindex-1700 = 	1700
+	$zindex-1800 = 	1800
+	$zindex-1900 = 	1900
+	$zindex-2000 = 	2000

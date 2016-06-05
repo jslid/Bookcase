@@ -1,0 +1,259 @@
+
+/* Bookcase -Typography */
+	
+	// - Body 
+	// - Headings
+	// - Paragraphs
+	// - Lists
+	// - Links
+	// - Bold and Italics
+	// - Code
+	// - Definitions
+	// - Blockquotes
+	// - Typography Margin
+
+
+// BODY
+
+	body {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+		font-family: $font-sans-serif;
+		@include font-size($baseFontSize);
+		@include line-height($baseLineHeight);
+		color: $text-color;
+		background: $bg-color;
+	}
+
+// HEADINGS
+	
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $heading-font-family;
+	}
+	
+	h1 {
+		@include font-size($h1-size);
+		@include line-height($h1-line-height);
+		font-weight: $h1-weight;
+		color: $h1-color;
+	}
+
+	h2 {
+		@include font-size($h2-size);
+		@include line-height($h2-line-height);
+		font-weight: $h2-weight;
+		color: $h2-color;
+	}
+
+	h3 {
+		@include font-size($h3-size);
+		@include line-height($h3-line-height);
+		font-weight: $h3-weight;
+		color: $h3-color;
+	}
+
+	h4 {
+		@include font-size($h4-size);
+		@include line-height($h4-line-height);
+		font-weight: $h4-weight;
+		color: $h4-color;
+	}
+
+	h5 {
+		@include font-size($h5-size);
+		@include line-height($h5-line-height);
+		font-weight: $h5-weight;
+		color: $h5-color;
+	}
+
+	h6 {
+		@include font-size($h6-size);
+		@include line-height($h6-line-height);
+		font-weight: $h6-weight;
+		color: $h6-color;
+	}
+
+
+// PARAGRAPHS
+
+	p {
+		@include font-size($p-size);
+		@include line-height($p-line-height);
+		font-weight: $p-weight;
+		color: $p-color;
+		font-family: $p-font-family;
+		margin-top: 0;
+	}
+
+
+// LISTS
+
+	ul { list-style: circle inside; }
+
+	ol { list-style: decimal inside; }
+
+	ul,
+	ol {
+		@include padding-left(20);
+		margin-top: 0;
+	}
+
+	li ol li, li ul li {
+		@include margin-four(24, 0, 24, 32);
+		@include font-size($li-size - 2);
+		@include line-height($li-line-height - 2);
+	}
+
+	li {
+		@include font-size($li-size);
+		@include line-height($li-line-height);
+		font-weight: $li-weight;
+		color: $li-color;
+		font-family: $li-font-family;
+		@include margin-bottom(16);
+	}
+
+
+// LINKS
+
+	a {
+		color: $link-color;
+		background: transparent;
+		text-decoration: underline;
+		&:active,
+		&:hover {
+			outline: 0;
+			text-decoration: underline;
+		}
+		&:hover {
+			color: $link-hover-color;
+		}
+	}
+
+
+// DEFINITIONS 
+
+	dl {
+		&:before, 
+		&:after { 
+			content: " "; 
+			display: table;
+		}
+
+		&:after {
+			clear: both;
+		}
+
+		dt {
+			float: left;
+			width: 25%;
+			display: block;
+			font-weight: $font-600;
+			@include font-size(18);
+			&:after {
+				content: ":";
+			}
+		}
+
+		dd {
+			overflow: hidden;
+			display: block;
+			font-weight: $font-400;
+			@include font-size(16);
+			@include line-height(20);
+		}
+	}
+
+
+// BOLD & ITALICS
+
+	// Bold
+
+	b,
+	strong,
+	.b,
+	.strong {
+		font-weight: $font-700;
+	}
+
+	// Italics
+
+	em,
+	.em,
+	.italic {
+		font-style: italic;
+	}
+
+
+// CODE
+
+	code {
+		@include font-size($code-size);
+		@include line-height($code-line-height);
+		font-weight: $code-weight;
+		color: $code-color;
+		font-family: $code-font-family;
+		background: $code-bg-color;
+		@include border(1, solid, $code-border-color);
+		@include padding(5);
+		@include margin-bottom(20);
+		display: block;
+	}
+
+	pre {
+		@include padding(10);
+		overflow: auto;
+		@include border(1, solid, $code-border-color);
+	}
+
+
+
+// BLOCKQUOTE
+
+	blockquote,
+	.blockquote {
+		font-family: $blockquote-font-family;
+		font-weight: $blockquote-weight;
+		color: $blockquote-color;
+		font-style: italic;
+		@include margin-two(32, 0);
+
+		p {
+			@include font-size($blockquote-size);
+			@include line-height($blockquote-line-height);
+			@include margin-bottom(8);
+		}
+
+		cite {
+			@include font-size($blockquote-size - 2);
+			@include line-height($blockquote-line-height - 2);
+			font-weight: $font-700;
+			font-style: normal;
+		}
+	}
+
+
+// TYPOGRAPHY MARGIN
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 0;
+		@include margin-bottom(32);
+	}
+
+	pre,
+	blockquote,
+	dl,
+	figure,
+	table,
+	p,
+	ul,
+	ol,
+	form {
+		@include margin-bottom(32);
+	}

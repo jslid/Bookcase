@@ -1,0 +1,1000 @@
+
+// Bookcase - Mixins
+	
+	// - REM to PX 
+	// - Fonts
+	// - Padding
+	// - Margins
+	// - Borders
+	// - Border Radius
+	// - Positions
+	// - Gradients
+	// - Opacity
+	// - Backgrounds
+	// - Drop Shadows
+	// - Animations and Transitions
+	// - Transforms
+	// - Flexbox
+	
+
+// REM to PX
+
+	// REM - rem-mixin(margin-top, 12)
+
+	rem-mixin($property, $value)
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		{$property}: unit($valuePx, 'px')
+		{$property}: unit($valueRem, 'rem')
+	
+
+	// REM Top/Bottom and Right/Left - rem-two-mixin(border, 20, 15)
+
+	rem-two-mixin($property, $topbottom, $rightleft)
+		$tpbtmPx = $topbottom
+		$tpbtmRem = $topbottom / $baseFontSize
+		$rightleftPx = $rightleft
+		$rightleftRem = $rightleft / $baseFontSize
+		{$property}: unit($tpbtmPx, 'px') unit($rightleftPx, 'px')
+		{$property}: unit($tpbtmRem, 'rem') unit($rightleftRem, 'rem')
+
+
+	// REM Top, Right/Left, Bottom - rem-three-mixin(padding, 10, 15, 20)
+
+	rem-three-mixin($property, $top, $rightleft, $bottom)
+		$topPx = $top
+		$topRem = $top / $baseFontSize
+		$rightleftPx = $rightleft
+		$rightleftRem = ($rightleft / $baseFontSize)
+		$bottomPx = $bottom
+		$bottomRem = $bottom / $baseFontSize
+		{$property}: unit($topPx, 'px') unit($rightleftPx, 'px') unit($bottomPx, 'px')
+		{$property}: unit($topRem, 'rem') unit($rightleftRem, 'rem') unit($bottomRem, 'rem')
+
+
+	// REM Top, Right, Bottom, Left - rem-four-mixin(margin, 20, 12, 5, 10)
+
+	rem-four-mixin($property, $top, $right, $bottom, $left)
+		$topPx = $top
+		$topRem = $top / $baseFontSize
+		$rightPx = $right
+		$rightRem = $right / $baseFontSize
+		$bottomPx = $bottom
+		$bottomRem = $bottom / $baseFontSize
+		$leftPx = $left
+		$leftRem = $left / $baseFontSize
+		{$property}: unit($topPx, 'px') unit($rightPx, 'px') unit($bottomPx, 'px') unit($leftPx, 'px')
+		{$property}: unit($topRem, 'rem') unit($rightRem, 'rem') unit($bottomRem, 'rem') unit($leftRem, 'rem')
+		
+
+
+// FONT MIXINS
+
+	// Font Size - font-size-mixin(24)
+
+	font-size-mixin($value)
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		font-size: unit($valuePx, 'px')
+		font-size: unit($valueRem, 'rem')
+
+	
+	// Line Height - line-height-mixin(18)
+
+	line-height-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		line-height: unit($valuePx, 'px')
+		line-height: unit($valueRem, 'rem')
+	
+
+	// Text Indent - text-indent-mixin(12)
+
+	text-indent-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		text-indent: unit($valuePx, 'px')
+		text-indent: unit($valueRem, 'rem')
+	
+
+
+// PADDING MIXINS
+
+	// Padding - padding-mixin(10)
+
+	padding-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		padding: unit($valuePx, 'px')
+		padding: unit($valueRem, 'rem')
+	
+
+	// Padding Top - padding-top-mixin(15)
+
+	padding-top-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		padding-top: unit($valuePx, 'px')
+		padding-top: unit($valueRem, 'rem')
+	
+
+	// Padding Bottom - padding-bottom-mixin(10)
+
+	padding-bottom-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		padding-bottom: unit($valuePx, 'px')
+		padding-bottom: unit($valueRem, 'rem')
+	
+
+	// Padding Right - padding-right-mixin(20)
+
+	padding-right-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		padding-right: unit($valuePx, 'px')
+		padding-right: unit($valueRem, 'rem')
+	
+
+	// Padding Left - padding-left-mixin(10)
+
+	padding-left-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		padding-left: unit($valuePx, 'px')
+		padding-left: unit($valueRem, 'rem')
+	
+
+	// Padding Top/Bottom and Right/Left - padding-two-mixin(20, 10)
+
+	padding-two-mixin($topbottom, $rightleft) 
+		$tpbtmPx = $topbottom
+		$tpbtmRem = $topbottom / $baseFontSize
+		$rightleftPx = $rightleft
+		$rightleftRem = $rightleft / $baseFontSize
+		padding: unit($tpbtmPx, 'px') unit($rightleftPx, 'px') 
+		padding: unit($tpbtmRem, 'rem') unit($rightleftRem, 'rem')
+	
+
+	// Padding Top, Right/Left, Bottom - padding-three-mixin(10, 12, 5)
+
+	padding-three-mixin($top, $rightleft, $bottom) 
+		$topPx = $top
+		$topRem = $top / $baseFontSize
+		$rightleftPx = $rightleft
+		$rightleftRem = $rightleft / $baseFontSize
+		$bottomPx = $bottom
+		$bottomRem = $bottom / $baseFontSize
+		padding: unit($topPx, 'px') unit($rightleftPx, 'px') unit($bottomPx, 'px') 
+		padding: unit($topRem, 'rem') unit($rightleftRem, 'rem') unit($bottomRem, 'rem') 
+	
+
+	// Padding Top, Right, Bottom, Left - padding-four-mixin(12, 10, 5, 8)
+
+	padding-four-mixin($top, $right, $bottom, $left) 
+		$topPx = $top
+		$topRem = $top / $baseFontSize
+		$rightPx = $right
+		$rightRem = $right / $baseFontSize
+		$bottomPx = $bottom
+		$bottomRem = $bottom / $baseFontSize
+		$leftPx = $left
+		$leftRem = $left / $baseFontSize
+		padding: unit($topPx, 'px') unit($rightPx, 'px') unit($bottomPx, 'px') unit($leftPx, 'px')
+		padding: unit($topRem, 'rem') unit($rightRem, 'rem') unit($bottomRem, 'rem') unit($leftRem, 'rem')
+	
+
+
+// MARGIN MIXINS
+
+	// Margin - margin-mixin(10)
+
+	margin-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		margin: unit($valuePx, 'px')
+		margin: unit($valueRem, 'rem')
+	
+
+	// Margin Top - margin-top-mixin(15)
+
+	margin-top-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		margin-top: unit($valuePx, 'px')
+		margin-top: unit($valueRem, 'rem')
+	
+
+	// Margin Bottom - margin-bottom-mixin(10)
+
+	margin-bottom-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		margin-bottom: unit($valuePx, 'px')
+		margin-bottom: unit($valueRem, 'rem')
+	
+
+	// Margin Right - margin-right-mixin20)
+
+	margin-right-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		margin-right: unit($valuePx, 'px')
+		margin-right: unit($valueRem, 'rem')
+	
+
+	// Margin Left - margin-left-mixin(10)
+
+	margin-left-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		margin-left: unit($valuePx, 'px')
+		margin-left: unit($valueRem, 'rem')
+	
+
+	// Margin Top/Bottom and Right/Left - margin-two-mixin(20, 10)
+
+	margin-two-mixin($topbottom, $rightleft) 
+		$tpbtmPx = $topbottom
+		$tpbtmRem = $topbottom / $baseFontSize
+		$rightleftPx = $rightleft
+		$rightleftRem = $rightleft / $baseFontSize
+		margin: unit($tpbtmPx, 'px') unit($rightleftPx, 'px') 
+		margin: unit($tpbtmRem, 'rem') unit($rightleftRem, 'rem') 
+	
+
+	// Margin Top, Right/Left, Bottom - margin-three-mixin(10, 12, 5)
+
+	margin-three-mixin($top, $rightleft, $bottom) 
+		$topPx = $top
+		$topRem = $top / $baseFontSize
+		$rightleftPx = $rightleft
+		$rightleftRem = $rightleft / $baseFontSize
+		$bottomPx = $bottom
+		$bottomRem = $bottom / $baseFontSize
+		margin: unit($topPx, 'px') unit($rightleftPx, 'px') unit($bottomPx, 'px') 
+		margin: unit($topRem, 'rem') unit($rightleftRem, 'rem') unit($bottomRem, 'rem') 
+	
+
+	// Margin Top, Right, Bottom, Left - margin-four-mixin(12, 10, 5, 8)
+
+	margin-four-mixin($top, $right, $bottom, $left) 
+		$topPx = $top
+		$topRem = $top / $baseFontSize
+		$rightPx = $right
+		$rightRem = $right / $baseFontSize
+		$bottomPx = $bottom
+		$bottomRem = $bottom / $baseFontSize
+		$leftPx = $left
+		$leftRem = $left / $baseFontSize
+		margin: unit($topPx, 'px') unit($rightPx, 'px') unit($bottomPx, 'px') unit($leftPx, 'px')
+		margin: unit($topRem, 'rem') unit($rightRem, 'rem') unit($bottomRem, 'rem') unit($leftRem, 'rem')
+	
+
+
+// BORDER MIXINS
+
+	// Border - border-mixin(10, solid, #000000)
+
+	border-mixin($value, $style, $color) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		border: unit($valuePx, 'px') $style $color
+		border: unit($valueRem, 'rem') $style $color
+	
+
+	// Border Top - border-top-mixin(15, dotted, #5c5c5c)
+
+	border-top-mixin($value, $style, $color) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		border-top: unit($valuePx, 'px') $style $color
+		border-top: unit($valueRem, 'rem') $style $color
+	
+
+	// Border Bottom - border-bottom-mixin(10, solid, #f6f6f6)
+
+	border-bottom-mixin($value, $style, $color) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		border-bottom: unit($valuePx, 'px') $style $color
+		border-bottom: unit($valueRem, 'rem') $style $color
+	
+
+	// Border Right - border-right-mixin(20, dotted, #000000)
+
+	border-right-mixin($value, $style, $color) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		border-right: unit($valuePx, 'px') $style $color
+		border-right: unit($valueRem, 'rem') $style $color
+	
+
+	// Border Left - border-left-mixin(10, solid, #5c5c5c)
+
+	border-left-mixin($value, $style, $color) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		border-left: unit($valuePx, 'px') $style $color
+		border-left: unit($valueRem, 'rem') $style $color
+	
+
+	// Border Top/Bottom and Right/Left - border-two-mixin(20, 10)
+
+	border-two-mixin($topbottom, $rightleft) 
+		$tpbtmPx = $topbottom;
+		$tpbtmRem = $topbottom / $baseFontSize
+		$rightleftPx = $rightleft
+		$rightleftRem = $rightleft / $baseFontSize
+		border: unit($tpbtmPx, 'px') unit($rightleftPx, 'px') 
+		border: unit($tpbtmRem, 'rem') unit($rightleftRem, 'rem') 
+	
+
+	// Border Top, Right/Left, Bottom - border-three-mixin(10, 12, 5)
+
+	border-three-mixin($top, $rightleft, $bottom) 
+		$topPx = $top
+		$topRem = $top / $baseFontSize
+		$rightleftPx = $rightleft
+		$rightleftRem = $rightleft / $baseFontSize
+		$bottomPx = $bottom
+		$bottomRem = $bottom / $baseFontSize
+		border: unit($topPx, 'px') unit($rightleftPx, 'px') unit($bottomPx, 'px') 
+		border: unit($topRem, 'rem') unit($rightleftRem, 'rem') unit($bottomRem, 'rem') 
+	
+
+	// Border Top, Right, Bottom, Left - border-four-mixin(12, 10, 5, 8)
+
+	border-four-mixin($top, $right, $bottom, $left) 
+		$topPx = $top
+		$topRem = $top / $baseFontSize
+		$rightPx = $right
+		$rightRem = $right / $baseFontSize
+		$bottomPx = $bottom
+		$bottomRem = $bottom / $baseFontSize
+		$leftPx = $left
+		$leftRem = $left / $baseFontSize
+		border: unit($topPx, 'px') unit($rightPx, 'px') unit($bottomPx, 'px') unit($leftPx, 'px')
+		border: unit($topRem, 'rem') unit($rightRem, 'rem') unit($bottomRem, 'rem') unit($leftRem, 'rem')
+	
+
+
+// BORDER RADIUS MIXINS
+
+	// Border Radius - border-radius-mixin(5)
+
+	border-radius-mixin($radius = 5) 
+		$border-radius-mixin = unit($radius, 'px')
+		-webkit-border-radius: $border-radius-mixin
+		-moz-border-radius: $border-radius-mixin
+		border-radius: $border-radius-mixin
+	
+
+
+	// Border Radius Corners - border-radius-corners-mixin(20, 10, 20, 0)
+
+	border-radius-corners-mixin($topLeft = 5, $topRight = 5, $bottomLeft = 5, $bottomRight = 5) 
+		$border-corners-mixin = unit($topLeft, 'px') unit($topRight, 'px') unit($bottomLeft, 'px') unit($bottomRight, 'px')
+		-webkit-border-radius: $border-corners-mixin
+		-moz-border-radius: $border-corners-mixin
+		border-radius: $border-corners-mixin
+	
+
+
+// POSITION MIXINS
+
+	// Height - height-mixin(40)
+
+	height-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		height: unit($valuePx, 'px')
+		height: unit($valueRem, 'rem')	
+	
+
+	// Max Height - max-height-mixin(30)
+
+	max-height-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		max-height: unit($valuePx, 'px')
+		max-height: unit($valueRem, 'rem')
+	
+
+	// Min Height - min-height-mixin(15)
+
+	min-height-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		min-height: unit($valuePx, 'px')
+		min-height: unit($valueRem, 'rem')
+	
+
+	// Width - width-mixin(14)
+
+	width-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		width: unit($valuePx, 'px')
+		width: unit($valueRem, 'rem')
+	
+
+	// Max Width - max-width-mixin(20)
+
+	max-width-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		max-width: unit($valuePx, 'px')
+		max-width: unit($valueRem, 'rem')
+	
+
+	// Min Width - min-width-mixin(500)
+
+	min-width-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		min-width: unit($valuePx, 'px')
+		min-width: unit($valueRem, 'rem')
+	
+
+	// Top - top-mixin(200)
+
+	top-mixin($value) 
+		$valuePx = $value;
+		$valueRem = $value / $baseFontSize
+		top: unit($valuePx, 'px')
+		top: unit($valueRem, 'rem')
+	
+
+	// Bottom - bottom-mixin(30)
+
+	bottom-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		bottom: unit($valuePx, 'px')
+		bottom: unit($valueRem, 'rem')
+	
+
+	// Right - right-mixin(150)
+
+	right-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		right: unit($valuePx, 'px')
+		right: unit($valueRem, 'rem')
+	
+
+	// Left - left-mixin(200)
+
+	left-mixin($value) 
+		$valuePx = $value
+		$valueRem = $value / $baseFontSize
+		left: unit($valuePx, 'px')
+		left: unit($valueRem, 'rem')
+	
+
+
+// GRADIENT MIXINS
+
+	// Can use - left, right, top, bottom, left bottom, left top, right bottom, right top for @origion
+
+	// Gradient - gradient-mixin(right, #d5d5d5, #c6c67c)
+	
+	gradient-mixin($origin = left, $start = #ffffff, $end = #000000) 
+		$gradient-mixin = $origin, $start, $end
+		background: $start
+		background: -webkit-linear-gradient($gradient-mixin)
+		background: -mox-linear-gradient($gradient-mixin)
+		background: -o-linear-gradient($gradient-mixin)
+		background: -ms-linear-gradient($gradient-mixin)
+		background: linear-gradient($gradient-mixin)
+	
+
+	// Gradient with a Degree - gradient-degree-mixin(30, #d5d5d5, #c6c67c)
+	
+	gradient-degree-mixin($degree = 45, $start = #ffffff, $end = #000000) 
+		$degree-convert = $degree + deg;
+		$gradient-degree-mixin = $degree-convert, $start, $end
+		background: $start
+		background: -webkit-linear-gradient($gradient-degree-mixin)
+		background: -mox-linear-gradient($gradient-degree-mixin)
+		background: -o-linear-gradient($gradient-degree-mixin)
+		background: -ms-linear-gradient($gradient-degree-mixin)
+		background: linear-gradient($gradient-degree-mixin)
+	
+
+	// Gradient Transparent - gradient-transparent-mixin(right, #d14836)
+	
+	gradient-transparent-mixin($origin = left, $color = #ffffff) 
+		$rgba-start = rgba($color, 0.0)
+		$rgba-end = rgba($color, 1.0)
+		$gradient-transparent-mixin = $origin, $rgba-start, $rgba-end
+		background: -webkit-linear-gradient($gradient-transparent-mixin)
+		background: -moz-linear-gradient($gradient-transparent-mixin)
+		background: -o-linear-gradient($gradient-transparent-mixin)
+		background: -ms-linear-gradient($gradient-transparent-mixin)
+		background: linear-gradient($gradient-transparent-mixin)
+	
+
+	// Gradient Transparent with a Degree - gradient-transparent-degree-mixin(35, #d14836)
+	
+	gradient-transparent-degree-mixin($degree = 45, $color = #ffffff) 
+		$degree-convert = $degree + deg
+		$rgba-start = rgba($color, 0.0)
+		$rgba-end = rgba($color, 1.0)
+		$gradient-trans-degree-mixin = $degree-convert, $rgba-start, $rgba-end
+		background: $color
+		background: -webkit-linear-gradient($gradient-trans-degree-mixin)
+		background: -moz-linear-gradient($gradient-trans-degree-mixin)
+		background: -o-linear-gradient($gradient-trans-degree-mixin)
+		background: -ms-linear-gradient($gradient-trans-degree-mixin)
+		background: linear-gradient($gradient-trans-degree-mixin)
+	
+
+
+// OPACITY MIXINS
+
+	// Opacity - opacity-mixin(25)
+
+	opacity-mixin($percentage = 50) 
+		$opacity = $percentage / 100
+		-webkit-opacity: $opacity
+		-moz-opacity: $opacity
+		opacity: $opacity
+
+
+
+// BACKGROUND MIXINS
+
+	// Background Opacity - bg-opacity-mixin(#d5d5d5, 25)
+
+	background-opacity-mixin($color, $percentage) 
+		$percent = $percentage / 100
+		$rgba = rgba($color, $percent)
+		background-color: $color
+		background-color: $rgba
+	
+
+	// Background Position - background-position-mixin(20, 30)
+
+	background-position-mixin($xValue, $yValue) 
+		$xValuePx = $xValue
+		$xValueRem = $xValue / $baseFontSize
+		$yValuePx = $yValue
+		$yValueRem = $yValue / $baseFontSize
+		background-position: unit($xValuePx, 'px') unit($yValuePx, 'px')
+		background-position: unit($xValueRem, 'rem') unit($yValueRem, 'rem')
+	
+
+	// Background Size - background-size-mixin(20px, 30px) or background-size-mixin(20%, 30%)
+
+	background-size-mixin($width = auto, $height = auto) 
+		-webkit-background-size: $width $height
+		-moz-background-size: $width $height
+		-o-background-size: $width $height
+		background-size: $width $height
+	
+
+	// Background Cover - background-cover;
+
+	background-cover-mixin($cover = cover) 
+		-webkit-background-size: $cover
+		-moz-background-size: $cover
+		-o-background-size: $cover
+		background-size: $cover
+	
+
+	// Background Contain - background-contain;
+
+	background-contain() 
+		-webkit-background-size: contain
+		-moz-background-size: contain
+		-o-background-size: contain
+		background-size: contain
+	
+
+
+// DROP SHADOW MIXINS
+
+	// Box Shadow - box-shadow-mixin(5px, 5px, 10px, 50)
+
+	box-shadow-mixin($x = 0, $y = 5, $blur = 5, $percentage = 50) 
+		$alpha = $percentage / 100
+		$box-shadow-mixin = unit($x, 'px') unit($y, 'px') unit($blur, 'px') rgba(0, 0, 0, $alpha)
+		-webkit-box-shadow: $box-shadow-mixin
+		-moz-box-shadow: $box-shadow-mixin
+		box-shadow: $box-shadow-mixin
+	
+
+
+// BOX SIZING MIXINS
+
+	// Box Sizing - box-sizing-mixin(border-box); - can use: border-box, content-box, padding-box, inherit, initial
+
+	box-sizing-mixin($type) 
+		-webkit-box-sizing: $type
+		-moz-box-sizing: $type
+		box-sizing: $type
+	
+
+
+// USER SELECT MIXINS
+
+	// User Select - user-select-mixin(text); - can use: none, text, all, element
+
+	user-select-mixin($selection) 
+		-webkit-user-select: $selection
+		-moz-user-select: $selection
+		-ms-user-select: $selection
+		user-select: $selection
+	
+
+
+// ANIMATION & TRANSITION MIXINS
+
+	// Animation Duration - animate-mixin(3)
+
+	animate-mixin($duration) 
+		$animate-mixin = unit($duration, 's')
+		-webkit-animation-duration: $animate-mixin
+		animation-duration: $animate-mixin
+		-webkit-animation-fill-mode: both
+		animation-fill-mode: both
+	 	
+
+	// Animation Delay - animate-delay-mixin(2);
+
+	animate-delay-mixin($delay) 
+		$animate-delay-mixin = unit($delay, 's')
+		-webkit-animation-delay: $animate-delay-mixin
+		animation-delay: $animate-delay-mixin
+	
+
+	// Transition  - transition-mixin(all, 0.8, ease-in);
+		// Available Properties - border, color, font-size, etc. 
+		// Available effects - ease, ease-in, ease-out, ease-in-out, linear, step-start, step-end
+
+	transition-mixin($property = all, $duration = 1, $effect = linear) 
+		$transition-mixin = $property unit($duration, 's') $effect
+		-webkit-transition: $transition-mixin
+		-moz-transition: $transition-mixin
+		-o-transition: $transition-mixin
+		-ms-transition: $transition-mixin
+		transition: $transition-mixin
+		
+
+
+// TRANSFORM MIXINS
+
+	// Transform - transform-all-mixin(3, 0.6, 2, 0)
+
+	transform-all-mixin($rotate = 90, $scale = 1, $skew = 1, $translate = 10) 
+		$transform-mixin = rotate(unit($rotate, 'deg')) scale($scale) skew(unit($skew, 'deg')) translate(unit($translate, 'px'))
+		-webkit-transform: $transform-mixin
+		-moz-transform: $transform-mixin
+		-o-transform: $transform-mixin
+		-ms-transform: $transform-mixin
+		transform: $transform-mixin
+	
+	
+	// Rotate - rotate-mixin(180) or rotate-mixin(-45)
+
+	rotate-mixin($rotate) 
+		$rotate-mixin = rotate(unit($rotate, 'deg'))
+		-webkit-transform: $rotate-mixin
+		-moz-transform: $rotate-mixin
+		-ms-transform: $rotate-mixin
+		-o-transform: $rotate-mixin
+		transform: $rotate-mixin
+	
+
+	// Scale - scale-mixin(45, 20)
+
+	scale-mixin($xScale, $yScale) 
+		$scale-mixin = scale($xScale, $yScale)
+		-webkit-transform: $scale-mixin
+		-moz-transform: $scale-mixin
+		-ms-transform: $scale-mixin
+		-o-transform: $scale-mixin
+		transform: $scale-mixin
+	
+
+	// Skew - skew-mixin(20, 45)
+
+	skew-mixin($xSkew, $ySkew) 
+		$skew-mixin = skew(unit($xSkew, 'deg') unit($ySkew, 'deg'))
+		-webkit-transform: $skew-mixin
+		-moz-transform: $skew-mixin
+		-ms-transform: $skew-mixin
+		-o-transform: $skew-mixin
+		transform: $skew-mixin
+	
+
+	// Translate - translate-xy-mixin(15, 30)
+
+	translate-xy-mixin($x, $y) 
+		$translate-mixin = translate(unit($x, 'px'), unit($y, 'px'))
+		-webkit-transform: $translate-mixin
+		-moz-transform: $translate-mixin
+		-ms-transform: $translate-mixin
+		-o-transform: $translate-mixin
+		transform: $translate-mixin
+	
+
+	// Translate X - translate-x-mixin(10)
+
+	translate-x-mixin($x) 
+		$translateX-mixin = translateX(unit($x, 'px'))
+		-webkit-transform: $translateX-mixin
+		-moz-transform: $translateX-mixin
+		-ms-transform: $translateX-mixin
+		-o-transform: $translateX-mixin
+		transform: $translateX-mixin
+	
+
+	// Translate Y - translate-y-mixin(14px)
+
+	translate-y-mixin($y) 
+		$translateY-mixin = translateY(unit($y, 'px'))
+		-webkit-transform: $translateY-mixin
+		-moz-transform: $translateY-mixin
+		-ms-transform: $translateY-mixin
+		-o-transform: $translateY-mixin
+		transform: $translateY-mixin
+	
+
+	// Translate Z - translate-z-mixin(20)
+
+	translate-z-mixin($z) 
+		$translateZ-mixin = translateZ(unit($z, 'px'))
+		-webkit-transform: $translateZ-mixin
+		-moz-transform: $translateZ-mixin
+		-ms-transform: $translateZ-mixin
+		-o-transform: $translateZ-mixin
+		transform: $translateZ-mixin
+	
+
+	// Translate 3D - @include translate-3d-mixin(45px, 10px, 5px);
+
+	translate-3d-mixin($x, $y, $z) 
+		$translate3d-mixin = translate3d(unit($x, 'px'), unit($y, 'px') unit($z, 'px'))
+		-webkit-transform: $translate3d-mixin
+		-moz-transform: $translate3d-mixin
+		-ms-transform: $translate3d-mixin
+		-o-transform: $translate3d-mixin
+		transform: $translate3d-mixin
+	
+
+	// Perspective - perspective-mixin(20)
+
+	perspective-mixin($value) 
+		$perspective-mixin = unit($value, 'px')
+		-webkit-perspective: $perspective-mixin
+		-moz-perspective: $perspective-mixin
+		-ms-perspective: $perspective-mixin
+		perspective: $perspective-mixin
+	
+
+
+// FLEXBOX MIXINS
+
+	//Based on the following flexbox mixins: 
+		
+		// - https://github.com/annebosman/FlexboxLess
+		// - https://github.com/mastastealth/sass-flex-mixin
+		// - http://philipwalton.github.io/solved-by-flexbox/
+		// - https://github.com/codio/Flex.less
+		// - https://github.com/kenstone/FlexBoxLessMixins
+
+
+	// Flexbox - flexbox-mixin()
+
+	flexbox-mixin() 
+		display: -webkit-box
+		display: -moz-box
+		display: -webkit-flex
+		display: -ms-flexbox
+		display: flex
+
+	// Inline Flexbox - inline-flexbox-mixin()
+
+	inline-flexbox-mixin() 
+		display: -webkit-inline-box
+		display: -moz-inline-box
+		display: -webkit-inline-flex
+		display: -ms-inline-flexbox
+		display: inline-flex
+	
+
+	// Flexbox Direction - flex-direction-mixin(row) 
+		
+		// Values: row | row-reverse | column | column-reverse
+
+	flex-direction-mixin($value = row) 
+		if $value == row-reverse 
+			-webkit-box-direction: reverse
+			-moz-box-direction: reverse
+			-webkit-box-orient: horizontal
+			-moz-box-orient: horizontal
+		else if $value == column 
+			-webkit-box-direction: normal
+			-moz-box-direction: normal
+			-webkit-box-orient: vertical
+			-moz-box-orient: vertical
+		else if $value == column-reverse 
+			-webkit-box-direction: reverse
+			-moz-box-direction: reverse
+			-webkit-box-orient: vertical
+			-moz-box-orient: vertical
+		else 
+			-webkit-box-direction: normal
+			-moz-box-direction: normal
+			-webkit-box-orient: horizontal
+			-moz-box-orient: horizontal
+		
+		-webkit-flex-direction: $value
+		-moz-flex-direction: $value
+		-ms-flex-direction: $value
+		flex-direction: $value
+		
+
+	// Flexbox Wrap - flex-wrap-mixin(wrap) 
+		
+		// Values: nowrap | wrap | wrap-reverse
+
+	flex-wrap-mixin($value = nowrap) 
+		if $value == wrap 
+			-webkit-box-lines: multiple
+			-moz-box-lines: multiple
+		else 
+			-webkit-box-lines: single
+			-moz-box-lines: single
+		
+		-webkit-flex-wrap: $value
+		-moz-flex-wrap: $value
+		-ms-flex-wrap: $value
+		flex-wrap: $value
+		
+
+	// Flexbox Justify Content - flex-justify-mixin(flex-start) 
+		
+		// Values: flex-start | flex-end | center | space-between | space-around
+
+	flex-justify-mixin($value = flex-start) 
+		if $value == flex-end 
+			-webkit-box-pack: end
+			-moz-box-pack: end
+			-ms-flex-pack: end
+		else if $value == center 
+			-webkit-box-pack: center
+			-moz-box-pack: center
+			-ms-flex-pack: center
+		else if $value == space-between 
+			-webkit-box-pack: justify
+			-moz-box-pack: justify
+			-ms-flex-pack: justify
+		else if $value == space-around
+			-ms-flex-pack: distribute
+		else 
+			-webkit-box-pack: start
+			-moz-box-pack: start
+			-ms-flex-pack: start
+		
+		-webkit-justify-content: $value
+		-moz-justify-content: $value
+		-ms-justify-content: $value
+		justify-content: $value
+	
+
+	// Flexbox Align Items - flex-align-items-mixin(stretch)
+		
+		// Values: flex-start | flex-end | center | stretch | baseline
+
+	flex-align-items-mixin($value = stretch)
+		if $value == flex-start 
+			-webkit-box-align: start
+			-moz-box-align: start
+			-ms-flex-align: start
+		else if $value == flex-end 
+			-webkit-box-align: end
+			-moz-box-align: end
+			-ms-flex-align: end
+		else
+			-webkit-box-align: $value
+			-moz-box-align: $value
+			-ms-flex-align: $value
+		
+		-webkit-align-items: $value
+		-moz-align-items: $value
+		-ms-align-items: $value
+		align-items: $value
+	
+
+	// Flexbox Align Self - flex-align-self-mixin(stretch) 
+		
+		// Values: auto | flex-start | flex-end | center | stretch | baseline
+
+	flex-align-self-mixin($value = auto) 
+		if $value == flex-start 
+			-ms-flex-item-align: start
+		else if $value == flex-end 
+			-ms-flex-item-align: end
+		else 
+			-ms-flex-item-align: $value
+		
+		-webkit-align-self: $value
+		-moz-align-self: $value
+		-ms-align-self: $value
+		align-self: $value
+	
+
+	// Flexbox Align Content - flex-align-content-mixin(center) 
+		
+		// Values: auto | flex-start | flex-end | center | stretch | space-between | space-around
+
+	flex-align-content-mixin($value = auto) 
+		if $value == flex-start 
+			-ms-flex-line-pack: start
+		else if $value == flex-end 
+			-ms-flex-line-pack: end
+		else if $value == space-between 
+			-ms-flex-line-pack: justify
+		else if $value == space-around 
+			-ms-flex-line-pack: distribute
+		else 
+			-ms-flex-line-pack: $value
+		
+		-webkit-align-content: $value
+		-moz-align-cotent: $value
+		-ms-align-content: $value
+		align-content: $value
+	
+
+	// Flexbox Order - flex-order-mixin(1)
+
+	flex-order-mixin($value = 0) 
+		-webkit-box-ordinal-group: $value + 1
+		-moz-box-ordinal-group: $value + 1
+		-ms-flex-order: $value
+		-webkit-order: $value
+		-moz-order: $value
+		-ms-order: $value
+		order: $value
+	
+
+	// Flexbox Grow - flex-grow-mixin(3)
+
+	flex-grow-mixin($grow = 0) 
+		-webkit-box-flex: $grow
+		-webkit-flex-grow: $grow
+		-moz-flex-grow: $grow
+		-ms-flex-positive: $grow
+		flex-grow: $grow
+	
+
+	// Flexbox Shrink - flex-shrink-mixin(1)
+
+	flex-shrink-mixin($shrink = 1) 
+		-webkit-flex-shrink: $shrink
+		-moz-flex-shrink: $shrink
+		-ms-flex-negative: $shrink
+		flex-shrink: $shrink
+	
+
+	// Flexbox Basis - flex-basis-mixin(3)
+
+	flex-basis-mixin($basis = auto) 
+		-webkit-flex-basis: $basis
+		-moz-flex-basis: $basis
+		-mx-flex-preferred-size: $basis
+		flex-basis: $basis
+	
+
+	// Flexbox Shorthand - flex-mixin(0, 1, auto);
+
+	flex-mixin($grow = 0, $shrink = 1, $basis = auto)
+		-webkit-flex: $grow $shrink $basis
+		-ms-flex: $grow $shrink $basis
+		-webkit-box-flex: $grow
+		flex: $grow $shrink $basis
+	
