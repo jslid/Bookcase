@@ -14,7 +14,7 @@ Bookcase also contains three starter templates in HTML, HAML, and Jade. Users ca
 
 ----------
 
-### **Getting Started**
+## **Getting Started**
 
 Getting started with Bookcase is easy, choose between three options: 
 
@@ -33,11 +33,13 @@ Getting started with Bookcase is easy, choose between three options:
 
 ----------
 
-### **Using the Framework** 
+## **Using the Framework** 
 
-The Bookcase framework has two separate grid systems. A typical grid system based on floats, and a grid system based on flexgrid. Both grid systems are based on column percentages. The default number of columns in both grid systems in 12. This number can easily be changed to however many columns you prefer by editing the "**variables**"  file in the pre-processor folder of your choosing. It is possible to have a standard grid and flex grid with different column totals. 
+The Bookcase framework has two separate grid systems. A standard grid system based on floats, and a flex-grid. Both grid systems are based on column percentages. The default number of columns in both grid systems is 12. This number can easily be changed to however many columns you prefer by editing the "**variables**"  file in the pre-processor folder of your choosing. It is possible to have a standard grid and flex grid with different column totals. 
 
-Bookcase's structure is similar to nearly all responsive frameworks, which contain a "container, row, then columns". The difference with bookcase is varying naming options for elements. For example: 
+### **Standard Grid**
+
+Bookcase's standard grid is similar to nearly all responsive frameworks, which contain a "container, row, then columns". The difference with bookcase is varying naming options for elements. For example: 
 
 #### **Containers and Bookcases**
 
