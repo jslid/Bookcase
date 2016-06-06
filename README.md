@@ -41,9 +41,9 @@ The Bookcase framework has two separate grid systems. A standard grid system bas
 
 Bookcase's standard grid is similar to nearly all responsive frameworks, which contain a "container, row, then columns". The difference with bookcase is varying naming options for elements. For example: 
 
-#### **Containers and Bookcases**
+#### **Container/Bookcase and Row/Shelf**
 
-All grid elements need to be wrapped in a container class element. This class can either be called a "**container**," or a "**bookcase**". Inside of a container/bookcase resides a "**row**," or a "**shelf**". 
+All grid elements need to be wrapped in a container class element. This class can either be called a "**container**," or a "**bookcase**". Inside of a container/bookcase resides a "**row**," or a "**shelf**". It is important to note that these elements can be interchanged. For example you could have a "bookcase" with a "row" inside, or a "container" with a "shelf" inside. 
 
     <div class="container">
 	    <div class="row">
@@ -58,7 +58,7 @@ or
 	</div>
 
 ##### **Full Length Containers**
-A containers size is determined by the "container" variables, in the variables file. It is possible for containers to be full-page length using the following classes: 
+A containers size is determined by the "container" variables, in the "variables" file. It is possible for containers to be full-page length using the following classes: 
 
     <div class="container-wide">
 	    <div class="row">
