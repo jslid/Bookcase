@@ -20,7 +20,7 @@ Getting started with Bookcase is easy, choose between three options:
 
 #### **Github**
 
-> Download the repository - [https://githubt.com/jslid/Bookcase](https://github.com/jslid/Bookcase)
+> Download the repository - [https://github.com/jslid/Bookcase](https://github.com/jslid/Bookcase)
 
 #### **Bower**
 
