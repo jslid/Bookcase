@@ -16,7 +16,7 @@ Bookcase also contains three starter templates in HTML, HAML, and Jade. Users ca
 
 ## **Getting Started**
 
-Getting started with Bookcase is easy, choose between three option: 
+Getting started with Bookcase is easy, choose between 3 options: 
 
 #### **Github**
 
