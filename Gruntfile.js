@@ -81,6 +81,19 @@ module.exports = function(grunt) {
       }
     },
 
+    // HTML
+    htmlmin: {
+      dist: {
+        options: {
+          removeComents: false,
+          collapseWhitespace: false,
+        },
+        files: {
+          'dist/index.html': 'src/index.html'
+        }
+      }
+    },    
+
     // Jade
     jade: {
       compile: {
@@ -118,7 +131,7 @@ module.exports = function(grunt) {
     // Watch Files
 
     /*
-    The default for Bookcase is to look for LESS, JADE and Javascript changes. Instructions for making use of CSS Processors or 
+    The default for Bookcase is to look for LESS, HTML and Javascript changes. Instructions for making use of CSS Processors or 
     HTML Template Languages is below:
 
     -- CSS Preprocessors
@@ -127,14 +140,15 @@ module.exports = function(grunt) {
         STYLUS: To use STYLUS make 'styl' the file location, and the file type .styl. Make the tasks 'stylus'.
 
     -- HTML Template Languages
+        HTML: To use HTML the file type .html. Make the tasks 'htmlmin'
         HAML: To use HAML the file type .haml. Make the tasks 'haml2html'.
         JADE: To use JADE the file type .jade. Make the tasks 'jade'.
     */
 
     watch: {
       styles: {
-        files: ['src/less/**/*.less', 'src/**/*.jade', 'src/js/**/*.js', 'src/coffee/**/*.coffee'], 
-        tasks: ['less', 'jade'],
+        files: ['src/less/**/*.less', 'src/**/*.html', 'src/js/**/*.js', 'src/coffee/**/*.coffee'], 
+        tasks: ['less', 'htmlmin'],
         options: {
           nospawn: true
         }
@@ -151,10 +165,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-haml2html');
   grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-contrib-watch');
   
-  grunt.registerTask('default', ['uglify', 'jshint', 'coffee:compile', 'less', 'jade', 'watch', 'newer:imagemin:all' ]);
+  grunt.registerTask('default', ['uglify', 'jshint', 'coffee:compile', 'less', 'htmlmin', 'watch', 'newer:imagemin:all' ]);
 
 };

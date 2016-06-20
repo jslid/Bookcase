@@ -11,6 +11,7 @@ var sass = require('gulp-sass');
 var stylus = require('gulp-stylus');
 var haml = require('gulp-ruby-haml');
 var jade = require('gulp-jade');
+var htmlmin = require('gulp-htmlmin');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var path = require('path');
@@ -65,6 +66,13 @@ gulp.task('one', function() {
 	.pipe(gulp.dest('dist/css'));
 });
 
+// HTML
+gulp.task('minify', function() {
+	gulp.src('src/*.html')
+	.pipe(htmlmin())
+	.pipe(gulp.dest('dist'));
+});
+
 // HAML 
 gulp.task('haml', function() {
 	gulp.src('src/*.haml')
@@ -94,7 +102,7 @@ gulp.task('imagemin', function() {
 // Watch
 
 /*
-    The default for Bookcase is to look for LESS, JADE and Javascript changes. Instructions for making use of CSS Processors or 
+    The default for Bookcase is to look for HTML, JADE and Javascript changes. Instructions for making use of CSS Processors or 
     HTML Template Languages is below:
      
     -- CSS Preprocessors
@@ -103,6 +111,7 @@ gulp.task('imagemin', function() {
         STYLUS: To use STYLUS make 'styl' the file location, and the file type .styl. Make the tasks 'one'.
 
     -- HTML Template Languages
+        HTML: To use HTML the file type .html. Make the tasks 'minify'
         HAML: To use HAML the file type .haml. Make the tasks 'haml'.
         JADE: To use JADE the file type .jade. Make the tasks 'templates'.
     */
@@ -110,9 +119,9 @@ gulp.task('imagemin', function() {
 gulp.task('watch', function() {
 	gulp.watch('src/js/**/*.js', ['lint']);
 	gulp.watch('src/coffee/**/*.coffee', ['coffee']);
-	gulp.watch('src/**/*.jade', ['templates']);
+	gulp.watch('src/**/*.html', ['minify']);
 	gulp.watch('src/less/**/*.less', ['less']);
 });
 
 // Default Task
-gulp.task('default', ['lint', 'coffee', 'templates', 'less', 'imagemin', 'watch']);
+gulp.task('default', ['lint', 'coffee', 'minify', 'less', 'imagemin', 'watch']);
