@@ -77,14 +77,15 @@ or
 
 Columns reside within either a "row" or "shelf", and it is possible to nest additional rows/shelfs and columns within one another. Bookcase provides two methods of naming columns, depending on which one makes it easier you or your team to interpret. Bookcase is divided into the following sizes: 
 
- - Mobile or Small (sm)
+ - Mobile or Extra Small (xs)
+ - Phablet or Small (sm)
  - Tablet or Medium (md)
  - Desktop or Large (lg)
- - HD or XL (xl)
+ - HD or Extra Large (xl)
 
 Bookcase is a mobile first framework, therefore you should design with mobile devices in mind and adjust column structures as the device width becomes larger. Below are examples for all media/width types: 
 
-##### **Mobile/Small (sm) Devices** 
+##### **Mobile/Extra Small (xs) Devices** 
 
     <div class="container">
 	    <div class="row">
@@ -101,13 +102,38 @@ or
 
     <div class="bookcase">
 	    <div class="shelf">
-		    <div class="col-6-sm">
+		    <div class="col-6-xs">
 			    <p>This is a small 6 column</p>
 			</div>
-			<div class="col-3-sm">
+			<div class="col-3-xs">
 				<p>This is a small 3 column</p>
 			</div>
 		</div>
+
+##### **Phablet/Small (sm) Devices**
+
+    <div class="container">
+	    <div class="row">
+		    <div class="col-12 col-5-phablet">
+			    <p>This column is full length on mobile devices and 5 columns wide on a phablet/small device.</p>
+			</div>
+			<div class="col-8-phablet">
+				<p>This content is 8 columns wide on a phablet device.</p>
+			</div>
+		</div>
+	</div>
+
+or
+
+    <div class="bookcase">
+	    <div class="shelf">
+		    <div class="col-12 col-5-sm">
+			    <p>This column is full length on small devices and 5 columns wide on small/phablet devices.</p>
+			</div class="col-8-sm">
+				<p>This content is 8 columns wide on a small/phablet device.</p>
+			</div>
+		</div>
+	</div>
 
 ##### **Tablet/Medium (md) Devices**
 
