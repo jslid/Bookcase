@@ -31,33 +31,39 @@
 
 	// Containers
 
-	$container-mobile =		100%	// Container Small (sm)
-	$container-tablet =		720		// Container Medium (md)
-	$container-desktop =	960		// Container Large (lg)
-	$container-hd =			1120	// Container XL (xl)
+	$container-mobile =		100%	// Container Mobile/Extra Small (xs)
+	$container-phablet =	460		// Container Phablet/Small (sm)
+	$container-tablet =		720		// Container Tablet/Medium (md)
+	$container-desktop =	940		// Container Desktop/Large (lg)
+	$container-hd =			1260	// Container HD/Extra Large (xl)
 
 	$container-wide = 		100%  	// Container wide is used for full length rows
 
 
 	// Breakpoints
 
-	$breakpoint-mobile = 	480px	// Breakpoint Small (sm)
-	$breakpoint-tablet = 	768px	// Breakpoint Medium (md)
-	$breakpoint-desktop = 	1024px	// Breakpoint Large (lg)
-	$breakpoint-hd = 		1280px	// Breakpoint XL (xl)
+	$breakpoint-mobile = 	360px	// Breakpoint Mobile/Extra Small (xs)
+	$breakpoint-phablet =	480px	// Breakpoint Phablet/Small (sm)
+	$breakpoint-tablet = 	740px	// Breakpoint Tablet/Medium (md)
+	$breakpoint-desktop = 	960px	// Breakpoint Desktop/Large (lg)
+	$breakpoint-hd = 		1280px	// Breakpoint HD/Extra Large (xl)
 
 
 	// Gutters
 
-	$gutter = 				10 		// Gutter Small (sm) 	
-	$gutter-tablet = 		10 		// Gutter Medium (md)
-	$gutter-desktop = 		10 		// Gutter Large (lg)
-	$gutter-hd = 			10 		// Gutter XL (xl)
+	$gutter = 				10 		// Gutter Mobile/Extra Small (xs)
+	$gutter-phablet =		10		// Gutter Phablet/Small (sm) 	
+	$gutter-tablet = 		10 		// Gutter Tablet/Medium (md)
+	$gutter-desktop = 		10 		// Gutter Desktop/Large (lg)
+	$gutter-hd = 			10 		// Gutter HD/Extra Large (xl)
+	$gutter-wide =			40		// Gutter Wide
 
-	$flex-gutter = 			10 		// Flex Gutter Small (sm)
-	$flex-gutter-tablet = 	10 		// Flex Gutter Medium (md)
-	$flex-gutter-desktop = 	10 		// Flex Gutter Large (lg)
-	$flex-gutter-hd = 		10 		// Flex Gutter XL (xl)
+	$flex-gutter = 			10 		// Flex Gutter Mobile/Extra Small (xs)
+	$flex-gutter-phablet =	10		// Flex Gutter Phablet/Small (sm)
+	$flex-gutter-tablet = 	10 		// Flex Gutter Tablet/Medium (md)
+	$flex-gutter-desktop = 	10 		// Flex Gutter Desktop/Large (lg)
+	$flex-gutter-hd = 		10 		// Flex Gutter HD/Extra Large (xl)
+	$flex-gutter-wide =		40		// Flex Gutter Wide
 
 
 // PADDING
@@ -88,17 +94,19 @@
 
 	// Grayscale
 
-	$gray-lightest = 	lighten(black, 95%)
-	$gray-lighter = 	lighten(black, 80%)
-	$gray-light = 		lighten(black, 65%)
-	$gray = 			lighten(black, 50%)
-	$gray-dark = 		lighten(black, 35%)
-	$gray-darker = 		lighten(black, 20%)
-	$gray-darkest = 	lighten(black, 5%)
+	$gray-lightest = 	lighten($black, 95%)
+	$gray-lighter = 	lighten($black, 80%)
+	$gray-light = 		lighten($black, 65%)
+	$gray = 			lighten($black, 50%)
+	$gray-dark = 		lighten($black, 35%)
+	$gray-darker = 		lighten($black, 20%)
+	$gray-darkest = 	lighten($black, 5%)
 
-	// Colorscheme
+	// Color Scheme - Enter your color scheme variables below
 
-	// Enter you color scheme variables below 
+
+
+	// Main Color Scheme
 
 	$text-color =					$gray-darker
 	$link-color = 					$gray
@@ -151,13 +159,10 @@
 
 	// Font Families
 
-	 	// If you choose to use two Sans-serif fonts, or two Serif fonts for your web project, just uncomment the "alt"
-		// variables of the corresponding font familes below.
-
 	$font-sans-serif = 	$raleway
-	// $font-sans-serif-alt =
+
 	$font-serif =		$buenard
-	// $font-serif-alt =
+
 	$font-monospace =	$courier-new
 
 
@@ -179,58 +184,58 @@
 	$heading-font-family = 		$font-sans-serif
 
 	$h1-size = 					80
-	$h1-line-height = 			84
-	$h1-weight = 				500
+	$h1-line-height = 			$h1-size + 2
+	$h1-weight = 				bold
 	$h1-color = 				$gray-darker
 
 	$h2-size = 					60
-	$h2-line-height = 			64
-	$h2-weight = 				500
+	$h2-line-height = 			$h2-size + 2
+	$h2-weight = 				bold
 	$h2-color = 				$gray-darker
 
 	$h3-size = 					40
-	$h3-line-height = 			44
-	$h3-weight =				500
+	$h3-line-height = 			$h3-size + 2
+	$h3-weight =				bold
 	$h3-color = 				$gray-darker
 
 	$h4-size = 					30
-	$h4-line-height = 			34
-	$h4-weight = 				500
+	$h4-line-height = 			$h4-size + 2
+	$h4-weight = 				bold
 	$h4-color = 				$gray-darker
 
 	$h5-size = 					24
-	$h5-line-height = 			28
-	$h5-weight = 				500
+	$h5-line-height = 			$h5-size + 2
+	$h5-weight = 				bold
 	$h5-color = 				$gray-darker
 
 	$h6-size = 					18
-	$h6-line-height = 			24
-	$h6-weight = 				500
+	$h6-line-height = 			$h6-size + 2
+	$h6-weight = 				bold
 	$h6-color = 				$gray-darker
 
 	$p-size = 					18
-	$p-line-height = 			24
-	$p-weight = 				300
+	$p-line-height = 			$p-size + 6
+	$p-weight = 				normal
 	$p-color = 					$gray-darker
 	$p-font-family = 			$font-serif
 
 	$li-size = 					18
-	$li-line-height = 			20
-	$li-weight = 				300
+	$li-line-height = 			$li-size + 2
+	$li-weight = 				normal
 	$li-color = 				$gray-darker
 	$li-font-family = 			$font-serif
 
 	$code-size = 				16
-	$code-line-height = 		18
-	$code-weight = 				400
+	$code-line-height = 		$code-size + 2
+	$code-weight = 				normal
 	$code-border-color =		$gray
 	$code-bg-color =			$gray-lighter
 	$code-color = 				$gray-darker
 	$code-font-family = 		$font-monospace
 
 	$blockquote-size = 			18
-	$blockquote-line-height = 	24
-	$blockquote-weight = 		400
+	$blockquote-line-height = 	$blockquote-size + 6
+	$blockquote-weight = 		normal
 	$blockquote-color =  		$gray-darker
 	$blockquote-font-family = 	$font-serif
 
@@ -245,9 +250,9 @@
 // BUTTONS
 
 	$btn-bg-color =					$gray
-	$btn-bg-hover-color =			$gray-darker
+	$btn-bg-hover-color =			darken($gray, 10%)
 	$btn-link-color =				$gray 
-	$btn-link-hover-color =			$gray-darker
+	$btn-link-hover-color =			darken($gray, 10%)
 	$btn-color =					$white
 	$btn-hover-color =				$white
 	$btn-font-family =				$font-sans-serif
@@ -256,34 +261,34 @@
 	$btn-outline-size =				3
 	$btn-outline-style =			solid
 	$btn-outline-color =			$gray
-	$btn-outline-hover-color =		$gray-darker
+	$btn-outline-hover-color =		darken($gray, 10%)
 	$btn-outline-font-color =		$gray
 
 	$btn-rounded-radius =			5
 	$btn-pill-radius =				30
 
 	$btn-font-size =				14
-	$btn-line-height =				16
+	$btn-line-height =				$btn-font-size + 2
 	$btn-vertical-padding =			10
 	$btn-horizontal-padding =		20
 
 	$btn-small-font-size =				12
-	$btn-small-line-height =			14
+	$btn-small-line-height =			$btn-small-font-size + 2
 	$btn-small-vertical-padding =		10
 	$btn-small-horizontal-padding =		20
 
 	$btn-medium-font-size =				16
-	$btn-medium-line-height =			18
+	$btn-medium-line-height =			$btn-medium-font-size + 2
 	$btn-medium-vertical-padding =		15
 	$btn-medium-horizontal-padding =	25
 
 	$btn-large-font-size =				18
-	$btn-large-line-height =			20
+	$btn-large-line-height =			$btn-large-font-size + 2
 	$btn-large-vertical-padding =		20
 	$btn-large-horizontal-padding =		30
 
 	$btn-mega-font-size =				24
-	$btn-mega-line-height =				26
+	$btn-mega-line-height =				$btn-mega-font-size + 2
 	$btn-mega-vertical-padding =		20
 	$btn-mega-horizontal-padding =		30
 

@@ -56,12 +56,14 @@
 	$gutter-tablet: 			10 !default;	// Gutter Tablet/Medium (md)
 	$gutter-desktop: 			10 !default;	// Gutter Desktop/Large (lg)
 	$gutter-hd: 				10 !default;	// Gutter HD/Extra Large (xl)
+	$gutter-wide:				40 !default;	// Gutter Wide
 
 	$flex-gutter: 				10 !default;	// Flex Gutter Mobile/Extra Small (xs)
 	$flex-gutter-phablet:		10 !default;	// Flex Gutter Phablet/Small (sm)
 	$flex-gutter-tablet: 		10 !default;	// Flex Gutter Tablet/Medium (md)
 	$flex-gutter-desktop: 		10 !default;	// Flex Gutter Desktop/Large (lg)
 	$flex-gutter-hd: 			10 !default;	// Flex Gutter HD/Extra Large (xl)
+	$flex-gutter-wide:			40 !default;	// Flex Gutter Wide
 
 
 //	PADDING
@@ -99,7 +101,7 @@
 	$gray-darker: 		lighten($black, 20%) !default;
 	$gray-darkest: 		lighten($black, 5%) !default;
 
-	// Color Scheme - Enter you color scheme variables below
+	// Color Scheme - Enter your color scheme variables below
 
 
 
@@ -249,7 +251,7 @@
 	$btn-bg-color:						$gray !default;
 	$btn-bg-hover-color:				darken($gray, 10%) !default;
 	$btn-link-color:					$gray !default;
-	$btn-link-hover-color:				$gray-darker !default;
+	$btn-link-hover-color:				darken($gray, 10%) !default;
 	$btn-color:							$white !default;
 	$btn-hover-color:					$white !default;
 	$btn-font-family:					$font-sans-serif !default;

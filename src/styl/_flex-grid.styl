@@ -20,10 +20,10 @@
 	.flexbox-common
 		box-sizing-mixin(border-box)
 		flexbox-mixin()
-		flex-mixin(0, 1, auto)
+		flex-mixin(1, 0, auto)
 		flex-wrap-mixin(wrap)
-		margin-left-mixin(- $gutter)
-		margin-right-mixin(- $gutter)
+		margin-left-mixin(- $flex-gutter)
+		margin-right-mixin(- $flex-gutter)
 
 
 // FLEX ROWS
@@ -47,75 +47,152 @@
 
 // FLEX COLUMNS & POSITIONING
 
-	// Mobile/Small (sm) Flex Grid - Columns and Offsets
+	// Mobile/Extra Small (xs) Flex Grid - Columns and Offsets
 
 		// Build Columns
 
-		.flex-mobile, .flex-sm
+		.flex, .flex-xs
 			box-sizing-mixin(border-box)
 			flex-mixin(0, 0, auto)
-			padding-left-mixin($gutter)
-			padding-right-mixin($gutter)
+			padding-left-mixin($flex-gutter)
+			padding-right-mixin($flex-gutter)
+			display: flex
 
 		for $i in (1..$flex-columns - 1)
-			.flex-{$i}-mobile, .flex-{$i}-sm
-				@extend .flex-mobile
+			.flex-{$i}, .flex-{$i}-xs
+				@extend .flex
 
 		for $i in (1..$flex-columns)
-			.flex-{$i}-mobile, .flex-{$i}-sm
+			.flex-{$i}, .flex-{$i}-xs
 				width: ($i / $flex-columns) * 100%
 
 		
 
 		// Flex Positioning
 
-		.flex-start-mobile, .flex-start-sm 
+		.flex-start, .flex-start-xs 
 			flex-justify-mixin(flex-start)
 
 		
-		.flex-center-mobile, .flex-center-sm 
+		.flex-center, .flex-center-xs 
 			flex-justify-mixin(center)
 
 		
-		.flex-end-mobile, .flex-end-sm
+		.flex-end, .flex-end-xs
 			flex-justify-mixin(flex-end)
 
-		.flex-around-mobile, .flex-around-sm 
+		.flex-around, .flex-around-xs 
 			flex-justify-mixin(space-around)
 		
 
-		.flex-between-mobile, .flex-between-sm
+		.flex-between, .flex-between-xs
 			flex-justify-mixin(space-between)
 		
 
-		.flex-top-mobile, .flex-top-sm 
+		.flex-top, .flex-top-xs 
 			flex-align-items-mixin(flex-start)
 		
 
-		.flex-middle-mobile, .flex-middle-sm 
+		.flex-middle, .flex-middle-xs 
 			flex-align-items-mixin(center)
 		
 
-		.flex-bottom-mobile, .flex-bottom-sm
+		.flex-bottom, .flex-bottom-xs
 			flex-align-items-mixin(flex-end)
 		
 
-		.flex-stretch-mobile, .flex-stretch-sm 
+		.flex-stretch, .flex-stretch-xs 
 			flex-align-items-mixin(stretch)
 		
 
-		.flex-baseline-mobile, .flex-baseline-sm
+		.flex-baseline, .flex-baseline-xs
 			flex-align-items-mixin(baseline)
 		
 
 		// Flex Order
 
-		.flex-order-start-mobile, .flex-order-start-sm 
+		.flex-order-start, .flex-order-start-xs 
 			flex-order-mixin(-1)
 		
 
-		.flex-order-end-mobile, .flex-order-end-sm 
+		.flex-order-end, .flex-order-end-xs 
 			flex-order-mixin(1)
+	
+
+	
+	// Phablet-Small (sm) Flex Grid - Columns and Offsets
+
+	@media only screen and (min-width: $breakpoint-phablet)
+
+		// Build Columns
+
+		.flex-phablet, .flex-sm
+			box-sizing-mixin(border-box)
+			flex-mixin(0, 0, auto)
+			padding-left-mixin($flex-gutter-phablet)
+			padding-right-mixin($flex-gutter-phablet)
+			display: flex
+
+		for $i in (1..$flex-columns - 1)
+			.flex-{$i}-phablet, .flex-{$i}-sm
+				@extend .flex-phablet
+
+		for $i in (1..$flex-columns)
+			.flex-{$i}-phablet, .flex-{$i}-sm 
+				width: ($i / $flex-columns) * 100%
+
+		
+
+		// Flex Positioning
+
+		.flex-start-phablet, .flex-start-sm 
+			flex-justify-mixin(flex-start)
+
+		
+		.flex-center-phablet, .flex-center-sm  
+			flex-justify-mixin(center)
+
+		
+		.flex-end-phablet, .flex-end-sm  
+			flex-justify-mixin(flex-end)
+
+		.flex-around-phablet, .flex-around-sm  
+			flex-justify-mixin(space-around)
+		
+
+		.flex-between-phablet, .flex-between-sm 
+			flex-justify-mixin(space-between)
+		
+
+		.flex-top-phablet, .flex-top-sm  
+			flex-align-items-mixin(flex-start)
+		
+
+		.flex-middle-phablet, .flex-middle-sm  
+			flex-align-items-mixin(center)
+		
+
+		.flex-bottom-phablet, .flex-bottom-sm  
+			flex-align-items-mixin(flex-end)
+		
+
+		.flex-stretch-phablet, .flex-stretch-sm 
+			flex-align-items-mixin(stretch)
+		
+
+		.flex-baseline-phablet, .flex-baseline-sm  
+			flex-align-items-mixin(baseline)
+		
+
+		// Flex Order
+
+		.flex-order-start-phablet, .flex-order-start-sm  
+			flex-order-mixin(-1)
+		
+
+		.flex-order-end-phablet, .flex-order-end-sm  
+			flex-order-mixin(1)
+			
 	
 
 	// Tablet/Medium (md) Flex Grid - Columns and Offsets
@@ -127,8 +204,9 @@
 		.flex-tablet, .flex-md
 			box-sizing-mixin(border-box)
 			flex-mixin(0, 0, auto)
-			padding-left-mixin($gutter-tablet)
-			padding-right-mixin($gutter-tablet)
+			padding-left-mixin($flex-gutter-tablet)
+			padding-right-mixin($flex-gutter-tablet)
+			display: flex
 
 		for $i in (1..$flex-columns - 1)
 			.flex-{$i}-tablet, .flex-{$i}-md
@@ -200,8 +278,9 @@
 		.flex-desktop, .flex-lg
 			box-sizing-mixin(border-box)
 			flex-mixin(0, 0, auto)
-			padding-left-mixin($gutter-desktop)
-			padding-right-mixin($gutter-desktop)
+			padding-left-mixin($flex-gutter-desktop)
+			padding-right-mixin($flex-gutter-desktop)
+			display: flex
 
 		for $i in (1..$flex-columns - 1)
 			.flex-{$i}-desktop, .flex-{$i}-lg
@@ -264,7 +343,7 @@
 			flex-order-mixin(1)
 
 
-	// HD/XL (xl) Grid - Columns and Offsets
+	// HD/Extra Large (xl) Grid - Columns and Offsets
 
 	@media only screen and (min-width: $breakpoint-hd)
 		// Build Columns
@@ -272,8 +351,9 @@
 		.flex-hd, .flex-xl 
 			box-sizing-mixin(border-box)
 			flex-mixin(0, 0, auto)
-			padding-left-mixin($gutter-hd)
-			padding-right-mixin($gutter-hd)
+			padding-left-mixin($flex-gutter-hd)
+			padding-right-mixin($flex-gutter-hd)
+			display: flex
 
 		for $i in (1..$flex-columns - 1)
 			.flex-{$i}-hd, .flex-{$i}-xl 

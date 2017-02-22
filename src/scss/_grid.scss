@@ -68,11 +68,11 @@
 		position: relative;
 		margin-left: 0;
 		margin-right: 0;
-		@include padding-left($padding-xl);
-		@include padding-right($padding-xl);
+		@include padding-left($gutter-wide);
+		@include padding-right($gutter-wide);
 	}
 
-	// Mobile/Small (sm) Container
+	// Mobile/Extra Small (xs) Container
 
 	.container,
 	.bookcase {

@@ -21,7 +21,6 @@
 	@import "_flex-grid"
 	@import "_type"
 	@import "_buttons"
-	@import "_visibility"
 	@import "_tables"
 	@import "_forms"
 	
@@ -29,14 +28,24 @@
 	// **** Custom Styles **** //
 
 	@import "_custom-styles"
-
 	
-	// **** Mobile/Small (sm) Styles **** //
+
+	// **** Visibility Classes **** //
+		
+	@import "_visibility"
+	
+	
+	// **** Mobile/Extra Small (xs) Styles **** //
 	
 	@import "media-styles/mobile-styles"
 
 
+	// **** Phablet/Small (sm) Styles **** //
 	
+	@media only screen and (min-width: $breakpoint-phablet) 
+		@import "media-styles/phablet-styles"
+	
+
 	// **** Tablet/Medium (md) Styles **** //
 	
 	@media only screen and (min-width: $breakpoint-tablet) 
@@ -48,9 +57,8 @@
 	@media only screen and (min-width: $breakpoint-desktop) 
 		@import "media-styles/desktop-styles"
 	
-
 	
-	// **** HD/XL (xl) Styles **** //
+	// **** HD/Extra Large (xl) Styles **** //
 	
 	@media only screen and (min-width: $breakpoint-hd) 
 		@import "media-styles/hd-styles"

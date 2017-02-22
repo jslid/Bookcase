@@ -21,8 +21,8 @@
 		@include flexbox-container;
 		@include flex(1, 0, auto);
 		@include flex-wrap(wrap);
-		@include margin-left(-$gutter);
-		@include margin-right(-$gutter);
+		@include margin-left(-$flex-gutter);
+		@include margin-right(-$flex-gutter);
 	}
 
 // FLEX ROWS & COLUMNS
@@ -57,8 +57,8 @@
 		.flex, .flex-xs {
 			@include box-sizing(border-box);
 			@include flex(0, 0, auto);
-			@include padding-left($gutter);
-			@include padding-right($gutter);
+			@include padding-left($flex-gutter);
+			@include padding-right($flex-gutter);
 			display: flex;
 		}
 
@@ -137,8 +137,8 @@
 		.flex-phablet, .flex-sm {
 			@include box-sizing(border-box);
 			@include flex(0, 0, auto);
-			@include padding-left($gutter-phablet);
-			@include padding-right($gutter-phablet);
+			@include padding-left($flex-gutter-phablet);
+			@include padding-right($flex-gutter-phablet);
 			display: flex;
 		}
 
@@ -218,8 +218,8 @@
 		.flex-tablet, .flex-md {
 			@include box-sizing(border-box);
 			@include flex(0, 0, auto);
-			@include padding-left($gutter-tablet);
-			@include padding-right($gutter-tablet);
+			@include padding-left($flex-gutter-tablet);
+			@include padding-right($flex-gutter-tablet);
 			display: flex;
 		}
 
@@ -299,8 +299,8 @@
 		.flex-desktop, .flex-lg {
 			@include box-sizing(border-box);
 			@include flex(0, 0, auto);
-			@include padding-left($gutter-desktop);
-			@include padding-right($gutter-desktop);
+			@include padding-left($flex-gutter-desktop);
+			@include padding-right($flex-gutter-desktop);
 			display: flex;
 		}
 
@@ -380,8 +380,8 @@
 		.flex-hd, .flex-xl {
 			@include box-sizing(border-box);
 			@include flex(0, 0, auto);
-			@include padding-left($gutter-hd);
-			@include padding-right($gutter-hd);
+			@include padding-left($flex-gutter-hd);
+			@include padding-right($flex-gutter-hd);
 			display: flex;
 		}
 

@@ -3,13 +3,39 @@
 
 // HIDE & SHOW
 
-	// Mobile/Small (sm) 
+	// Mobile/Extra Small (xs) 
 
 	.hide-mobile, .hide-sm 
 		display: none
 	
 	.show-mobile, .show-sm 
 		display: block
+		
+	.clear-mobile
+		&:after
+			display: table
+			clear: both
+			content: ""
+
+
+	// Phablet/Small (sm) 
+	
+	@media only screen and (min-width: $breakpoint-phablet) 
+		
+		.hide-phablet, .hide-sm 
+			display: none
+		
+		.show-phablet, .show-sm 
+			display: block
+		
+		.clear-phablet
+			&:after
+				display: table
+				clear: both
+				content: ""
+		
+		.clear-mobile
+			display: none
 
 
 	// Tablet/Medium (md) 
@@ -21,6 +47,15 @@
 		
 		.show-tablet, .show-md 
 			display: block
+		
+		.clear-tablet
+			&:after
+				display: table
+				clear: both
+				content: ""
+		
+		.clear-mobile, .clear-phablet
+			display: none
 
 
 	// Desktop/Large (lg) 
@@ -31,9 +66,18 @@
 			display: none
 		.show-desktop, .show-lg 
 			display: block
+		
+		.clear-desktop
+			&:after
+				display: table
+				clear: both
+				content: ""
+		
+		.clear-mobile, .clear-phablet, .clear-tablet
+			display: none
 
 	
-	// HD/XL (xl) 
+	// HD/Extra Large (xl) 
 	
 	@media only screen and (min-width: $breakpoint-hd)
 		
@@ -42,3 +86,12 @@
 		
 		.show-hd, .show-xl 
 			display: block
+		
+		.clear-hd
+			&:after
+				display: table
+				clear: both
+				content: ""
+		
+		.clear-mobile, .clear-phablet, .clear-tablet, .clear-desktop
+			display: none
