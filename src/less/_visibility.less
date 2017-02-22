@@ -3,18 +3,60 @@
 
 // HIDE & SHOW
 
-	// Mobile/Small (sm)
+	// Mobile/Extra-Small (xs)
 
-	.hide-mobile, .hide-sm { display: none; }
-	.show-mobile, .show-sm { display: block; }
+	.hide-mobile, .hide-xs { display: none !important; }
+	.show-mobile, .show-xs { display: block !important; }
+
+	.clear-mobile {
+		&:after {
+			display: table;
+			clear: both;
+			content: "";
+		}
+	}
+
+	// Phablet/Small (sm)
+
+	@media only screen and (min-width: @breakpoint-phablet) {
+		
+		.hide-phablet, .hide-sm { display: none !important; }
+		.show-phablet, .show-sm { display: block !important; }
+	
+	.clear-phablet {
+		&:after {
+			display: table;
+			clear: both;
+			content: "";
+		}
+	}
+
+	.clear-mobile {
+		display: none;
+	}
+
+	}
 
 
 	// Tablet/Medium (md) 
 	
 	@media only screen and (min-width: @breakpoint-tablet) {
 		
-		.hide-tablet, .hide-md { display: none; }
-		.show-tablet, .show-md { display: block; }
+		.hide-tablet, .hide-md { display: none !important; }
+		.show-tablet, .show-md { display: block !important; }
+	
+	.clear-tablet {
+		&:after {
+			display: table;
+			clear: both;
+			content: "";
+		}
+	}
+
+	.clear-mobile, .clear-phablet {
+		display: none;
+	}
+
 	}
 
 
@@ -22,8 +64,21 @@
 	
 	@media only screen and (min-width: @breakpoint-desktop) {
 		
-		.hide-desktop, .hide-lg { display: none; }
-		.show-desktop, .show-lg { display: block; }
+		.hide-desktop, .hide-lg { display: none !important; }
+		.show-desktop, .show-lg { display: block !important; }
+
+	.clear-desktop {
+		&:after {
+			display: table;
+			clear: both;
+			content: "";
+		}
+	}
+
+	.clear-mobile, .clear-phablet, .clear-tablet {
+		display: none;
+	}
+
 	}
 
 
@@ -31,6 +86,19 @@
 	
 	@media only screen and (min-width: @breakpoint-hd) {
 		
-		.hide-hd, .hide-xl { display: none; }
-		.show-hd, .show-xl { display: block; }
+		.hide-hd, .hide-xl { display: none !important; }
+		.show-hd, .show-xl { display: block !important; }
+	
+	.clear-hd {
+		&:after {
+			display: table;
+			clear: both;
+			content: "";
+		}
+	}
+
+	.clear-mobile, .clear-phablet, .clear-tablet, .clear-desktop {
+		display: none;
+	}
+
 	}

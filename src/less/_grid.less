@@ -64,7 +64,16 @@
 		.margin-right(-@gutter);
 	}
 
-	// Mobile/Small (sm) Container
+	.container-wide .row, .container-wide .shelf,
+	.bookcase-wide .row, .bookcase-wide .shelf {
+		position: relative;
+		margin-left: 0;
+		margin-right: 0;
+		.padding-left(@padding-xl);
+		.padding-right(@padding-xl);
+	}
+
+	// Mobile/Extra Small (xs) Container
 
 	.container,
 	.bookcase {
@@ -81,6 +90,16 @@
 		padding-right: 0;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	// Phablet/Small (sm) Container
+
+	@media only screen and (min-width: @breakpoint-phablet) {
+
+		.container,
+		.bookcase {
+			.width(@container-phablet);
+		}
 	}
 
 
@@ -104,7 +123,7 @@
 		}
 	}
 
-	// HD/XL (xl) Container
+	// HD/Extra Large (xl) Container
 
 	@media only screen and (min-width: @breakpoint-hd) {
 
@@ -118,14 +137,14 @@
 
 // COLUMNS & OFFSETS
 
-	// Mobile/Small (sm) Grid - Columns and Offsets
+	// Mobile/Extra Small (xs) Grid - Columns and Offsets
 
 		// Build Columns
 
 		.build-columns(@name; @grid-columns; @index: 1) when (@index =< @grid-columns) {
 		  .build-columns(@name; @grid-columns; (@index + 1));
 		   
-		  .@{name}-@{index}, .@{name}-@{index}-sm {
+		  .@{name}-@{index}, .@{name}-@{index}-xs {
 		    width: ( percentage(@index / @grid-columns) );
 		    & when ( @index < @grid-columns ) {
 		      &:extend(.col);
@@ -133,7 +152,7 @@
 		  } 
 		}
 
-		.col, .col-sm {
+		.col, .col-xs {
 			float: left;
 			position: relative;
 			.padding-left(@gutter);
@@ -148,7 +167,7 @@
 
 		.build-push-offsets(@offset-columns) when (@offset-columns > 0) {
 			.build-push-offsets (@offset-columns - 1);
-			.push-@{offset-columns}, .push-@{offset-columns}-sm {
+			.push-@{offset-columns}, .push-@{offset-columns}-xs {
 				left: @offset-columns / @grid-columns * 100%;
 			}
 		}
@@ -159,11 +178,61 @@
 
 		.build-pull-offsets(@offset-columns) when (@offset-columns > 0) {
 			.build-pull-offsets (@offset-columns - 1);
-			.pull-@{offset-columns}, .pull-@{offset-columns}-sm {
+			.pull-@{offset-columns}, .pull-@{offset-columns}-xs {
 				left: -@offset-columns / @grid-columns * 100%;
 			}
 		}
 
+
+	// Phablet/Small (sm) Grid - Columns and Offsets
+
+	@media only screen and (min-width: @breakpoint-phablet) {
+
+		// Build Columns
+
+		.build-columns-phablet(@name; @grid-columns; @index: 1) when (@index =< @grid-columns) {
+		  .build-columns-phablet(@name; @grid-columns; (@index + 1));
+		   
+		  .@{name}-@{index}-phablet, .@{name}-@{index}-sm {
+		    width: ( percentage(@index / @grid-columns) );
+		    & when ( @index < @grid-columns ) {
+		      &:extend(.col-phablet);
+		    }
+		  } 
+		}
+
+		.col-phablet, .col-sm {
+			float: left;
+			position: relative;
+			.padding-left(@gutter-tablet);
+			.padding-right(@gutter-tablet);
+		}
+
+		.build-columns-phablet(col; @grid-columns);
+
+		// Build Push Offsets
+		
+		.build-push-offsets-phablet(@offset-columns);
+
+		.build-push-offsets-phablet(@offset-columns) when (@offset-columns > 0) {
+			.build-push-offsets-phablet (@offset-columns - 1);
+			.push-@{offset-columns}-phablet, .push-@{offset-columns}-sm {
+				left: @offset-columns / @grid-columns * 100%;
+			}
+		}
+
+		// Build Pull Offsets
+
+		.build-pull-offsets-phablet(@offset-columns);
+
+		.build-pull-offsets-phablet(@offset-columns) when (@offset-columns > 0) {
+			.build-pull-offsets-phablet (@offset-columns - 1);
+			.pull-@{offset-columns}-phablet, .pull-@{offset-columns}-sm {
+				left: -@offset-columns / @grid-columns * 100%;
+			}
+		}
+	}
+	
 
 	// Tablet/Medium (md) Grid - Columns and Offsets
 
@@ -267,7 +336,7 @@
 	}
 
 
-	// HD/XL (xl) Grid - Columns and Offsets
+	// HD/Extra Large (xl) Grid - Columns and Offsets
 
 	@media only screen and (min-width: @breakpoint-hd) {
 

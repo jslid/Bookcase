@@ -19,10 +19,10 @@
 	.flexbox-common {
 		.box-sizing(border-box);
 		.flexbox-container;
-		.flex(0, 1, auto);
+		.flex(1, 0, auto);
 		.flex-wrap(wrap);
-		.margin-left(-@gutter);
-		.margin-right(-@gutter);
+		.margin-left(-@flex-gutter);
+		.margin-right(-@flex-gutter);
 	}
 
 
@@ -51,29 +51,30 @@
 
 // FLEX COLUMNS & POSITIONING
 
-	// Mobile/Small (sm) Grid - Columns and Offsets
+	// Mobile/Extra Small (ex) Grid - Columns and Offsets
 
 		// Build Flex Columns
 
 		.build-flex-columns(@name; @flex-columns; @index: 1) when (@index =< @flex-columns) {
 		  .build-flex-columns(@name; @flex-columns; (@index + 1));
 		   
-		  .@{name}-@{index}-mobile, .@{name}-@{index}-sm {
+		  .@{name}-@{index}, .@{name}-@{index}-xs {
 		    -ms-flex-preferred-size: ( percentage(@index / @flex-columns) );
 		    -webkit-flex-basis: ( percentage(@index / @flex-columns) );
 		    -flex-basis: ( percentage(@index / @flex-columns) );
 		    max-width: ( percentage(@index / @flex-columns) );
 		    & when ( @index < @flex-columns ) {
-		      &:extend(.flex-mobile);
+		      &:extend(.flex);
 		    }
 		  } 
 		}
 
-		.flex-mobile, .flex-sm {
+		.flex, .flex-xs {
 			.box-sizing(border-box);
 			.flex(0, 0, auto);
-			.padding-left(@gutter);
-			.padding-right(@gutter);
+			.padding-left(@flex-gutter);
+			.padding-right(@flex-gutter);
+			display: flex;
 		}
 
 		.build-flex-columns(flex; @flex-columns);
@@ -81,56 +82,142 @@
 
 		// Flex Positioning
 
-		.flex-start-mobile, .flex-start-sm {
+		.flex-start, .flex-start-xs {
 			.flex-justify(flex-start);
 		}
 
-		.flex-center-mobile, .flex-center-sm {
+		.flex-center, .flex-center-xs {
 			.flex-justify(center);
 		}
 
-		.flex-end-mobile, .flex-end-sm {
+		.flex-end, .flex-end-xs {
 			.flex-justify(flex-end);
 		}
 
-		.flex-around-mobile, .flex-around-sm {
+		.flex-around, .flex-around-xs {
 			.flex-justify(space-around);
 		}
 
-		.flex-between-mobile, .flex-between-sm {
+		.flex-between, .flex-between-xs {
 			.flex-justify(space-between);
 		}
 
-		.flex-top-mobile, .flex-top-sm {
+		.flex-top, .flex-top-xs {
 			.flex-align-items(flex-start);
 		}
 
-		.flex-middle-mobile, .flex-middle-sm {
+		.flex-middle, .flex-middle-xs {
 			.flex-align-items(center);
 		}
 
-		.flex-bottom-mobile, .flex-bottom-sm {
+		.flex-bottom, .flex-bottom-xs {
 			.flex-align-items(flex-end);
 		}
 
-		.flex-stretch-mobile, .flex-stretch-sm {
+		.flex-stretch, .flex-stretch-xs {
 			.flex-align-items(stretch);
 		}
 
-		.flex-baseline-mobile, .flex-baseline-sm {
+		.flex-baseline, .flex-baseline-xs {
 			.flex-align-items(baseline);
 		}
 
 		// Flex Order
 
-		.flex-order-start-mobile, .flex-order-start-sm {
+		.flex-order-start, .flex-order-start-xs {
 			.flex-order(-1);
 		}
 
-		.flex-order-end-mobile, .flex-order-end-sm {
+		.flex-order-end, .flex-order-end-xs {
 			.flex-order(1);
 		}
 
+
+	// Phablet/Small (sm) Flex Grid - Columns and Offsets
+
+	@media only screen and (min-width: @breakpoint-phablet) {
+
+		// Build Columns
+
+		.flex-columns-phablet(@name; @flex-columns; @index: 1) when (@index =< @flex-columns) {
+		  .flex-columns-phablet(@name; @flex-columns; (@index + 1));
+		   
+		  .@{name}-@{index}-phablet, .@{name}-@{index}-sm {
+		    -ms-flex-preferred-size: ( percentage(@index / @flex-columns) );
+		    -webkit-flex-basis: ( percentage(@index / @flex-columns) );
+		    -flex-basis: ( percentage(@index / @flex-columns) );
+		    max-width: ( percentage(@index / @flex-columns) );
+		    & when ( @index < @grid-columns ) {
+		      &:extend(.flex-phablet);
+		    }
+		  } 
+		}
+
+		.flex-phablet, .flex-sm {
+			.box-sizing(border-box);
+			.flex(0, 0, auto);
+			.padding-left(@flex-gutter-phablet);
+			.padding-right(@flex-gutter-phablet);
+		}
+
+		.flex-columns-phablet(flex; @flex-columns);
+
+
+		// Flex Positioning
+
+		.flex-start-phablet, .flex-start-sm {
+			.flex-justify(flex-start);
+		}
+
+		.flex-center-phablet, .flex-center-sm {
+			.flex-justify(center);
+		}
+
+		.flex-end-phablet, .flex-end-sm {
+			.flex-justify(flex-end);
+		}
+
+		.flex-around-phablet, .flex-around-sm {
+			.flex-justify(space-around);
+		}
+
+		.flex-between-phablet, .flex-between-sm {
+			.flex-justify(space-between);
+		}
+
+		.flex-top-phablet, .flex-top-sm {
+			.flex-align-items(flex-start);
+		}
+
+		.flex-middle-phablet, .flex-middle-sm {
+			.flex-align-items(center);
+		}
+
+		.flex-bottom-phablet, .flex-bottom-sm {
+			.flex-align-items(flex-end);
+		}
+
+		.flex-stretch-phablet, .flex-stretch-sm {
+			.flex-align-items(stretch);
+		}
+
+		.flex-baseline-phablet, .flex-baseline-sm {
+			.flex-align-items(baseline);
+		}
+
+		// Flex Order
+
+		.flex-order-start-phablet, .flex-order-start-sm {
+			.flex-order(-1);
+		}
+
+		.flex-order-end-phablet, .flex-order-end-sm {
+			.flex-order(1);
+		}
+
+	}
+
+	
 
 	// Tablet/Medium (md) Flex Grid - Columns and Offsets
 
@@ -155,8 +242,8 @@
 		.flex-tablet, .flex-md {
 			.box-sizing(border-box);
 			.flex(0, 0, auto);
-			.padding-left(@gutter-tablet);
-			.padding-right(@gutter-tablet);
+			.padding-left(@flex-gutter-tablet);
+			.padding-right(@flex-gutter-tablet);
 		}
 
 		.flex-columns-tablet(flex; @flex-columns);
@@ -240,8 +327,8 @@
 		.flex-desktop, .flex-lg {
 			.box-sizing(border-box);
 			.flex(0, 0, auto);
-			.padding-left(@gutter-desktop);
-			.padding-right(@gutter-desktop);
+			.padding-left(@flex-gutter-desktop);
+			.padding-right(@flex-gutter-desktop);
 		}
 
 		.flex-columns-desktop(flex; @flex-columns);
@@ -324,8 +411,8 @@
 		.flex-hd, .flex-xl {
 			.box-sizing(border-box);
 			.flex(0, 0, auto);
-			.padding-left(@gutter-hd);
-			.padding-right(@gutter-hd);
+			.padding-left(@flex-gutter-hd);
+			.padding-right(@flex-gutter-hd);
 		}
 
 		.flex-columns-hd(flex; @flex-columns);

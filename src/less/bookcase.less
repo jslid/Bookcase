@@ -4,7 +4,7 @@
   Version - 1.0.0
 */
 
-    // **** Variables **** // 
+  // **** Variables **** // 
 
   @import "_variables";
 
@@ -17,12 +17,13 @@
 
   @import "_mixins";
   
+  // **** Elements **** //
+
   @import "_clearfix";
   @import "_grid";
   @import "_flex-grid";
   @import "_type";
   @import "_buttons";
-  @import "_visibility";
   @import "_tables";
   @import "_forms";
   
@@ -31,11 +32,22 @@
 
   @import "_custom-styles";
 
+
+  // **** Visibility Classes **** //
+
+  @import "_visibility";
+
   
-  // **** Mobile/Small (sm) Styles **** //
+  // **** Mobile/Extra Small (xs) Styles **** //
   
   @import "media-styles/mobile-styles";
 
+
+  // **** Phablet/Small (sm) Styles **** //
+  
+  @media only screen and (min-width: @breakpoint-phablet) {
+      @import "media-styles/phablet-styles";
+    }
 
   
   // **** Tablet/Medium (md) Styles **** //
@@ -52,7 +64,7 @@
   }
 
   
-  // **** HD/XL (xl) Styles **** //
+  // **** HD/Extra Large (xl) Styles **** //
   
   @media only screen and (min-width: @breakpoint-hd) {
     @import "media-styles/hd-styles";
