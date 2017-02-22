@@ -1,6 +1,7 @@
 
 /* Bookcase -Typography */
 	
+	// - FontFace
 	// - Body 
 	// - Headings
 	// - Paragraphs
@@ -11,6 +12,10 @@
 	// - Definitions
 	// - Blockquotes
 	// - Typography Margin
+
+
+// FONTFACE
+
 
 
 // BODY
@@ -89,9 +94,9 @@
 
 // LISTS
 
-	ul { list-style: circle inside; }
+	ul { list-style: circle outside; }
 
-	ol { list-style: decimal inside; }
+	ol { list-style: decimal outside; }
 
 	ul,
 	ol {
@@ -124,7 +129,7 @@
 		&:active,
 		&:hover {
 			outline: 0;
-			text-decoration: underline;
+			text-decoration: none;
 		}
 		&:hover {
 			color: $link-hover-color;

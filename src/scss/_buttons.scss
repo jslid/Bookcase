@@ -32,7 +32,7 @@
 		text-decoration: none;
 		color: $btn-color;
 		background: $btn-bg-color;
-		border: 0;
+		border: none;
 
 		&:hover { 
 			color: $btn-hover-color;
@@ -68,10 +68,12 @@
 		border: 0;
 		background: transparent;
 		padding: 0;
+		font-family: inherit;
+		font-size: inherit;
+		text-transform: none;
 
 		&:hover, &:active {
 			color: $btn-link-hover-color;
-			font-weight: bold;
 		}
 	}
 

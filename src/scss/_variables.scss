@@ -31,33 +31,37 @@
 
 	// Containers
 
-	$container-mobile:		100% !default;	// Container Small (sm)
-	$container-tablet:		720 !default;	// Container Medium (md)
-	$container-desktop:		960 !default;	// Container Large (lg)
-	$container-hd:			1120 !default; 	// Container XL (xl)
+	$container-mobile:		100% !default;	// Container Mobile/Extra Small (xs)
+	$container-phablet:		460 !default;	// Container Phablet/Small (sm)
+	$container-tablet:		720 !default;	// Container Tablet/Medium (md)
+	$container-desktop:		940 !default;	// Container Desktop/Large (lg)
+	$container-hd:			1260 !default; 	// Container HD/Extra Large (xl)
 
 	$container-wide:		100% !default;	// Container wide is used for full length rows
 
 
 	// Breakpoints
 
-	$breakpoint-mobile: 	480px !default;		// Breakpoint Small (sm)
-	$breakpoint-tablet: 	768px !default;		// Breakpoint Medium (md)
-	$breakpoint-desktop: 	1024px !default;	// Breakpoint Large (lg)
-	$breakpoint-hd: 		1280px !default;	// Breakpoint XL (xl)
+	$breakpoint-mobile: 	360px !default;		// Breakpoint Mobile/Extra Small (xs)
+	$breakpoint-phablet:	480px !default;		// Breakpoint Phablet/Small (sm)
+	$breakpoint-tablet: 	740px !default;		// Breakpoint Tablet/Medium (md)
+	$breakpoint-desktop: 	960px !default;		// Breakpoint Desktop/Large (lg)
+	$breakpoint-hd: 		1280px !default;	// Breakpoint HD/Extra Large (xl)
 
 
 	// Gutters
 
-	$gutter: 					10 !default;	// Gutter Small (sm)
-	$gutter-tablet: 			10 !default;	// Gutter Medium (md)
-	$gutter-desktop: 			10 !default;	// Gutter Large (lg)
-	$gutter-hd: 				10 !default;	// Gutter XL (xl)
+	$gutter: 					10 !default;	// Gutter Mobile/Extra Small (xs)
+	$gutter-phablet:			10 !default;	// Gutter Phablet/Small (sm)
+	$gutter-tablet: 			10 !default;	// Gutter Tablet/Medium (md)
+	$gutter-desktop: 			10 !default;	// Gutter Desktop/Large (lg)
+	$gutter-hd: 				10 !default;	// Gutter HD/Extra Large (xl)
 
-	$flex-gutter: 				10 !default;	// Flex Gutter Small (sm)
-	$flex-gutter-tablet: 		10 !default;	// Flex Gutter Medium (md)
-	$flex-gutter-desktop: 		10 !default;	// Flex Gutter Large (lg)
-	$flex-gutter-hd: 			10 !default;	// Flex Gutter XL (xl)
+	$flex-gutter: 				10 !default;	// Flex Gutter Mobile/Extra Small (xs)
+	$flex-gutter-phablet:		10 !default;	// Flex Gutter Phablet/Small (sm)
+	$flex-gutter-tablet: 		10 !default;	// Flex Gutter Tablet/Medium (md)
+	$flex-gutter-desktop: 		10 !default;	// Flex Gutter Desktop/Large (lg)
+	$flex-gutter-hd: 			10 !default;	// Flex Gutter HD/Extra Large (xl)
 
 
 //	PADDING
@@ -95,9 +99,11 @@
 	$gray-darker: 		lighten($black, 20%) !default;
 	$gray-darkest: 		lighten($black, 5%) !default;
 
-	// Color Scheme
+	// Color Scheme - Enter you color scheme variables below
 
-	// Enter your color scheme variables below 
+
+
+	// Main Color Scheme
 
 	$text-color:			$gray-darker !default;
 	$link-color:			$gray !default;
@@ -150,13 +156,10 @@
 
 	// Font Families
 
-	// If you choose to use two Sans-serif fonts, or two Serif fonts for your web project, just uncomment the "alt"
-	// variables of the corresponding font familes below. 
-
 	$font-sans-serif: 	$raleway !default;
-	// $font-sans-serif-alt: ;
+
 	$font-serif:		$buenard !default;
-	// $font-serif-alt: ;
+
 	$font-monospace:	$courier-new !default;
 
 
@@ -178,58 +181,58 @@
 	$heading-font-family: 		$font-sans-serif !default;
 
 	$h1-size: 					80 !default;
-	$h1-line-height: 			84 !default;
-	$h1-weight: 				500 !default;
+	$h1-line-height: 			($h1-size + 2);
+	$h1-weight: 				bold !default;
 	$h1-color: 					$gray-darker !default;
 
 	$h2-size: 					60 !default;
-	$h2-line-height: 			64 !default;
-	$h2-weight: 				500 !default;
+	$h2-line-height: 			($h2-size + 2);
+	$h2-weight: 				bold !default;
 	$h2-color: 					$gray-darker !default;
 
 	$h3-size: 					40 !default;
-	$h3-line-height: 			44 !default;
-	$h3-weight: 				500 !default;
+	$h3-line-height: 			($h3-size + 2);
+	$h3-weight: 				bold !default;
 	$h3-color: 					$gray-darker !default;
 
 	$h4-size: 					30 !default;
-	$h4-line-height: 			34 !default;
-	$h4-weight: 				500 !default;
+	$h4-line-height: 			($h4-size + 2);
+	$h4-weight: 				bold !default;
 	$h4-color: 					$gray-darker !default;
 
 	$h5-size: 					24 !default;
-	$h5-line-height: 			28 !default;
-	$h5-weight: 				500 !default;
+	$h5-line-height: 			($h5-size + 2);
+	$h5-weight: 				bold !default;
 	$h5-color: 					$gray-darker !default;
 
 	$h6-size: 					18 !default;
-	$h6-line-height: 			24 !default;
-	$h6-weight: 				500 !default;
+	$h6-line-height: 			($h6-size + 2);
+	$h6-weight: 				bold !default;
 	$h6-color: 					$gray-darker !default;
 
 	$p-size: 					18 !default;
-	$p-line-height: 			24 !default;
-	$p-weight: 					300 !default;
+	$p-line-height: 			($p-size + 6);
+	$p-weight: 					normal !default;
 	$p-color: 					$gray-darker !default;
 	$p-font-family: 			$font-serif !default;
 
 	$li-size: 					18 !default;
-	$li-line-height: 			20 !default;
-	$li-weight: 				300 !default;
+	$li-line-height: 			($lisize + 2);
+	$li-weight: 				normal !default;
 	$li-color: 					$gray-darker !default;
 	$li-font-family: 			$font-serif !default;
 
 	$code-size: 				16 !default;
-	$code-line-height: 			18 !default;
-	$code-weight: 				400 !default;
+	$code-line-height: 			($code-size + 2);
+	$code-weight: 				normal !default;
 	$code-border-color:			$gray !default;
 	$code-bg-color:				$gray-lighter !default;
 	$code-color: 				$gray-darker !default;
 	$code-font-family: 			$font-monospace !default;
 
 	$blockquote-size: 			18 !default;
-	$blockquote-line-height: 	24 !default;
-	$blockquote-weight: 		400 !default;
+	$blockquote-line-height: 	($blockquote-size + 6);
+	$blockquote-weight: 		normal !default;
 	$blockquote-color:  		$gray-darker !default;
 	$blockquote-font-family: 	$font-serif !default;
 
@@ -244,7 +247,7 @@
 //	BUTTONS
 
 	$btn-bg-color:						$gray !default;
-	$btn-bg-hover-color:				$gray-darker !default;
+	$btn-bg-hover-color:				darken($gray, 10%) !default;
 	$btn-link-color:					$gray !default;
 	$btn-link-hover-color:				$gray-darker !default;
 	$btn-color:							$white !default;
@@ -255,34 +258,34 @@
 	$btn-outline-size:					3 !default;
 	$btn-outline-style:					solid !default;
 	$btn-outline-color:					$gray !default;
-	$btn-outline-hover-color:			$gray-darker !default;
+	$btn-outline-hover-color:			darken($gray, 10%) !default;
 	$btn-outline-font-color:			$gray !default;
 
 	$btn-rounded-radius:				5 !default;
 	$btn-pill-radius:					30 !default;
 
 	$btn-font-size:						14 !default;
-	$btn-line-height:					16 !default;
+	$btn-line-height:					($btn-font-size + 2) !default;
 	$btn-vertical-padding:				10 !default;
 	$btn-horizontal-padding:			20 !default;
 
 	$btn-small-font-size:				12 !default;
-	$btn-small-line-height:				14 !default;
+	$btn-small-line-height:				($btn-small-font-size + 2) !default;
 	$btn-small-vertical-padding:		10 !default;
 	$btn-small-horizontal-padding:		20 !default;
 
 	$btn-medium-font-size:				16 !default;
-	$btn-medium-line-height:			18 !default;
+	$btn-medium-line-height:			($btn-medium-font-size + 2) !default;
 	$btn-medium-vertical-padding:		15 !default;
 	$btn-medium-horizontal-padding:		25 !default;
 
 	$btn-large-font-size:				18 !default;
-	$btn-large-line-height:				20 !default;
+	$btn-large-line-height:				($btn-large-font-size + 2) !default;
 	$btn-large-vertical-padding:		20 !default;
 	$btn-large-horizontal-padding:		30 !default;
 
 	$btn-mega-font-size:				24 !default;
-	$btn-mega-line-height:				26 !default;
+	$btn-mega-line-height:				($btn-mega-font-size + 2) !default;
 	$btn-mega-vertical-padding:			20 !default;
 	$btn-mega-horizontal-padding:		30 !default;
 

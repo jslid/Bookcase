@@ -63,6 +63,15 @@
 		@include margin-right(-$gutter);
 	}
 
+	.container-wide .row, .container-wide .shelf, 
+	.bookcase-wide .row, .bookcase-wide .shelf {
+		position: relative;
+		margin-left: 0;
+		margin-right: 0;
+		@include padding-left($padding-xl);
+		@include padding-right($padding-xl);
+	}
+
 	// Mobile/Small (sm) Container
 
 	.container,
@@ -80,6 +89,17 @@
 		@include padding-right(0);
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+
+	// Phablet/Small (sm) Container
+
+	@media only screen and (min-width: $breakpoint-phablet) {
+
+		.container,
+		.bookcase { 
+			@include width($container-phablet); 
+		}
 	}
 
 
@@ -103,7 +123,7 @@
 		}
 	}
 
-	// HD/XL (xl) Container
+	// HD/Extra Large (xl) Container
 
 	@media only screen and (min-width: $breakpoint-hd) {
 
@@ -117,11 +137,11 @@
 
 // COLUMNS & OFFSETS
 
-	// Mobile/Small (sm) Grid - Columns and Offsets
+	// Mobile/Extra Small (xs) Grid - Columns and Offsets
 
 		// Build Columns
 
-		.col, .col-sm {
+		.col, .col-xs {
 			float: left;
 			position: relative;
 			@include padding-left($gutter);
@@ -129,13 +149,13 @@
 		}
 
 		@for $i from 1 through $grid-columns - 1 {
-			.col-#{$i}, .col-#{$i}-sm {
+			.col-#{$i}, .col-#{$i}-xs {
 				@extend .col;
 			}
 		}
 
 		@for $i from 1 through $grid-columns {
-			.col-#{$i}, .col-#{$i}-sm {
+			.col-#{$i}, .col-#{$i}-xs {
 				width: ($i / $grid-columns) * 100%;
 			}
 		}
@@ -144,7 +164,7 @@
 		// Build Push Offsets
 		
 		@for $i from 1 through $offset-columns {
-			.push-#{$i}, .push-#{$i}-sm {
+			.push-#{$i}, .push-#{$i}-xs {
 				left: ($i / $grid-columns) * 100%;
 			}
 		}
@@ -152,10 +172,54 @@
 		// Build Pull Offsets
 
 		@for $i from 1 through $offset-columns {
-			.pull-#{$i}, .pull-#{$i}-sm {
+			.pull-#{$i}, .pull-#{$i}-xs {
 				left: -($i / $grid-columns) * 100%;
 			}
 		}
+
+
+	// Phablet/Small (sm) Grid - Columns and Offsets
+
+	@media only screen and (min-width: $breakpoint-phablet) {
+
+		// Build Columns
+
+		.col-phablet, .col-sm {
+			float: left;
+			position: relative;
+			@include padding-left($gutter-phablet);
+			@include padding-right($gutter-phablet);
+		}
+
+		@for $i from 1 through $grid-columns - 1 {
+			.col-#{$i}-phablet, .col-#{$i}-sm {
+				@extend .col-phablet;
+			}
+		}
+
+		@for $i from 1 through $grid-columns {
+			.col-#{$i}-phablet, .col-#{$i}-sm {
+				width: ($i / $grid-columns) * 100%;
+			}
+		}
+
+		
+		// Build Push Offsets
+		
+		@for $i from 1 through $offset-columns {
+			.push-#{$i}-phablet, .push-#{$i}-sm {
+				left: ($i / $grid-columns) * 100%;
+			}
+		}
+
+		// Build Pull Offsets
+
+		@for $i from 1 through $offset-columns {
+			.pull-#{$i}-phablet, .pull-#{$i}-sm {
+				left: -($i / $grid-columns) * 100%;
+			}
+		}
+	}
 
 
 	// Tablet/Medium (md) Grid - Columns and Offsets
@@ -246,7 +310,7 @@
 	}
 
 
-	// HD/XL (xl) Grid - Columns and Offsets
+	// HD/Extra Large (xl) Grid - Columns and Offsets
 
 	@media only screen and (min-width: $breakpoint-hd) {
 

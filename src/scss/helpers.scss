@@ -306,6 +306,53 @@
 	
 // MEDIA QUERIES
 
+	// Phablet/Small (sm) Helpers
+	
+	@media only screen and (min-width: $breakpoint-phablet) {
+		
+		.text-left-phablet, .text-left-sm { text-align: left; }
+		.text-right-phablet, .text-right-sm { text-align: right; }
+		.text-center-phablet, .text-center-sm { text-align: center; }
+		.text-justify-phablet, .text-justify-sm { text-align: justify; }
+
+		.vertical-top-phablet, .vertical-top-sm { vertical-align: top; }
+		.vertical-middle-phablet, .vertical-middle-sm { vertical-align: middle; }
+		.vertical-bottom-phablet, .vertical-bottom-sm { vertical-align: bottom; }
+
+		.phablet-no-push, .sm-no-push 
+		.phablet-no-pull, .sm-no-pull { left: 0; }
+
+		.no-float-phablet, .no-float-sm { float: none; }
+
+		.left-phablet, .left-sm { float: left; }
+		.right-phablet, .right-sm { float: right; }
+
+		.center-phablet, .center-sm {
+			float: none;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.relative-phablet, .relative-sm { position: relative; }
+		.absolute-phablet, .absolute-sm { position: absolute; }
+		.static-phablet, .static-sm { position: static; }
+		.fixed-phablet, .fixed-sm { position: fixed; }
+
+		.none-phablet, .none-sm { display: none; }
+		.block-phablet, .block-sm { display: block; }
+		.inline-block-phablet, .inline-block-sm { display: inline-block; }
+		.inline-phablet, .inline-sm { display: inline; }
+
+		.clear-phablet, .clear-sm {
+		&:after {
+			display: table;
+			clear: both;
+			content: "";
+			}
+		}
+	}
+
+
 	// Tablet/Medium (md) Helpers
 	
 	@media only screen and (min-width: $breakpoint-tablet) {

@@ -19,7 +19,7 @@
 	.flexbox-common {
 		@include box-sizing(border-box);
 		@include flexbox-container;
-		@include flex(0, 1, auto);
+		@include flex(1, 0, auto);
 		@include flex-wrap(wrap);
 		@include margin-left(-$gutter);
 		@include margin-right(-$gutter);
@@ -50,25 +50,26 @@
 
 // FLEX COLUMNS & POSITIONING
 
-	// Mobile/Small (sm) Flex Grid - Columns and Offsets
+	// Mobile/Extra Small (xs) Flex Grid - Columns and Offsets
 
 		// Build Columns
 
-		.flex-mobile, .flex-sm {
+		.flex, .flex-xs {
 			@include box-sizing(border-box);
 			@include flex(0, 0, auto);
 			@include padding-left($gutter);
 			@include padding-right($gutter);
+			display: flex;
 		}
 
 		@for $i from 1 through $flex-columns - 1 {
-			.flex-#{$i}-mobile, .flex-#{$i}-sm {
-				@extend .flex-mobile;
+			.flex-#{$i}, .flex-#{$i}-xs {
+				@extend .flex;
 			}
 		}
 
 		@for $i from 1 through $flex-columns {
-			.flex-#{$i}-mobile, .flex-#{$i}-sm {
+			.flex-#{$i}, .flex-#{$i}-xs {
 				width: ($i / $flex-columns) * 100%;
 			}
 		}
@@ -76,55 +77,136 @@
 
 		// Flex Positioning
 
-		.flex-start-mobile, .flex-start-sm {
+		.flex-start, .flex-start-xs {
 			@include flex-justify(flex-start);
 		}
 
-		.flex-center-mobile, .flex-center-sm {
+		.flex-center, .flex-center-xs {
 			@include flex-justify(center);
 		}
 
-		.flex-end-mobile, .flex-end-sm {
+		.flex-end, .flex-end-xs {
 			@include flex-justify(flex-end);
 		}
 
-		.flex-around-mobile, .flex-around-sm {
+		.flex-around, .flex-around-xs {
 			@include flex-justify(space-around);
 		}
 
-		.flex-between-mobile, .flex-between-sm {
+		.flex-between, .flex-between-xs {
 			@include flex-justify(space-between);
 		}
 
-		.flex-top-mobile, .flex-top-sm {
+		.flex-top, .flex-top-xs {
 			@include flex-align-items(flex-start);
 		}
 
-		.flex-middle-mobile, .flex-middle-sm {
+		.flex-middle, .flex-middle-xs {
 			@include flex-align-items(center);
 		}
 
-		.flex-bottom-mobile, .flex-bottom-sm {
+		.flex-bottom, .flex-bottom-xs {
 			@include flex-align-items(flex-end);
 		}
 
-		.flex-stretch-mobile, .flex-stretch-sm {
+		.flex-stretch, .flex-stretch-xs {
 			@include flex-align-items(stretch);
 		}
 
-		.flex-baseline-mobile, .flex-baseline-sm {
+		.flex-baseline, .flex-baseline-xs {
 			@include flex-align-items(baseline);
 		}
 
 		// Flex Order
 
-		.flex-order-start-mobile, .flex-order-start-sm {
+		.flex-order-start, .flex-order-start-xs {
 			@include flex-order(-1);
 		}
 
-		.flex-order-end-mobile, .flex-order-end-sm {
+		.flex-order-end, .flex-order-end-xs {
 			@include flex-order(1);
 		}
+
+
+	// Phablet/Small (sm) Flex Grid - Columns and Offsets
+
+	@media only screen and (min-width: $breakpoint-phablet) {
+
+		// Build Columns
+
+		.flex-phablet, .flex-sm {
+			@include box-sizing(border-box);
+			@include flex(0, 0, auto);
+			@include padding-left($gutter-phablet);
+			@include padding-right($gutter-phablet);
+			display: flex;
+		}
+
+		@for $i from 1 through $flex-columns - 1 {
+			.flex-#{$i}-phablet, .flex-#{$i}-sm {
+				@extend .flex-phablet;
+			}
+		}
+
+		@for $i from 1 through $flex-columns {
+			.flex-#{$i}-phablet, .flex-#{$i}-sm {
+				width: ($i / $flex-columns) * 100%;
+			}
+		}
+
+
+		// Flex Positioning
+
+		.flex-start-phablet, .flex-start-sm {
+			@include flex-justify(flex-start);
+		}
+
+		.flex-center-tphablet, .flex-center-sm {
+			@include flex-justify(center);
+		}
+
+		.flex-end-phablet, .flex-end-sm {
+			@include flex-justify(flex-end);
+		}
+
+		.flex-around-phablet, .flex-around-sm {
+			@include flex-justify(space-around);
+		}
+
+		.flex-between-phablet, .flex-between-sm {
+			@include flex-justify(space-between);
+		}
+
+		.flex-top-phablet, .flex-top-sm {
+			@include flex-align-items(flex-start);
+		}
+
+		.flex-middle-phablet, .flex-middle-sm {
+			@include flex-align-items(center);
+		}
+
+		.flex-bottom-phablet, .flex-bottom-sm {
+			@include flex-align-items(flex-end);
+		}
+
+		.flex-stretch-phablet, .flex-stretch-sm {
+			@include flex-align-items(stretch);
+		}
+
+		.flex-baseline-phablet, .flex-baseline-sm {
+			@include flex-align-items(baseline);
+		}
+
+		// Flex Order
+
+		.flex-order-start-phablet, .flex-order-start-sm {
+			@include flex-order(-1);
+		}
+
+		.flex-order-end-phablet, .flex-order-end-sm {
+			@include flex-order(1);
+		}
+	}
 
 
 	// Tablet/Medium (md) Flex Grid - Columns and Offsets
@@ -138,6 +220,7 @@
 			@include flex(0, 0, auto);
 			@include padding-left($gutter-tablet);
 			@include padding-right($gutter-tablet);
+			display: flex;
 		}
 
 		@for $i from 1 through $flex-columns - 1 {
@@ -218,6 +301,7 @@
 			@include flex(0, 0, auto);
 			@include padding-left($gutter-desktop);
 			@include padding-right($gutter-desktop);
+			display: flex;
 		}
 
 		@for $i from 1 through $flex-columns - 1 {
@@ -287,7 +371,7 @@
 	}
 
 
-	// HD/XL (xl) Flex Grid - Columns and Offsets
+	// HD/Extra Large (xl) Flex Grid - Columns and Offsets
 
 	@media only screen and (min-width: $breakpoint-hd) {
 
@@ -298,6 +382,7 @@
 			@include flex(0, 0, auto);
 			@include padding-left($gutter-hd);
 			@include padding-right($gutter-hd);
+			display: flex;
 		}
 
 		@for $i from 1 through $flex-columns - 1 {
