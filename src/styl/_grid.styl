@@ -125,32 +125,32 @@
 
 		// Build Columns
 
-		.col, .col-sm
+		.col, .col-xs
 			float: left
 			position: relative
 			padding-left-mixin($gutter)
 			padding-right-mixin($gutter)
 
 		for $i in (1..$grid-columns - 1)
-			.col-{$i}, .col-{$i}-sm
+			.col-{$i}, .col-{$i}-xs
 				@extend .col
 
 		for $i in (1..$grid-columns)
-			.col-{$i}, .col-{$i}-sm  
+			.col-{$i}, .col-{$i}-xs  
 				width: ($i / $grid-columns) * 100%
 
 
 		// Build Push Offsets
 		
 		for $i in (1..$offset-columns)
-			.push-{$i}, .push-{$i}-sm
+			.push-{$i}, .push-{$i}-xs
 				left: ($i / $grid-columns) * 100%
 
 
 		// Build Pull Offsets
 
 		for $i in (1..$offset-columns)
-			.pull-{$i}, .pull-{$i}-sm
+			.pull-{$i}, .pull-{$i}-xs
 				left: -($i / $grid-columns) * 100%
 
 
