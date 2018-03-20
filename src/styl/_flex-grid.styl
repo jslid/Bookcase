@@ -57,6 +57,9 @@
 			padding-left-mixin($flex-gutter)
 			padding-right-mixin($flex-gutter)
 			display: flex
+			-webkit-flex-direction: column
+			-ms-flex-direction: column
+			flex-direction: column
 
 		for $i in (1..$flex-columns - 1)
 			.flex-{$i}, .flex-{$i}-xs
@@ -132,6 +135,9 @@
 			padding-left-mixin($flex-gutter-phablet)
 			padding-right-mixin($flex-gutter-phablet)
 			display: flex
+			-webkit-flex-direction: column
+			-ms-flex-direction: column
+			flex-direction: column
 
 		for $i in (1..$flex-columns - 1)
 			.flex-{$i}-phablet, .flex-{$i}-sm
@@ -207,6 +213,9 @@
 			padding-left-mixin($flex-gutter-tablet)
 			padding-right-mixin($flex-gutter-tablet)
 			display: flex
+			-webkit-flex-direction: column
+			-ms-flex-direction: column
+			flex-direction: column
 
 		for $i in (1..$flex-columns - 1)
 			.flex-{$i}-tablet, .flex-{$i}-md
@@ -281,6 +290,9 @@
 			padding-left-mixin($flex-gutter-desktop)
 			padding-right-mixin($flex-gutter-desktop)
 			display: flex
+			-webkit-flex-direction: column
+			-ms-flex-direction: column
+			flex-direction: column
 
 		for $i in (1..$flex-columns - 1)
 			.flex-{$i}-desktop, .flex-{$i}-lg
@@ -354,6 +366,9 @@
 			padding-left-mixin($flex-gutter-hd)
 			padding-right-mixin($flex-gutter-hd)
 			display: flex
+			-webkit-flex-direction: column
+			-ms-flex-direction: column
+			flex-direction: column
 
 		for $i in (1..$flex-columns - 1)
 			.flex-{$i}-hd, .flex-{$i}-xl 
