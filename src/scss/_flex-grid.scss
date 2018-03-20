@@ -60,6 +60,9 @@
 			@include padding-left($flex-gutter);
 			@include padding-right($flex-gutter);
 			display: flex;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
 		}
 
 		@for $i from 1 through $flex-columns - 1 {
@@ -140,6 +143,9 @@
 			@include padding-left($flex-gutter-phablet);
 			@include padding-right($flex-gutter-phablet);
 			display: flex;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
 		}
 
 		@for $i from 1 through $flex-columns - 1 {
@@ -221,6 +227,9 @@
 			@include padding-left($flex-gutter-tablet);
 			@include padding-right($flex-gutter-tablet);
 			display: flex;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
 		}
 
 		@for $i from 1 through $flex-columns - 1 {
@@ -302,6 +311,9 @@
 			@include padding-left($flex-gutter-desktop);
 			@include padding-right($flex-gutter-desktop);
 			display: flex;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
 		}
 
 		@for $i from 1 through $flex-columns - 1 {
@@ -383,6 +395,9 @@
 			@include padding-left($flex-gutter-hd);
 			@include padding-right($flex-gutter-hd);
 			display: flex;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
 		}
 
 		@for $i from 1 through $flex-columns - 1 {
